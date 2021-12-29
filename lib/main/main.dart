@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:rmb_admin/screens/login.dart';
+import 'package:provider/provider.dart';
+import 'package:rmb_admin/main/locator.dart';
+import 'package:rmb_admin/pages/home/home.dart';
+import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/providers/home_page_provider.dart';
+import 'package:rmb_admin/repositories/navigation_repo.dart';
 
 void main() {
-  runApp(const MyApp());
+  setupLocator();
+  runApp(ChangeNotifierProvider(create: (_) => HomePageProvider(), child: const MyApp(),));
 }
 
 class MyApp extends StatelessWidget {
@@ -12,6 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: locator.get<NavigationRepo>().navigationKey,
+      scaffoldMessengerKey: locator.get<NavigationRepo>().scaffoldKey,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -25,7 +33,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: const HomePage(),
     );
   }
 }
