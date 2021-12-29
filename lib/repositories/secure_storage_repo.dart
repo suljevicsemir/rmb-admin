@@ -23,8 +23,7 @@ class SecureStorageRepo {
     await _instance.write(key: key, value: value);
   }
 
-  Future<String?> getValue({required String key}) async {
-    if(_fields.containsKey(key)) {
+  Future<String?> getValue({required String key}) async {if(_fields.containsKey(key)) {
       return _fields[key];
     }
     return await _instance.read(key: key);
