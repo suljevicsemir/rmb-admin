@@ -17,7 +17,7 @@ class _AppState extends State<App> {
     return MaterialApp(
       scaffoldMessengerKey: locator.get<NavigationRepo>().scaffoldKey,
       navigatorKey: locator.get<NavigationRepo>().navigationKey,
-      initialRoute: ,
+      initialRoute: ''
     );
   }
 }

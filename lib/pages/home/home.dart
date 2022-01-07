@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/expendable_item.dart';
+import 'package:rmb_admin/pages/home/widgets/sidebar/section_title.dart';
 import 'package:rmb_admin/providers/home_page_provider.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
+              SectionTitle(title: "General"),
               SidebarExpendableItem(
                 icon: Icons.home,
                 title: "Dashboard",
@@ -51,13 +53,37 @@ class _HomePageState extends State<HomePage> {
                 title: "Services",
               ),
               SidebarExpendableItem(
-                icon: Icons.policy,
-                title: "Legal elements",
-              ),
-              SidebarExpendableItem(
                 icon: Icons.article,
                 title: "News"
+              ),
+              SectionTitle(title: "Legal"),
+              SidebarExpendableItem(
+                icon: Icons.policy,
+                title: "Terms of use",
+              ),
+              SidebarExpendableItem(
+                icon: Icons.policy,
+                title: "Privacy policy",
+              ),
+              SidebarExpendableItem(
+                icon: Icons.lightbulb,
+                title: "About us",
+              ),
+              SectionTitle(title: "Application settings"),
+              SidebarExpendableItem(
+                icon: Icons.dark_mode,
+                title: "Dark mode",
+              ),
+              SidebarExpendableItem(
+                icon: Icons.person,
+                title: "Account settings",
+              ),
+              SidebarExpendableItem(
+                icon: Icons.logout,
+                title: "Log out",
               )
+
+
             ],
           ),
         ),

@@ -5,29 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/main/app.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/main/locator.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/models/city.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/models/city.g.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/network_module/api_path.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/authentication_wrapper.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/cities/cities_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/home/widgets/stat_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/providers/home_page_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/providers/start_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repositories/cities_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repositories/secure_storage_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/theme/color_helper.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expanded_item.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/section_title.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/start_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main/main_common.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/main_common.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/login_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/login_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/start_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/start_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/secure_storage_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/secure_storage_repo.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rmb_admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rmb_admin.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,12 +88,27 @@
       <option name="project" value="LOCAL" />
       <updated>1640729153246</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added secure storage repo">
+      <created>1640809197378</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640809197378</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added secure storage repo">
+      <created>1640809212451</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640809212451</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="added login page ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="added login page ui" />
+    <MESSAGE value="added secure storage repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="added secure storage repo" />
   </component>
 </project>

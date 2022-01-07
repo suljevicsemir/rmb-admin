@@ -1,6 +1,7 @@
 
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 
 class SecureStorageRepo {
 
@@ -35,6 +36,11 @@ class SecureStorageRepo {
 
   Future<void> deleteKey({required String key}) async {
     await _instance.delete(key: key);
+  }
+
+  Future<bool> isLoggedIn() async {
+    final String? refreshToken = await _instance.read(key: 'refresh');
+    return refreshToken  != null && JwtDecoder.isExpired(refreshToken);
   }
 
 

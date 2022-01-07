@@ -247,6 +247,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_spinkit">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_spinkit-5.1.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_test">
           <value>
             <list>
@@ -599,6 +606,7 @@
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage_platform_interface-1.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage_web-1.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage_windows-1.1.2/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_spinkit-5.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/frontend_server_client-2.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-7.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/glob-2.0.2/lib" />

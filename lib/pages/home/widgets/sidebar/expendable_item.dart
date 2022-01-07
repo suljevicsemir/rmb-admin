@@ -35,35 +35,39 @@ class _SidebarExpendableItemState extends State<SidebarExpendableItem> {
       color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        child: !context.watch<HomePageProvider>().sidebarCollapsed ? Padding(
+        child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-          child: Row(
+          child: Column(
             children: <Widget>[
-              Icon(widget.icon, color: ColorHelper.dashboardIcon.color,),
-              const SizedBox(width: 10,),
-              Text(
-                widget.title,
-                style: TextStyle(
-                  color: ColorHelper.white.color
-                ),
+              Row(
+                children: <Widget>[
+                  Icon(widget.icon, color: ColorHelper.dashboardIcon.color,),
+                  const SizedBox(width: 10,),
+                  Text(
+                    widget.title,
+                    style: TextStyle(
+                        color: ColorHelper.white.color
+                    ),
+                  ),
+                  const Spacer(),
+                  if (expanded)
+                    Icon(
+                      Icons.arrow_drop_down_sharp,
+                      color: ColorHelper.dashboardIcon.color,
+                    )
+                  else Icon(
+                      Icons.arrow_drop_up_sharp,
+                      color: ColorHelper.dashboardIcon.color
+                  )
+                ],
               ),
-              const Spacer(),
-              if (expanded)
-                Icon(
-                  Icons.arrow_drop_down_sharp,
-                  color: ColorHelper.dashboardIcon.color,
-                )
-              else Icon(
-                Icons.arrow_drop_up_sharp,
-                color: ColorHelper.dashboardIcon.color
+              AnimatedSize(
+                duration: const Duration(milliseconds: 50),
+                child: expanded ? Container(height: 20, width: 50, color: Colors.green,) : const SizedBox(),
               )
             ],
-          ),
-        ):
-        Padding(
-          padding: const EdgeInsets.all(8),
-          child: Icon(widget.icon, color: ColorHelper.dashboardIcon.color,),
-        ),
+          )
+        )
       ),
     );
   }
