@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:rmb_admin/pages/home/widgets/sidebar/expanded_item.dart';
 import 'package:rmb_admin/providers/home_page_provider.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 
@@ -9,11 +10,13 @@ class SidebarExpendableItem extends StatefulWidget {
   const SidebarExpendableItem({
     Key? key,
     required this.title,
-    required this.icon
+    required this.icon,
+    this.children
   }) : super(key: key);
 
   final String title;
   final IconData icon;
+  final List<Widget>? children;
 
   @override
   _SidebarExpendableItemState createState() => _SidebarExpendableItemState();
@@ -34,7 +37,10 @@ class _SidebarExpendableItemState extends State<SidebarExpendableItem> {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: onTap,
+        onHover: (bool? value) {
+          onTap();
+        },
+          onTap: () {},
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
           child: Column(
@@ -62,8 +68,10 @@ class _SidebarExpendableItemState extends State<SidebarExpendableItem> {
                 ],
               ),
               AnimatedSize(
-                duration: const Duration(milliseconds: 50),
-                child: expanded ? Container(height: 20, width: 50, color: Colors.green,) : const SizedBox(),
+                duration: const Duration(milliseconds: 150),
+                child: expanded ? Column(
+                  children: widget.children?? [],
+                ): const SizedBox(),
               )
             ],
           )

@@ -19,19 +19,20 @@ class ExpandedSidebarItem extends StatelessWidget {
       child: InkWell(
         onTap: () {},
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.fromLTRB(16, 16, 6, 0),
           child: Row(
             children: <Widget>[
               Icon(icon, color: ColorHelper.dashboardIcon.color,),
               const SizedBox(width: 10,),
-              Text(
-                title,
-                style: TextStyle(
-                  color: ColorHelper.white.color
+              Expanded(
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    color: ColorHelper.white.color
+                  ),
                 ),
               ),
-              const Spacer()
-
+              Icon(Icons.arrow_forward, color: ColorHelper.dashboardIcon.color, size: 16,)
             ],
           ),
         ),
