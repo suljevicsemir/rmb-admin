@@ -43,89 +43,79 @@ class _HomePageState extends State<HomePage> {
               SectionTitle(title: "home.drawer.section_title_general".tr()),
               SidebarExpendableItem(
                 icon: Icons.home,
-                title: "home.drawer.section_item_dashboard",
-                children: [
-                  ExpandedSidebarItem(
-                    title: "Eleven",
-                    icon: Icons.eleven_mp,
-                  ),
-                  ExpandedSidebarItem(
-                    title: "Eleven",
-                    icon: Icons.eleven_mp,
-                  )
-                ],
+                title: "home.drawer.section_item_dashboard".tr(),
               ),
               SidebarExpendableItem(
                 icon: Icons.location_on,
-                title: "Cities",
+                title: "home.drawer.section_item_cities".tr(),
                 children: <ExpandedSidebarItem>[
-                  ExpandedSidebarItem(title: "List, edit, delete cities", icon: Icons.map),
-                  ExpandedSidebarItem(title: "Create a new city", icon: Icons.location_city)
+                  ExpandedSidebarItem(title: "home.drawer.section_item_cities_list".tr(), icon: Icons.map),
+                  ExpandedSidebarItem(title: "home.drawer.section_item_cities_create".tr(), icon: Icons.location_city)
                 ],
               ),
               SidebarExpendableItem(
                 icon: Icons.atm,
-                title: "ATMS",
+                title: "home.drawer.section_item_atms".tr(),
                 children: <ExpandedSidebarItem>[
-                  ExpandedSidebarItem(title: "List, edit, delete ATMs", icon: Icons.view_list,),
-                  ExpandedSidebarItem(title: "Create a new ATM", icon: Icons.create,)
+                  ExpandedSidebarItem(title: "home.drawer.section_item_atms_list".tr(), icon: Icons.view_list,),
+                  ExpandedSidebarItem(title: "home.drawer.section_item_atms_create".tr(), icon: Icons.create,)
                 ],
               ),
               SidebarExpendableItem(
                 icon: Icons.design_services,
-                title: "Services",
+                title: "home.drawer.section_item_services".tr(),
               ),
               SidebarExpendableItem(
                 icon: Icons.article,
-                title: "News",
+                title: "home.drawer.section_item_news".tr(),
                 children: <Text>[
                   Text("Find about latest news")
                 ],
               ),
-              SectionTitle(title: "Legal"),
+              SectionTitle(title: "home.drawer.section_title_legal".tr()),
               SidebarExpendableItem(
                 icon: Icons.policy,
-                title: "Terms of use",
+                title: "home.drawer.section_item_terms_of_use".tr(),
                 hasArrow: false,
               ),
               SidebarExpendableItem(
                 icon: Icons.policy,
-                title: "Privacy policy",
+                title: "home.drawer.section_item_privacy_policy".tr(),
                 hasArrow: false,
               ),
               SidebarExpendableItem(
                 icon: Icons.quiz,
-                title: "FAQ",
+                title: "home.drawer.section_item_faq".tr(),
                 hasArrow: false,
               ),
               SidebarExpendableItem(
                 icon: Icons.lightbulb,
-                title: "About us",
+                title: "home.drawer.section_item_about_us".tr(),
                 hasArrow: false,
               ),
-              SectionTitle(title: "Application settings"),
+              SectionTitle(title: "home.drawer.section_title_app_settings".tr()),
               SidebarExpendableItem(
                 icon: Icons.dark_mode,
-                title: "Dark mode",
+                title: "home.drawer.section_item_dark_mode".tr(),
                 hasArrow: false,
               ),
               SidebarExpendableItem(
                 icon: Icons.person,
-                title: "Account settings",
+                title: "home.drawer.section_item_account_settings".tr(),
                 children: [
                   ExpandedSidebarItem(
-                    title: "Change password",
+                    title: "home.drawer.section_item_change_password".tr(),
                     icon: Icons.password,
                   ),
                   ExpandedSidebarItem(
-                    title: "Language selection",
+                    title: "home.drawer.section_item_language".tr(),
                     icon: Icons.language,
                   )
                 ],
               ),
               SidebarExpendableItem(
                 icon: Icons.logout,
-                title: "Log out",
+                title: "home.drawer.section_item_log_out".tr(),
                 hasArrow: false,
               )
 
