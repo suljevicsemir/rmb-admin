@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rmb_admin/main/locator.dart';
-import 'package:rmb_admin/pages/faq/faq.dart';
+import 'package:rmb_admin/pages/faq/faq_page.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
 import 'package:rmb_admin/providers/home_page_provider.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:url_strategy/url_strategy.dart';
 
-void main() {
+void mainStart() {
   setupLocator();
+  setPathUrlStrategy();
   runApp(ChangeNotifierProvider(create: (_) => HomePageProvider(), child: const MyApp(),));
 }
 
