@@ -4,7 +4,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:rmb_admin/pages/faq/widgets/faq_list_item.dart';
+import 'package:rmb_admin/providers/faq_provider.dart';
 
 class FaqPage extends StatefulWidget {
   const FaqPage({Key? key}) : super(key: key);
@@ -27,10 +29,10 @@ class _FaqPageState extends State<FaqPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black87,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 100),
-          child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 100),
             child: Column(
               children: <Widget>[
                 Row(
@@ -80,48 +82,16 @@ class _FaqPageState extends State<FaqPage> {
                   ],
                 ),
                 const SizedBox(height: 100),
-                FAQListItem(
-                  id: '',
-                  answer: "Semir je razuvceni konj",
-                  question: "Semir je konj ?",
-                ),
-                Row(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width - 500,
-                        child: ExpansionTile(
-                          backgroundColor: Colors.yellow,
-                          collapsedIconColor: ListTileTheme.of(context).iconColor,
-                          //iconColor: ListTileTheme.of(context).iconColor,
-                          collapsedBackgroundColor: Colors.yellow,
-                          onExpansionChanged: (bool value) => onTap(),
-                          collapsedTextColor: Colors.red,
-                          textColor: Colors.red,
-                          title: Text("Semir je konj" ,),
-                          children: [
-                            Text("Semir je razvuceni konj", style: TextStyle(
-                                color: Colors.red
-                            ),),
-
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 10,),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.edit,),
-                      splashRadius: 20,
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.delete),
-                      splashRadius: 20,
+                if (context.watch<FaqProvider>().faqItems.isEmpty) CircularProgressIndicator() else
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: context.read<FaqProvider>().faqItems.length,
+                    itemBuilder: (ctx, index) => FAQListItem(
+                      id: context.read<FaqProvider>().faqItems[index].id!,
+                      question: context.read<FaqProvider>().faqItems[index].questionEn,
+                      answer: context.read<FaqProvider>().faqItems[index].answerEn,
                     )
-                  ],
-                )
+                  ),
               ],
             ),
           ),
