@@ -1,7 +1,6 @@
 
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
@@ -47,6 +46,37 @@ class HTTPClient {
     }
   }
 
+  Future<APIResponse> postData(String url, Map<String, String> headers, dynamic body, {int timeoutSeconds = 3}) async {
+
+    debugPrint("Posting data to: ${FlavorConfig.instance.flavorValues.baseUrl}$url");
+    final Map<String, dynamic> arguments = {
+      'baseUrl' : FlavorConfig.instance.flavorValues.baseUrl,
+      'url'     : url,
+      'headers' : headers,
+      'body'    : body
+    };
+    return await _post(arguments);
+  }
+
+  static Future<APIResponse> _post(Map<String, dynamic> arguments) async {
+    final String uri = arguments["baseUrl"] + arguments["url"];
+    try {
+      http.Response response = await http.post(
+          Uri.parse(uri),
+          headers: arguments["headers"],
+          body: jsonEncode(arguments["body"])
+      ).timeout(const Duration(seconds: 3));
+      final APIResponse apiResponse = await _parseResponse(response);
+      return apiResponse;
+    }
+    on TimeoutException catch (_) {
+      return const APIResponse(responseType: ResponseTypes.timeout);
+    }
+    on Exception catch(_) {
+      return const APIResponse(responseType: ResponseTypes.unexpected);
+    }
+  }
+
   static Future<APIResponse> _parseResponse(http.Response response) async {
     switch(response.statusCode) {
       case 200:
@@ -68,7 +98,7 @@ class HTTPClient {
           responseType: ResponseTypes.badRequest,
         );
       case 401:
-        //bool logged = await locator.get<SharedPref>().isFinishedRegistrationFlow();
+        bool logged = false;
         if(logged) {
           await Future.wait([
             locator.get<SecureStorageRepo>().deleteAll(),

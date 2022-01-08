@@ -1,0 +1,32 @@
+{
+  "home" : {
+    "drawer" : {
+      "section_title_general" : "Općenito",
+      "section_item_dashboard" : "Početna",
+      "section_item_cities": "Gradovi",
+      "section_item_cities_list": "Pregled, brisanje i mijenjanje gradova",
+      "section_item_cities_create": "Kreiraj novi grad",
+      "section_item_atms" : "Bankomati",
+      "section_item_atms_list" : "Pregled, brisanje i mijenjanje bankomata",
+      "section_item_atms_create" : "Kreiraj novi bankomat",
+      "section_item_services" : "Servisi",
+      "section_item_news" : "Vijesti",
+      "section_item_news_list": "Pregled svih vijesti",
+      "section_item_terms_of_use": "Pravila korištenja",
+      "section_item_privacy_policy" : "Polica privatnosti",
+      "section_item_faq" : "Često postavljena pitanja",
+      "section_item_about_us" : "O nama",
+      "section_title_app_settings" : "Postavke aplikacije",
+      "section_item_dark_mode" : "Tamna tema",
+      "section_item_account_settings" : "Postavke profila",
+      "section_item_change_password" : "Promijeni lozinku",
+      "section_item_language" : "Promjena jezika",
+      "section_item_log_out" : "Odjava"
+    }
+  },
+  "faq_page" : {
+      "asked_questions": "Često postavljena pitanja",
+      "can't_find" : "Ne možete ih ovdje naći? Posjetite naš ",
+      "help_center" : "Centar za Pomoć"
+    }
+}

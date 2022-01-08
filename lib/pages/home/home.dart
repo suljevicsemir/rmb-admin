@@ -3,6 +3,7 @@
 import 'dart:html' as html;
 import 'dart:ui' as ui;
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps/google_maps.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/expanded_item.dart';
@@ -39,10 +40,10 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              SectionTitle(title: "General"),
+              SectionTitle(title: "home.drawer.section_title_general".tr()),
               SidebarExpendableItem(
                 icon: Icons.home,
-                title: "Dashboard",
+                title: "home.drawer.section_item_dashboard",
                 children: [
                   ExpandedSidebarItem(
                     title: "Eleven",

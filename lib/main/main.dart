@@ -1,16 +1,23 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/pages/faq/faq_page.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
-import 'package:rmb_admin/providers/home_page_provider.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
 import 'package:url_strategy/url_strategy.dart';
-
-void mainStart() {
+void mainStart() async{
   setupLocator();
   setPathUrlStrategy();
-  runApp(ChangeNotifierProvider(create: (_) => HomePageProvider(), child: const MyApp(),));
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [Locale('en', 'US'), Locale('bs', 'BA')],
+      path: 'assets/translations',
+      fallbackLocale: const Locale('en', 'US'),
+      child: const MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {

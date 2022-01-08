@@ -1,7 +1,7 @@
 
 
 
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +32,7 @@ class FaqPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'Frequently asked questions?',
+                          "faq_page.asked_questions".tr(),
                           style: TextStyle(
                             fontSize: 45,
                             color: Colors.white
@@ -40,14 +40,14 @@ class FaqPage extends StatelessWidget {
                         ),
                         RichText(
                           text: TextSpan(
-                            text: "Can't find it here? Check out our ",
+                            text: "faq_page.can't_find".tr(),
                             style: TextStyle(
                               fontSize: 25,
                               color: Colors.white,
                             ),
                             children: [
                               TextSpan(
-                                text: "Help Center",
+                                text: "faq_page.help_center".tr(),
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

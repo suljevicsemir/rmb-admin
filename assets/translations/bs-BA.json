@@ -1,0 +1,32 @@
+{
+  "home" : {
+    "drawer" : {
+      "section_title_general" : "General",
+      "section_item_dashboard" : "Dashboard",
+      "section_item_cities": "Cities",
+      "section_item_cities_list": "List, edit, delete cities",
+      "section_item_cities_create": "Create a new city",
+      "section_item_atms" : "ATMS",
+      "section_item_atms_list" : "List, edit, delete ATMs",
+      "section_item_atms_create" : "Create a new ATM",
+      "section_item_services" : "Services",
+      "section_item_news" : "News",
+      "section_item_news_list": "List all news",
+      "section_item_terms_of_use": "Terms of use",
+      "section_item_privacy_policy" : "Privacy policy",
+      "section_item_faq" : "FAQ",
+      "section_item_about_us" : "About us",
+      "section_title_app_settings" : "Application settings",
+      "section_item_dark_mode" : "Dark mode",
+      "section_item_account_settings" : "Account settings",
+      "section_item_change_password" : "Change password",
+      "section_item_language" : "Language selection",
+      "section_item_log_out" : "Log out"
+    }
+  },
+  "faq_page" : {
+    "asked_questions": "Frequently asked questions",
+    "can't_find" : "Can't find it here? Check out our ",
+    "help_center" : "Help Center"
+  }
+}
