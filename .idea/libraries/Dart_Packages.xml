@@ -261,6 +261,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_svg">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_test">
           <value>
             <list>
@@ -450,6 +457,27 @@
             </list>
           </value>
         </entry>
+        <entry key="path_drawing">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-1.0.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="path_parsing">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/path_parsing-1.0.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="petitparser">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.4.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="plugin_platform_interface">
           <value>
             <list>
@@ -611,6 +639,13 @@
             </list>
           </value>
         </entry>
+        <entry key="xml">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/xml-5.3.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="yaml">
           <value>
             <list>
@@ -657,6 +692,7 @@
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage_web-1.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage_windows-1.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_spinkit-5.1.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/frontend_server_client-2.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-7.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/glob-2.0.2/lib" />
@@ -682,6 +718,9 @@
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/package_config-2.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-1.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/path_parsing-1.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.4.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/pool-1.5.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.1/lib" />
@@ -704,6 +743,7 @@
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/watcher-1.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-2.1.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/xml-5.3.1/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Flutter/folder_sdk/flutter/packages/flutter/lib" />

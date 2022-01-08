@@ -85,27 +85,47 @@ class _HomePageState extends State<HomePage> {
               SidebarExpendableItem(
                 icon: Icons.policy,
                 title: "Terms of use",
+                hasArrow: false,
               ),
               SidebarExpendableItem(
                 icon: Icons.policy,
                 title: "Privacy policy",
+                hasArrow: false,
+              ),
+              SidebarExpendableItem(
+                icon: Icons.quiz,
+                title: "FAQ",
+                hasArrow: false,
               ),
               SidebarExpendableItem(
                 icon: Icons.lightbulb,
                 title: "About us",
+                hasArrow: false,
               ),
               SectionTitle(title: "Application settings"),
               SidebarExpendableItem(
                 icon: Icons.dark_mode,
                 title: "Dark mode",
+                hasArrow: false,
               ),
               SidebarExpendableItem(
                 icon: Icons.person,
                 title: "Account settings",
+                children: [
+                  ExpandedSidebarItem(
+                    title: "Change password",
+                    icon: Icons.password,
+                  ),
+                  ExpandedSidebarItem(
+                    title: "Language selection",
+                    icon: Icons.language,
+                  )
+                ],
               ),
               SidebarExpendableItem(
                 icon: Icons.logout,
                 title: "Log out",
+                hasArrow: false,
               )
 
 

@@ -1,9 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:rmb_admin/pages/home/widgets/sidebar/expanded_item.dart';
-import 'package:rmb_admin/providers/home_page_provider.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 
 class SidebarExpendableItem extends StatefulWidget {
@@ -11,19 +8,22 @@ class SidebarExpendableItem extends StatefulWidget {
     Key? key,
     required this.title,
     required this.icon,
-    this.children
+    this.children,
+    this.hasArrow = true,
+    this.onTap
   }) : super(key: key);
 
   final String title;
   final IconData icon;
   final List<Widget>? children;
+  final bool hasArrow;
+  final VoidCallback? onTap;
 
   @override
   _SidebarExpendableItemState createState() => _SidebarExpendableItemState();
 }
 
 class _SidebarExpendableItemState extends State<SidebarExpendableItem> {
-
   bool expanded = false;
 
   void onTap() {
@@ -40,7 +40,11 @@ class _SidebarExpendableItemState extends State<SidebarExpendableItem> {
         onHover: (bool? value) {
           onTap();
         },
-          onTap: () {},
+        onTap: () {
+          if(widget.onTap != null) {
+            widget.onTap!();
+          }
+        },
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
           child: Column(
@@ -56,15 +60,7 @@ class _SidebarExpendableItemState extends State<SidebarExpendableItem> {
                     ),
                   ),
                   const Spacer(),
-                  if (expanded)
-                    Icon(
-                      Icons.arrow_drop_down_sharp,
-                      color: ColorHelper.dashboardIcon.color,
-                    )
-                  else Icon(
-                      Icons.arrow_drop_up_sharp,
-                      color: ColorHelper.dashboardIcon.color
-                  )
+                 _ArrowWidget(hasArrow: widget.hasArrow, expanded: expanded)
                 ],
               ),
               AnimatedSize(
@@ -80,3 +76,31 @@ class _SidebarExpendableItemState extends State<SidebarExpendableItem> {
     );
   }
 }
+
+class _ArrowWidget extends StatelessWidget {
+  const _ArrowWidget({
+    Key? key,
+    required this.hasArrow,
+    required this.expanded
+  }) : super(key: key);
+
+  final bool hasArrow;
+  final bool expanded;
+
+  @override
+  Widget build(BuildContext context) {
+    if(!hasArrow) {
+      return const SizedBox();
+    }
+    return expanded ?
+    Icon(
+      Icons.arrow_drop_down_sharp,
+      color: ColorHelper.dashboardIcon.color,
+    ) :
+    Icon(
+      Icons.arrow_drop_up_sharp,
+      color: ColorHelper.dashboardIcon.color
+    );
+  }
+}
+
