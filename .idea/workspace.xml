@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/faq/faq_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/faq/faq_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/faq/widgets/faq_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/faq/widgets/faq_list_item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/faq_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/faq_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/faq_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/faq_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main/app.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main/main_common.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641676079553</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="display list of expendable list items">
+      <created>1641680296420</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1641680296420</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -155,7 +159,8 @@
     <MESSAGE value="setup json parser" />
     <MESSAGE value="translations setup" />
     <MESSAGE value="added faq list item widget" />
-    <option name="LAST_COMMIT_MESSAGE" value="added faq list item widget" />
+    <MESSAGE value="display list of expendable list items" />
+    <option name="LAST_COMMIT_MESSAGE" value="display list of expendable list items" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
