@@ -1,9 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rmb_admin/main/locator.dart';
-import 'package:rmb_admin/pages/faq/faq_page.dart';
-import 'package:rmb_admin/providers/faq_provider.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
 import 'package:url_strategy/url_strategy.dart';
 void mainStart() async{
@@ -27,20 +25,34 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: locator.get<NavigationRepo>().navigationKey,
+    return MaterialApp.router(
+      routeInformationParser: _router.routeInformationParser,
+      routerDelegate: _router.routerDelegate,
+      //navigatorKey: locator.get<NavigationRepo>().navigationKey,
       scaffoldMessengerKey: locator.get<NavigationRepo>().scaffoldKey,
       title: 'Flutter Demo',
       locale: context.locale,
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
-      home: ChangeNotifierProvider<FaqProvider>(
-        create: (_) => FaqProvider(),
-        lazy: false,
-        child: const FaqPage(),
-      ),
+      // home: ChangeNotifierProvider<FaqProvider>(
+      //   create: (_) => FaqProvider(),
+      //   lazy: false,
+      //   child: const FaqPage(),
+      // ),
     );
   }
+  final _router = GoRouter(
+    routes: [
+      GoRoute(
+        path: '/',
+        builder: (context, state) => const Scaffold(backgroundColor: Colors.red,),
+      ),
+      GoRoute(
+        path: '/page2',
+        builder: (context, state) => const Scaffold(backgroundColor: Colors.green,),
+      ),
+    ],
+  );
 }
 
 class MyHomePage extends StatefulWidget {
