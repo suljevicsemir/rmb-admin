@@ -2,10 +2,24 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class NavigationRepo{
   final GlobalKey<NavigatorState> _navigationKey = GlobalKey<NavigatorState>();
   final GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
+
+  final _router = GoRouter(
+    routes: [
+      GoRoute(
+        path: '/',
+        builder: (context, state) => const Scaffold(backgroundColor: Colors.red,),
+      ),
+      GoRoute(
+        path: '/page2',
+        builder: (context, state) => const Scaffold(backgroundColor: Colors.green,),
+      ),
+    ],
+  );
 
   void pop({dynamic result}) {
     return _navigationKey.currentState!.pop(result);
