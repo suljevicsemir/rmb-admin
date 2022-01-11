@@ -8,7 +8,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FlavorConfig(
     flavor: Flavor.dev,
-    flavorValues: FlavorValues(
+    flavorValues: const FlavorValues(
       baseUrl: "http://rmbcloneapi.azurewebsites.net/api/",
       appName: "Raiffeisen Admin Development",
     ),

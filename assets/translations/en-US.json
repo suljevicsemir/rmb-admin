@@ -1,4 +1,12 @@
 {
+  "login" : {
+    "login_headline" : "Prijava",
+    "email_hint_text" : "Email",
+    "password_hint_text" : "Lozinka",
+    "remember_checkbox" : "Zapamti prijavu",
+    "forgot_password" : "Zaboravili ste šifru?",
+    "button_title" : "Prijavi se"
+  },
   "home" : {
     "drawer" : {
       "section_title_general" : "Općenito",

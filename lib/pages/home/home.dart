@@ -15,6 +15,8 @@ import 'package:rmb_admin/theme/color_helper.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  static const String route = '/home';
+
   @override
   _HomePageState createState() => _HomePageState();
 }

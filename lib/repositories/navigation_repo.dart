@@ -3,6 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:rmb_admin/pages/home/home.dart';
+import 'package:rmb_admin/pages/login.dart';
 
 class NavigationRepo{
   final GlobalKey<NavigatorState> _navigationKey = GlobalKey<NavigatorState>();
@@ -11,12 +13,12 @@ class NavigationRepo{
   final _router = GoRouter(
     routes: [
       GoRoute(
-        path: '/',
-        builder: (context, state) => const Scaffold(backgroundColor: Colors.red,),
+        path: LoginPage.route,
+        builder: (context, state) => const LoginPage(),
       ),
       GoRoute(
-        path: '/page2',
-        builder: (context, state) => const Scaffold(backgroundColor: Colors.green,),
+        path: HomePage.route,
+        builder: (context, state) => const HomePage(),
       ),
     ],
   );
@@ -27,7 +29,12 @@ class NavigationRepo{
 
   Future<dynamic> navigateTo(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50)}) async{
     await Future.delayed(duration);
-    return await _navigationKey.currentState!.pushNamed(routeName, arguments: arguments);
+    return _router.go(routeName);
+  }
+
+  Future<dynamic> navigateToNamed(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50)}) async {
+    await Future.delayed(duration);
+    return _router.goNamed(routeName);
   }
 
 
@@ -52,4 +59,8 @@ class NavigationRepo{
   GlobalKey<NavigatorState> get navigationKey => _navigationKey;
 
   GlobalKey<ScaffoldMessengerState> get scaffoldKey => _scaffoldKey;
+
+  GoRouter get router => _router;
+
+
 }

@@ -1,4 +1,12 @@
 {
+  "login" : {
+    "login_headline" : "Login",
+    "email_hint_text" : "Email",
+    "password_hint_text" : "Password",
+    "remember_checkbox" : "Remember me",
+    "forgot_password" : "Forgot password?",
+    "button_title" : "Login"
+  },
   "home" : {
     "drawer" : {
       "section_title_general" : "General",

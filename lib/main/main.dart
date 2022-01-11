@@ -1,12 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:rmb_admin/main/config/flavor_config.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
-import 'package:url_strategy/url_strategy.dart';
+
 void mainStart() async{
   setupLocator();
-  setPathUrlStrategy();
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
@@ -26,33 +25,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routeInformationParser: _router.routeInformationParser,
-      routerDelegate: _router.routerDelegate,
-      //navigatorKey: locator.get<NavigationRepo>().navigationKey,
+      routeInformationParser: locator<NavigationRepo>().router.routeInformationParser,
+      routerDelegate: locator.get<NavigationRepo>().router.routerDelegate,
       scaffoldMessengerKey: locator.get<NavigationRepo>().scaffoldKey,
-      title: 'Flutter Demo',
+      title: FlavorConfig.instance.flavorValues.appName,
       locale: context.locale,
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
-      // home: ChangeNotifierProvider<FaqProvider>(
-      //   create: (_) => FaqProvider(),
-      //   lazy: false,
-      //   child: const FaqPage(),
-      // ),
     );
   }
-  final _router = GoRouter(
-    routes: [
-      GoRoute(
-        path: '/',
-        builder: (context, state) => const Scaffold(backgroundColor: Colors.red,),
-      ),
-      GoRoute(
-        path: '/page2',
-        builder: (context, state) => const Scaffold(backgroundColor: Colors.green,),
-      ),
-    ],
-  );
 }
 
 class MyHomePage extends StatefulWidget {
