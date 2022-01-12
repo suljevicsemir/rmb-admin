@@ -4,8 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:rmb_admin/pages/faq/pages/faq_edit_page.dart';
+import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
 import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/providers/faq_provider.dart';
 import 'package:rmb_admin/providers/login_provider.dart';
 
 class NavigationRepo{
@@ -26,9 +29,33 @@ class NavigationRepo{
           ),
         ),
         GoRoute(
+          name: HomePage.route,
           path: HomePage.route,
           builder: (context, state) => const HomePage(),
         ),
+        GoRoute(
+          name: FaqPage.route,
+          path: FaqPage.route,
+          builder: (context, state) {
+            return ChangeNotifierProvider(
+              create: (_) => FaqProvider(),
+              child: const FaqPage(),
+              lazy: false,
+            );
+          },
+          routes: [
+            GoRoute(
+              path: ':id',
+              name: FaqEditPage.route,
+              builder: (context, state) => ChangeNotifierProvider.value(
+                value: state.extra! as FaqProvider,
+                child: const FaqEditPage(),
+              ),
+            )
+          ]
+        ),
+
+
       ],
     );
   }
@@ -38,14 +65,19 @@ class NavigationRepo{
     return _navigationKey.currentState!.pop(result);
   }
 
-  Future<dynamic> navigateTo(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50)}) async{
+  Future<dynamic> navigateTo(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50), Map<String, String> params = const {}}) async{
     await Future.delayed(duration);
-    return _router.go(routeName);
+    return _router.goNamed(routeName, params: params, extra: arguments);
   }
 
-  Future<dynamic> navigateToNamed(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50)}) async {
+
+
+
+  Future<dynamic> navigateToNamed(String routeName, {Object? arguments, Duration duration = const Duration(milliseconds: 50)}) async {
     await Future.delayed(duration);
-    return _router.go(routeName);
+    return _router.pushNamed(routeName, queryParams: {
+      'kurac' : '12cm'
+    });
   }
 
 

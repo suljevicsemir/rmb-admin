@@ -10,7 +10,7 @@ class LoginRepository {
 
   Future<APIResponse<TokenPair>> login({required CredentialsPair credentialsPair}) async {
     final Map<String, String> headers = await ApiHeaders.appJsonNoAuth.createHeaders();
-    final APIResponse response = await HTTPClient.instance.postData(ApiRoutes.token.path, headers, credentialsPair.toJson());
+    final APIResponse response = await HTTPClient.instance.postData(ApiRoutes.token.path(), headers, credentialsPair.toJson());
     if(response.responseType == ResponseTypes.ok) {
       return APIResponse(responseType: ResponseTypes.ok, data: TokenPair.fromJson(response.data));
     }

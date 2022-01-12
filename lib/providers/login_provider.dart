@@ -26,7 +26,7 @@ class LoginProvider extends ChangeNotifier {
     final APIResponse<TokenPair> response = await loginRepository.login(credentialsPair: pair);
     if(response.error == null && response.data != null) {
       await locator.get<SecureStorageRepo>().saveToken(tokenPair: response.data!);
-      locator.get<NavigationRepo>().navigateToNamed(HomePage.route);
+      locator.get<NavigationRepo>().navigateTo(HomePage.route);
     }
     else {
 

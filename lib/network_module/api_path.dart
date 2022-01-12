@@ -2,18 +2,21 @@
 enum ApiRoutes {
   postCity,
   token,
-  faq
+  faq,
+  faqEdit
 }
 
 
 extension ApiRoutesExtension on ApiRoutes{
 
-  String get path {
+  String path([List<String> params = const []]) {
     switch (this) {
       case ApiRoutes.token:
         return "Token";
       case ApiRoutes.faq:
         return  "Faq";
+      case ApiRoutes.faqEdit:
+        return "Faq/${params[0]}";
       case ApiRoutes.postCity:
         return "City";
     }

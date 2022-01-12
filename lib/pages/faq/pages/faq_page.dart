@@ -8,22 +8,11 @@ import 'package:provider/provider.dart';
 import 'package:rmb_admin/pages/faq/widgets/faq_list_item.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
 
-class FaqPage extends StatefulWidget {
+class FaqPage extends StatelessWidget {
+
   const FaqPage({Key? key}) : super(key: key);
 
-  @override
-  State<FaqPage> createState() => _FaqPageState();
-}
-
-class _FaqPageState extends State<FaqPage> {
-
-  bool tapped = false;
-
-  void onTap() {
-    setState(() {
-      tapped = !tapped;
-    });
-  }
+  static const String route = '/faq';
 
   @override
   Widget build(BuildContext context) {
@@ -82,14 +71,12 @@ class _FaqPageState extends State<FaqPage> {
                   ],
                 ),
                 const SizedBox(height: 100),
-                if (context.watch<FaqProvider>().faqItems.isEmpty) CircularProgressIndicator() else
+                if (context.watch<FaqProvider>().faqItems.isEmpty) const CircularProgressIndicator() else
                   ListView.builder(
                     shrinkWrap: true,
                     itemCount: context.read<FaqProvider>().faqItems.length,
                     itemBuilder: (ctx, index) => FAQListItem(
-                      id: context.read<FaqProvider>().faqItems[index].id!,
-                      question: context.read<FaqProvider>().faqItems[index].questionEn,
-                      answer: context.read<FaqProvider>().faqItems[index].answerEn,
+                      faqItem: context.read<FaqProvider>().faqItems[index],
                     )
                   ),
               ],

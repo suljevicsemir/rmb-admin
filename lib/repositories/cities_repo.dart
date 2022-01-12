@@ -7,7 +7,7 @@ class CitiesRepo {
 
   Future<void> createCity(City city) async {
 
-    http.Response response = await http.post(Uri.parse('http://rmbcloneapi.azurewebsites.net/api/' + ApiRoutes.postCity.path), body: city.toJson());
+    http.Response response = await http.post(Uri.parse('http://rmbcloneapi.azurewebsites.net/api/' + ApiRoutes.postCity.path()), body: city.toJson());
     print(response.body);
 
   }

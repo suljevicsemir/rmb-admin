@@ -37,5 +37,16 @@
     "asked_questions": "Frequently asked questions",
     "can't_find" : "Can't find it here? Check out our ",
     "help_center" : "Help Center"
+  },
+  "faq_edit_page" : {
+    "title" : "Promijeni pitanje",
+    "question_en_hint"  : "Unesi pitanje na engleskom jeziku...",
+    "question_en_label" : "Pitanje na engleskom",
+    "question_bj_hint" : "Unesi pitanje na bosanskom jeziku...",
+    "question_bj_label" : "Pitanje na bosanskom",
+    "answer_en_hint" : "Unesi odgovor na engleskom jeziku...",
+    "answer_en_label" : "Odgovor na engleskom",
+    "answer_bj_hint" : "Unesi odgovor na bosanskom jeziku...",
+    "answer_bj_label" : "Odgovor na bosanskom"
   }
 }

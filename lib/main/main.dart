@@ -6,6 +6,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:rmb_admin/main/config/flavor_config.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/pages/home/home.dart';
+import 'package:rmb_admin/pages/login.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
 import 'package:rmb_admin/repositories/secure_storage_repo.dart';
 void mainStart() async{
@@ -18,18 +19,13 @@ void mainStart() async{
     locator.get<SecureStorageRepo>().websiteStart()
   ]);
 
-
-
-  locator.get<NavigationRepo>().setInitialRoute(initialRoute: HomePage.route);
-  // bool isLoggedIn = locator.get<SecureStorageRepo>().isLoggedIn;
-  // if(isLoggedIn) {
-  //   locator.get<NavigationRepo>().setInitialRoute(initialRoute: HomePage.route);
-  // }
-  // else {
-  //   locator.get<NavigationRepo>().setInitialRoute(initialRoute: LoginPage.route);
-  // }
-
-
+  bool isLoggedIn = locator.get<SecureStorageRepo>().isLoggedIn;
+  if(isLoggedIn) {
+    locator.get<NavigationRepo>().setInitialRoute(initialRoute: HomePage.route);
+  }
+  else {
+    locator.get<NavigationRepo>().setInitialRoute(initialRoute: LoginPage.route);
+  }
 
   runApp(
     EasyLocalization(

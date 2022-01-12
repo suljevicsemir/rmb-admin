@@ -77,6 +77,35 @@ class HTTPClient {
     }
   }
 
+  Future<APIResponse> putData(String url, Map<String, String> headers, dynamic body) async {
+    debugPrint("Putting data to: ${FlavorConfig.instance.flavorValues.baseUrl}$url");
+    final Map<String, dynamic> arguments = {
+      'baseUrl' : FlavorConfig.instance.flavorValues.baseUrl,
+      'url'     : url,
+      'headers' : headers,
+      'body'    : body
+    };
+    return await _put(arguments);
+  }
+
+  static Future<APIResponse> _put(Map<String, dynamic> arguments) async {
+    String uri = arguments["baseUrl"] + arguments["url"];
+    try {
+      http.Response response = await http.put(
+          Uri.parse(uri),
+          headers: arguments["headers"],
+          body: jsonEncode(arguments["body"])
+      ).timeout(const Duration(seconds: 3));
+      return _parseResponse(response);
+    }
+    on TimeoutException catch (_) {
+      return const APIResponse(responseType: ResponseTypes.timeout);
+    }
+    on Exception catch(_) {
+      return const APIResponse(responseType: ResponseTypes.unexpected);
+    }
+  }
+
   static Future<APIResponse> _parseResponse(http.Response response) async {
     switch(response.statusCode) {
       case 200:

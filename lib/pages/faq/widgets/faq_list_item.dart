@@ -2,20 +2,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:rmb_admin/main/locator.dart';
+import 'package:rmb_admin/models/faq_item.dart';
+import 'package:rmb_admin/pages/faq/pages/faq_edit_page.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
+import 'package:rmb_admin/repositories/navigation_repo.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 
 class FAQListItem extends StatefulWidget {
   const FAQListItem({
     Key? key,
-    required this.id,
-    required this.answer,
-    required this.question
+    required this.faqItem,
   }) : super(key: key);
 
-  final String id;
-  final String question;
-  final String answer;
+  final FaqItem faqItem;
 
   @override
   _FAQListItemState createState() => _FAQListItemState();
@@ -50,7 +50,7 @@ class _FAQListItemState extends State<FAQListItem> {
                   collapsedBackgroundColor: ColorHelper.backgroundColor.color,
                   onExpansionChanged: (bool value) => onTap(),
                   title: Text(
-                    widget.question,
+                    widget.faqItem.questionBj,
                     style: TextStyle(
                       fontSize: 18,
                       color: ColorHelper.rmbYellow.color
@@ -60,7 +60,7 @@ class _FAQListItemState extends State<FAQListItem> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20, bottom: 10),
                       child: SelectableText(
-                        widget.answer,
+                        widget.faqItem.answerBj,
                         style: TextStyle(
                             fontSize: 16,
                             color: ColorHelper.rmbYellow.color
@@ -75,12 +75,18 @@ class _FAQListItemState extends State<FAQListItem> {
           ),
           const SizedBox(width: 10,),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.read<FaqProvider>().onFaqEdit(faqItem: widget.faqItem);
+              final Map<String, String> params = {
+                'id' : widget.faqItem.id!
+              };
+              locator.get<NavigationRepo>().navigateTo(FaqEditPage.route, params: params, arguments: context.read<FaqProvider>());
+            },
             icon: Icon(Icons.edit, color: ColorHelper.dashboardIcon.color,),
             splashRadius: 20,
           ),
           IconButton(
-            onPressed: () => context.read<FaqProvider>(),
+            onPressed: () {},
             icon: Icon(Icons.delete, color: ColorHelper.dangerRed.color,),
             splashRadius: 20,
           )

@@ -5,27 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/network_module/api_headers.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/faq/pages/faq_edit_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/faq/widgets/faq_edit_field.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/translations/bs-BA.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-Us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/translations/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/bs-Ba.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main/locator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/locator.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/user/token_pair.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user/token_pair.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/user/token_pair.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user/token_pair.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/network_module/api_response.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/api_response.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network_module/api_path.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/api_path.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/network_module/http_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/http_client.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/faq/faq_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/faq/pages/faq_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/faq/widgets/faq_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/faq/widgets/faq_list_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/faq_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/faq_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/providers/login_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/login_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/start_provider.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/cities_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/cities_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/faq_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/faq_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/repositories/login_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/login_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/secure_storage_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/secure_storage_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +40,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="22vh7EZPIPQk2a8l4lrdreZkW2r" />
   <component name="ProjectViewState">
@@ -62,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\pages\faq\pages" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\models\user" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\main" />
     </key>
@@ -186,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641873466682</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="switch secure storage for shared preferences">
+      <created>1641985216547</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1641985216547</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -204,7 +218,8 @@
     <MESSAGE value="what" />
     <MESSAGE value="create navigation strategy" />
     <MESSAGE value="added credentials and token model classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="added credentials and token model classes" />
+    <MESSAGE value="switch secure storage for shared preferences" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch secure storage for shared preferences" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
