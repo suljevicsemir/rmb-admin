@@ -6,9 +6,11 @@ import 'dart:ui' as ui;
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps/google_maps.dart';
+import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/expanded_item.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/expendable_item.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/section_title.dart';
+import 'package:rmb_admin/repositories/secure_storage_repo.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 
 
@@ -34,6 +36,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          locator.get<SecureStorageRepo>().deleteAll();
+        },
+      ),
       drawer: Drawer(
         child: Container(
           color: ColorHelper.dashboardBlue.color,

@@ -14,8 +14,9 @@ enum ResponseTypes {
 @immutable
 class APIResponse<T> {
 
-  const APIResponse({required this.responseType, this.data});
+  const APIResponse({required this.responseType, this.data, this.error});
 
   final ResponseTypes responseType;
+  final String? error;
   final T? data;
 }

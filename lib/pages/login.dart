@@ -1,16 +1,14 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:rmb_admin/main/locator.dart';
-import 'package:rmb_admin/pages/home/home.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:provider/provider.dart';
+import 'package:rmb_admin/providers/login_provider.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
-  static const String route = '/';
+  static const String route = '/login';
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -18,18 +16,11 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorHelper.backgroundColor.color,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async{
-          locator.get<NavigationRepo>().navigateTo(HomePage.route);
-        },
-      ),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
@@ -47,10 +38,9 @@ class _LoginPageState extends State<LoginPage> {
             Center(
               child: Text(
                 "login.login_headline".tr(),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 30,
-
                 ),
               ),
             ),
@@ -59,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
               child: SizedBox(
                 width: 400,
                 child: TextFormField(
-                  controller: emailController,
+                  controller: context.watch<LoginProvider>().emailController,
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.person, color: Colors.white,),
@@ -78,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
               child: SizedBox(
                 width: 400,
                 child: TextFormField(
-                  controller: passwordController,
+                  controller: context.watch<LoginProvider>().passwordController,
                   style: const TextStyle(color: Colors.white),
                   obscureText: true,
                   decoration: InputDecoration(
@@ -107,12 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                         text: 'login.forgot_password'.tr(),
                         style: const TextStyle(color: Colors.white),
                         recognizer: TapGestureRecognizer()..onTap = () {
-
                         }
                       ),
-
                     )
-
                   ],
                 ),
               ),
@@ -125,9 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                   fixedSize: const Size(400, 40),
                   padding: EdgeInsets.zero
                 ),
-                onPressed: () {
-                  //LoginRepository().login(email: emailController.text, password: passwordController.text);
-                },
+                onPressed: () => context.read<LoginProvider>().login(),
                 child: Text('login.button_title'.tr()),
               ),
             )

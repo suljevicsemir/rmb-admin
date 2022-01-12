@@ -3,25 +3,36 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/providers/login_provider.dart';
 
 class NavigationRepo{
   final GlobalKey<NavigatorState> _navigationKey = GlobalKey<NavigatorState>();
   final GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
 
-  final _router = GoRouter(
-    routes: [
-      GoRoute(
-        path: LoginPage.route,
-        builder: (context, state) => const LoginPage(),
-      ),
-      GoRoute(
-        path: HomePage.route,
-        builder: (context, state) => const HomePage(),
-      ),
-    ],
-  );
+  late GoRouter _router;
+
+  void setInitialRoute({required String initialRoute}) {
+    _router = GoRouter(
+      initialLocation: LoginPage.route,
+      routes: [
+        GoRoute(
+          path: LoginPage.route,
+          builder: (context, state) => ChangeNotifierProvider<LoginProvider>(
+            create: (_) => LoginProvider(),
+            child: const LoginPage(),
+          ),
+        ),
+        GoRoute(
+          path: HomePage.route,
+          builder: (context, state) => const HomePage(),
+        ),
+      ],
+    );
+  }
+
 
   void pop({dynamic result}) {
     return _navigationKey.currentState!.pop(result);
@@ -34,7 +45,7 @@ class NavigationRepo{
 
   Future<dynamic> navigateToNamed(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50)}) async {
     await Future.delayed(duration);
-    return _router.goNamed(routeName);
+    return _router.go(routeName);
   }
 
 

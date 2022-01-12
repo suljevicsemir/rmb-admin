@@ -10,6 +10,7 @@ import 'package:rmb_admin/network_module/api_response.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
 import 'package:rmb_admin/repositories/secure_storage_repo.dart';
 
+
 class HTTPClient {
 
   static final HTTPClient _singleton = HTTPClient();
@@ -47,7 +48,6 @@ class HTTPClient {
   }
 
   Future<APIResponse> postData(String url, Map<String, String> headers, dynamic body, {int timeoutSeconds = 3}) async {
-
     debugPrint("Posting data to: ${FlavorConfig.instance.flavorValues.baseUrl}$url");
     final Map<String, dynamic> arguments = {
       'baseUrl' : FlavorConfig.instance.flavorValues.baseUrl,
@@ -96,6 +96,7 @@ class HTTPClient {
       case 400:
         return APIResponse(
           responseType: ResponseTypes.badRequest,
+          error: response.body
         );
       case 401:
         bool logged = false;
@@ -121,6 +122,7 @@ class HTTPClient {
             data: {}
         );
       default:
+        print(response.body);
         locator.get<NavigationRepo>().navigateTo("UnexpectedErrorRoute");
         return const APIResponse(responseType: ResponseTypes.unexpected);
     }

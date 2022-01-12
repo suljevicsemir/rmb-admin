@@ -1,16 +1,15 @@
-
-
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:rmb_admin/models/user/token_pair.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SecureStorageRepo {
 
-  final FlutterSecureStorage _instance = const FlutterSecureStorage();
-
-  Map<String, String> _fields = <String, String>{};
+  late SharedPreferences _preferences;
+  TokenPair? _tokenPair;
 
   Future<void> websiteStart() async {
-    _fields = await _instance.readAll();
+    _preferences = await SharedPreferences.getInstance();
+    _tokenPair = TokenPair(refreshToken: _preferences.getString(refreshToken), accessToken: _preferences.getString(accessToken));
   }
 
   static const String refreshToken = 'refresh';
@@ -20,30 +19,28 @@ class SecureStorageRepo {
     required String key,
     required String value
   }) async {
-    _fields[key] = value;
-    await _instance.write(key: key, value: value);
+    await _preferences.setString(key, value);
   }
 
-  Future<String?> getValue({required String key}) async {if(_fields.containsKey(key)) {
-      return _fields[key];
-    }
-    return await _instance.read(key: key);
+  String? getValue({required String key}) {
+    return _preferences.getString(key);
   }
 
   Future<void> deleteAll() async {
-    await _instance.deleteAll();
+    await _preferences.clear();
   }
 
   Future<void> deleteKey({required String key}) async {
-    await _instance.delete(key: key);
+    await _preferences.remove(key);
   }
 
-  Future<bool> isLoggedIn() async {
-    final String? refreshToken = await _instance.read(key: 'refresh');
-    return refreshToken  != null && JwtDecoder.isExpired(refreshToken);
+  bool get isLoggedIn => _tokenPair != null && _tokenPair!.refreshToken != null && !JwtDecoder.isExpired(_tokenPair!.refreshToken!);
+
+
+  Future<void> saveToken({required TokenPair tokenPair}) async {
+    await Future.wait([
+      _preferences.setString(refreshToken, tokenPair.refreshToken!),
+      _preferences.setString(accessToken, tokenPair.accessToken!)
+    ]);
   }
-
-
-
-
 }
