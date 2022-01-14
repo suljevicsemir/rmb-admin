@@ -62,5 +62,15 @@
     "dialog_message"    : "Jeste li sigurni da želite obrisati FAQ?",
     "dialog_yes"        : "DA",
     "dialog_no"         : "NE"
+  },
+  "cities_page" : {
+    "headline_desc" : "Dodaj, obriši i izmijeni gradove",
+    "got_questions" : "Imaš nekih pitanja? Posjeti naš ",
+    "help_center"   : "Centar za Pomoć",
+    "city_name_hint": "Unesite ime grada...",
+    "add_city_label": "Dodajte novi grad",
+    "select_city"   : "Odaberite grad...",
+    "edit_section"  : "Sekcija za izmjene"
+
   }
 }

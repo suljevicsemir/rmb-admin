@@ -43,8 +43,6 @@ class FaqRepo {
     final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
     final APIResponse response = await HTTPClient.instance.postData(ApiRoutes.faq.path(), headers, faqItem.toJson());
     if(response.responseType == ResponseTypes.ok) {
-      print("DOSLO DO VRACANJA");
-      print(response.data.toString());
       return APIResponse<FaqItem>(responseType: response.responseType, data: FaqItem.fromJson(response.data));
     }
     return APIResponse<FaqItem>(responseType: response.responseType, error: response.data);

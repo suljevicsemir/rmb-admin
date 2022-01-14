@@ -5,30 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/utils/password_validator.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/widgets/snackbars.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/widgets/text_form_fields/text_field_suffix_icon.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/cities/city_item.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/providers/cities_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/translations/bs-Ba.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/bs-Ba.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/translations/en-Us.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-Us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main/locator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/locator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/faq_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/faq_item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/faq_item.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/faq_item.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/network_module/api_headers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/api_headers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/city.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/city.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/city.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/city.g.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/network_module/api_path.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/api_path.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/network_module/http_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/http_client.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/faq/pages/faq_edit_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/faq/pages/faq_edit_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/faq/pages/faq_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/faq/pages/faq_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/faq/widgets/faq_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/faq/widgets/faq_list_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/cities/cities_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/cities/cities_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/faq_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/faq_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/login_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/login_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expanded_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expanded_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/cities_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/cities_repo.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/repositories/faq_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/faq_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/secure_storage_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/secure_storage_repo.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642001106294</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="creation, editing, deleting faqs">
+      <created>1642155355191</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1642155355191</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -232,7 +232,8 @@
     <MESSAGE value="added credentials and token model classes" />
     <MESSAGE value="switch secure storage for shared preferences" />
     <MESSAGE value="fix translations and faq routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix translations and faq routing" />
+    <MESSAGE value="creation, editing, deleting faqs" />
+    <option name="LAST_COMMIT_MESSAGE" value="creation, editing, deleting faqs" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

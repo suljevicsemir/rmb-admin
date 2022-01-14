@@ -7,6 +7,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps/google_maps.dart';
 import 'package:rmb_admin/main/locator.dart';
+import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/expanded_item.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/expendable_item.dart';
@@ -72,7 +73,11 @@ class _HomePageState extends State<HomePage> {
                 icon: Icons.location_on,
                 title: "home.drawer.section_item_cities".tr(),
                 children: <ExpandedSidebarItem>[
-                  ExpandedSidebarItem(title: "home.drawer.section_item_cities_list".tr(), icon: Icons.map),
+                  ExpandedSidebarItem(
+                    title: "home.drawer.section_item_cities_list".tr(),
+                    icon: Icons.map,
+                    onTap: () => locator.get<NavigationRepo>().navigateTo(CitiesPage.route),
+                  ),
                   ExpandedSidebarItem(title: "home.drawer.section_item_cities_create".tr(), icon: Icons.location_city)
                 ],
               ),

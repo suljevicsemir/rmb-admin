@@ -4,10 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_edit_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
 import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/providers/cities_provider.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
 import 'package:rmb_admin/providers/login_provider.dart';
 import 'package:rmb_admin/widgets/snackbars.dart';
@@ -55,9 +57,15 @@ class NavigationRepo{
             ),
           ]
         ),
-
-
-
+        GoRoute(
+          name: CitiesPage.route,
+          path: CitiesPage.route,
+          builder: (context, state) => ChangeNotifierProvider<CitiesProvider>(
+            create: (_) => CitiesProvider(),
+            lazy: false,
+            child: const CitiesPage(),
+          )
+        )
       ],
     );
   }

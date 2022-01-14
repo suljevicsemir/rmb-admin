@@ -62,5 +62,14 @@
     "dialog_message"    : "Are you sure you want to delete this FAQ?",
     "dialog_yes"        : "YES",
     "dialog_no"         : "NO"
+  },
+  "cities_page" : {
+    "headline_desc" : "Add, delete and edit cities",
+    "got_questions" : "You have some questions ? Check out our ",
+    "help_center"   : "Help Center",
+    "city_name_hint": "Enter city name...",
+    "add_city_label": "Add new city",
+    "select_city"   : "Select city...",
+    "edit_section"  : "Edit section"
   }
 }

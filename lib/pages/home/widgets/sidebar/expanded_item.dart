@@ -6,18 +6,24 @@ class ExpandedSidebarItem extends StatelessWidget {
   const ExpandedSidebarItem({
     Key? key,
     required this.title,
-    required this.icon
+    required this.icon,
+    this.onTap
   }) : super(key: key);
 
   final String title;
   final IconData icon;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          if(onTap != null) {
+            onTap!();
+          }
+        },
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 6, 0),
           child: Row(

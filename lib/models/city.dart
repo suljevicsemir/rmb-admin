@@ -12,6 +12,7 @@ class City {
 
   Map<String, dynamic> toJson() => _$CityToJson(this);
 
+  @JsonKey(includeIfNull: false)
   String? id;
   String name;
 
