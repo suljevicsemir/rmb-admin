@@ -10,6 +10,7 @@ import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/pages/login.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
 import 'package:rmb_admin/providers/login_provider.dart';
+import 'package:rmb_admin/widgets/snackbars.dart';
 
 class NavigationRepo{
   final GlobalKey<NavigatorState> _navigationKey = GlobalKey<NavigatorState>();
@@ -51,9 +52,10 @@ class NavigationRepo{
                 value: state.extra! as FaqProvider,
                 child: const FaqEditPage(),
               ),
-            )
+            ),
           ]
         ),
+
 
 
       ],
@@ -62,7 +64,7 @@ class NavigationRepo{
 
 
   void pop({dynamic result}) {
-    return _navigationKey.currentState!.pop(result);
+    return _router.pop();
   }
 
   Future<dynamic> navigateTo(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50), Map<String, String> params = const {}}) async{
@@ -83,8 +85,7 @@ class NavigationRepo{
 
   Future<dynamic> navigateAndRemove(String routeName, {dynamic arguments}) async{
     await Future.delayed(const Duration(milliseconds: 100));
-    return _navigationKey.currentState!
-        .pushNamedAndRemoveUntil(routeName, (_) => false, arguments: arguments);
+    return _router.go(routeName);
   }
 
   Future<dynamic> popCurrentAndPush(String routeName, {dynamic arguments}) {
@@ -97,6 +98,14 @@ class NavigationRepo{
   Future<void> popMultipleRoutes(int count) async {
     int value = 0;
     _navigationKey.currentState!.popUntil((route) => value++ >= count);
+  }
+
+  Future<void> showInvalidInputSnackBar(String label) async {
+    _scaffoldKey.currentState!.clearSnackBars();
+    _scaffoldKey.currentState!.showSnackBar(InvalidInputSnackBar(label: label));
+  }
+  Future<dynamic> showActionSuccessSnackBar(String label) async {
+    _scaffoldKey.currentState!.showSnackBar(ActionSuccessSnackBar(label: label));
   }
 
   GlobalKey<NavigatorState> get navigationKey => _navigationKey;

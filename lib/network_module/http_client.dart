@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:rmb_admin/main/config/flavor_config.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
+import 'package:rmb_admin/pages/login.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
 import 'package:rmb_admin/repositories/secure_storage_repo.dart';
 
@@ -106,7 +107,37 @@ class HTTPClient {
     }
   }
 
+  Future<APIResponse> deleteData(String url, Map<String, String> headers, dynamic body) async {
+    debugPrint("Deleting data from: ${FlavorConfig.instance.flavorValues.baseUrl}$url");
+    final Map<String, dynamic> arguments = {
+      'baseUrl' : FlavorConfig.instance.flavorValues.baseUrl,
+      'url'     : url,
+      'headers' : headers,
+      'body'    : body
+    };
+    return await _delete(arguments);
+  }
+
+  Future<APIResponse> _delete(Map<String, dynamic> arguments) async {
+    String uri = arguments["baseUrl"] + arguments["url"];
+    try {
+      http.Response response = await http.delete(
+          Uri.parse(uri),
+          headers: arguments["headers"],
+          body: jsonEncode(arguments["body"])
+      ).timeout(const Duration(seconds: 3));
+      return _parseResponse(response);
+    }
+    on TimeoutException catch (_) {
+      return const APIResponse(responseType: ResponseTypes.timeout);
+    }
+    on Exception catch(_) {
+      return const APIResponse(responseType: ResponseTypes.unexpected);
+    }
+  }
+
   static Future<APIResponse> _parseResponse(http.Response response) async {
+    print(response.body);
     switch(response.statusCode) {
       case 200:
       case 201:
@@ -119,8 +150,8 @@ class HTTPClient {
         }
         String source = const Utf8Decoder().convert(response.bodyBytes);
         return APIResponse(
-            data: jsonDecode(source),
-            responseType: ResponseTypes.ok
+          data: jsonDecode(source),
+          responseType: ResponseTypes.ok
         );
       case 400:
         return APIResponse(
@@ -128,31 +159,31 @@ class HTTPClient {
           error: response.body
         );
       case 401:
-        bool logged = false;
+        bool logged = locator.get<SecureStorageRepo>().isLoggedIn;
         if(logged) {
           await Future.wait([
             locator.get<SecureStorageRepo>().deleteAll(),
             //locator.get<SharedPref>().setFinishedRegistrationFlow(false),
-            locator.get<NavigationRepo>().navigateAndRemove("SignIn"),
+            locator.get<NavigationRepo>().navigateAndRemove(LoginPage.route),
           ]);
         }
         return APIResponse(
           responseType: ResponseTypes.unauthorised,
+          error: response.body,
         );
       case 403:
         return APIResponse(
-            responseType: ResponseTypes.unauthorised,
-
+          responseType: ResponseTypes.unauthorised,
+          error: response.body
         );
       case 404:
-
         return APIResponse(
             responseType: ResponseTypes.notFound,
             data: {}
         );
       default:
         print(response.body);
-        locator.get<NavigationRepo>().navigateTo("UnexpectedErrorRoute");
+        //locator.get<NavigationRepo>().navigateTo("UnexpectedErrorRoute");
         return const APIResponse(responseType: ResponseTypes.unexpected);
     }
   }

@@ -38,10 +38,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          locator.get<SecureStorageRepo>().deleteAll();
-        },
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TextButton(
+              onPressed: () {
+                locator.get<SecureStorageRepo>().deleteAll();
+              },
+              child: Text("LOGOUT"),
+            ),
+            TextButton(
+              onPressed: () {
+                locator.get<SecureStorageRepo>().getAccessToken();
+              },
+              child: Text("REFRESH"),
+            )
+            ]
       ),
       drawer: Drawer(
         child: Container(

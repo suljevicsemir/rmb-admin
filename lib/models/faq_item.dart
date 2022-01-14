@@ -19,6 +19,7 @@ class FaqItem {
 
   Map<String, dynamic> toJson() => _$FaqItemToJson(this);
 
+  @JsonKey(includeIfNull: false)
   final String? id;
   final String questionBj;
   final String answerBj;

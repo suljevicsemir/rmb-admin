@@ -28,7 +28,26 @@ class FaqRepo {
       return APIResponse(responseType: ResponseTypes.ok, data: faqItem);
     }
     return APIResponse(responseType: response.responseType, error: response.error);
+  }
 
+  Future<APIResponse> deleteFaqItem({required FaqItem faqItem}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    final APIResponse response = await HTTPClient.instance.deleteData(ApiRoutes.faqEdit.path([faqItem.id!]), headers, {});
+    if(response.responseType == ResponseTypes.ok) {
+      return const APIResponse(responseType: ResponseTypes.ok);
+    }
+    return APIResponse(responseType: response.responseType, error: response.data);
+  }
+
+  Future<APIResponse<FaqItem>> createFaqItem({required FaqItem faqItem}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    final APIResponse response = await HTTPClient.instance.postData(ApiRoutes.faq.path(), headers, faqItem.toJson());
+    if(response.responseType == ResponseTypes.ok) {
+      print("DOSLO DO VRACANJA");
+      print(response.data.toString());
+      return APIResponse<FaqItem>(responseType: response.responseType, data: FaqItem.fromJson(response.data));
+    }
+    return APIResponse<FaqItem>(responseType: response.responseType, error: response.data);
   }
 
 }

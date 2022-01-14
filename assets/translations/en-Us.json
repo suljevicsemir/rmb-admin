@@ -1,4 +1,10 @@
 {
+  "errors" : {
+    "email_empty" : "Please insert your email address",
+    "email_invalid" : "Email not valid",
+    "password_empty" : "Please insert your password",
+    "password_invalid" : "Password not valid"
+  },
   "login" : {
     "login_headline" : "Login",
     "email_hint_text" : "Email",
@@ -36,17 +42,25 @@
   "faq_page" : {
     "asked_questions": "Frequently asked questions",
     "can't_find" : "Can't find it here? Check out our ",
-    "help_center" : "Help Center"
+    "help_center" : "Help Center",
+    "item_not_selected" : "Item not selected"
   },
   "faq_edit_page" : {
-    "title" : "Promijeni pitanje",
-    "question_en_hint"  : "Unesi pitanje na engleskom jeziku...",
-    "question_en_label" : "Pitanje na engleskom",
-    "question_bj_hint" : "Unesi pitanje na bosanskom jeziku...",
-    "question_bj_label" : "Pitanje na bosanskom",
-    "answer_en_hint" : "Unesi odgovor na engleskom jeziku...",
-    "answer_en_label" : "Odgovor na engleskom",
-    "answer_bj_hint" : "Unesi odgovor na bosanskom jeziku...",
-    "answer_bj_label" : "Odgovor na bosanskom"
+    "title"             : "Edit question",
+    "question_en_hint"  : "Enter a question in English language...",
+    "question_en_label" : "Question in English",
+    "question_bj_hint"  : "Enter a question in Bosnian language...",
+    "question_bj_label" : "Question in Bosnian",
+    "answer_en_hint"    : "Enter an answer in English language...",
+    "answer_en_label"   : "Answer in English",
+    "answer_bj_hint"    : "Enter an answer in Bosnian language...",
+    "answer_bj_label"   : "Answer in Bosnian",
+    "save_button"       : "Save changes",
+    "question_updated"  : "Changes saved!",
+    "failed_update"     : "Error! Please try again",
+    "dialog_title"      : "Confirm delete action",
+    "dialog_message"    : "Are you sure you want to delete this FAQ?",
+    "dialog_yes"        : "YES",
+    "dialog_no"         : "NO"
   }
 }

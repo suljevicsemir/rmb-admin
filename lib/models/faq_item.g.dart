@@ -14,10 +14,19 @@ FaqItem _$FaqItemFromJson(Map<String, dynamic> json) => FaqItem(
       questionEn: json['questionEn'] as String,
     );
 
-Map<String, dynamic> _$FaqItemToJson(FaqItem instance) => <String, dynamic>{
-      'id': instance.id,
-      'questionBj': instance.questionBj,
-      'answerBj': instance.answerBj,
-      'questionEn': instance.questionEn,
-      'answerEn': instance.answerEn,
-    };
+Map<String, dynamic> _$FaqItemToJson(FaqItem instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  val['questionBj'] = instance.questionBj;
+  val['answerBj'] = instance.answerBj;
+  val['questionEn'] = instance.questionEn;
+  val['answerEn'] = instance.answerEn;
+  return val;
+}

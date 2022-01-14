@@ -13,6 +13,7 @@ import 'package:rmb_admin/repositories/secure_storage_repo.dart';
 
 class LoginProvider extends ChangeNotifier {
   bool _rememberMe = false;
+  bool _obscurePassword = true;
   final LoginRepository loginRepository = LoginRepository();
 
   final TextEditingController _emailController = TextEditingController();
@@ -21,7 +22,12 @@ class LoginProvider extends ChangeNotifier {
   TextEditingController get emailController => _emailController;
   TextEditingController get passwordController => _passwordController;
 
-  Future<void> login() async {
+  Future<void> login({required GlobalKey<FormState> key}) async {
+    _passwordController.text = _passwordController.text.trim();
+    _emailController.text = _emailController.text.trim();
+    if(!key.currentState!.validate()) {
+      return;
+    }
     final CredentialsPair pair = CredentialsPair(password: _passwordController.text, email: _emailController.text);
     final APIResponse<TokenPair> response = await loginRepository.login(credentialsPair: pair);
     if(response.error == null && response.data != null) {
@@ -38,6 +44,14 @@ class LoginProvider extends ChangeNotifier {
 
   set rememberMe(bool value) {
     _rememberMe = value;
+    notifyListeners();
+  }
+
+
+  bool get obscurePassword => _obscurePassword;
+
+  void changeObscurity() {
+    _obscurePassword = !_obscurePassword;
     notifyListeners();
   }
 

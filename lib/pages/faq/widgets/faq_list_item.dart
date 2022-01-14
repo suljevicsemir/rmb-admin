@@ -1,5 +1,5 @@
 
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rmb_admin/main/locator.dart';
@@ -76,7 +76,7 @@ class _FAQListItemState extends State<FAQListItem> {
           const SizedBox(width: 10,),
           IconButton(
             onPressed: () {
-              context.read<FaqProvider>().onFaqEdit(faqItem: widget.faqItem);
+              context.read<FaqProvider>().selectFaq(faqItem: widget.faqItem);
               final Map<String, String> params = {
                 'id' : widget.faqItem.id!
               };
@@ -86,7 +86,7 @@ class _FAQListItemState extends State<FAQListItem> {
             splashRadius: 20,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () => onDelete(context, context.read<FaqProvider>(), widget.faqItem),
             icon: Icon(Icons.delete, color: ColorHelper.dangerRed.color,),
             splashRadius: 20,
           )
@@ -95,3 +95,30 @@ class _FAQListItemState extends State<FAQListItem> {
     );
   }
 }
+
+// dialog is shown with a different context than the widget above it
+// so we need to pass the provider as well
+void onDelete(BuildContext context, FaqProvider provider, FaqItem faqItem) {
+  provider.selectFaq(faqItem: faqItem);
+  showDialog(context: context, builder: (_) {
+    return AlertDialog(
+      title: Text('faq_edit_page.dialog_title'.tr()),
+      content: Text("faq_edit_page.dialog_message".tr()),
+      actions: [
+        TextButton(
+          onPressed: () async{
+            final String? error = await provider.deleteFaqItem();
+          },
+          child: Text('faq_edit_page.dialog_yes'.tr())
+        ),
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text('faq_edit_page.dialog_no'.tr())
+        )
+      ],
+    );
+  });
+}
+
+
+
