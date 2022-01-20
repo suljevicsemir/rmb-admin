@@ -46,7 +46,6 @@ class FaqProvider extends ChangeNotifier {
 
   Future<void> saveChanges() async {
     if(_faqItem == null) {
-      print("FAQ JE NULL");
       await _createFaq();
       return;
     }
@@ -54,16 +53,16 @@ class FaqProvider extends ChangeNotifier {
   }
 
   Future<void> _createFaq() async {
-    print('creating faq');
     _faqItem = FaqItem(
       answerBj: _answerBj.text,
       answerEn: _answerEn.text,
       questionBj: _questionBj.text,
       questionEn: _questionEn.text
     );
-    final APIResponse<FaqItem?> response = await _repo.createFaqItem(faqItem: _faqItem!);
+    final APIResponse response = await _repo.createFaqItem(faqItem: _faqItem!);
     if(response.responseType == ResponseTypes.ok) {
-      _faqItems.insert(0, response.data!);
+      locator.get<NavigationRepo>().showActionSuccessSnackBar('faq_edit_page.question_updated'.tr());
+      await loadFaq();
     }
   }
 
@@ -87,9 +86,6 @@ class FaqProvider extends ChangeNotifier {
   }
 
   Future<void> loadFaq() async {
-    if(_faqItems.isNotEmpty) {
-      return;
-    }
     APIResponse<List<FaqItem>> list = await _repo.getFaq();
     if(list.responseType == ResponseTypes.ok) {
       faqItems = list.data!;

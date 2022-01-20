@@ -40,10 +40,11 @@
     }
   },
   "faq_page" : {
-      "asked_questions": "Često postavljena pitanja",
-      "can't_find" : "Ne možete ih ovdje naći? Posjetite naš ",
-      "help_center" : "Centar za Pomoć",
-      "item_not_selected" : "Potrebno odabrati FAQ brije brisanja"
+      "asked_questions"   : "Često postavljena pitanja",
+      "can't_find"        : "Ne možete ih ovdje naći? Posjetite naš ",
+      "help_center"       : "Centar za Pomoć",
+      "item_not_selected" : "Potrebno odabrati FAQ brije brisanja",
+      "add_button"        : "Dodaj novi FAQ"
     },
   "faq_edit_page" : {
     "title"             : "Promijeni pitanje",
@@ -70,7 +71,7 @@
     "city_name_hint": "Unesite ime grada...",
     "add_city_label": "Dodajte novi grad",
     "select_city"   : "Odaberite grad...",
-    "edit_section"  : "Sekcija za izmjene"
-
+    "edit_section"  : "Sekcija za izmjene",
+    "must_select"   : "Morate odabrati grad!"
   }
 }

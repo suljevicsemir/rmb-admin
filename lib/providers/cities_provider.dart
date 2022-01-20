@@ -1,12 +1,17 @@
 
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/models/city.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
 import 'package:rmb_admin/repositories/cities_repo.dart';
+import 'package:rmb_admin/repositories/navigation_repo.dart';
 
 class CitiesProvider extends ChangeNotifier{
   final CitiesRepo _repo = CitiesRepo();
+
+  final TextEditingController _createController = TextEditingController();
+  final TextEditingController _editingController = TextEditingController();
 
   CitiesProvider() {
     getCities();
@@ -16,11 +21,12 @@ class CitiesProvider extends ChangeNotifier{
   City? _city;
 
 
-  Future<void> createCity({required String city}) async{
-    final APIResponse response = await _repo.createCity(city: City(name: city));
+  Future<void> createCity() async{
+    final APIResponse response = await _repo.createCity(city: City(name: _createController.text));
     if(response.responseType == ResponseTypes.ok) {
+      _createController.clear();
+      notifyListeners();
       await getCities();
-
     }
   }
 
@@ -30,29 +36,32 @@ class CitiesProvider extends ChangeNotifier{
     final APIResponse response = await _repo.getCities();
     if(response.responseType == ResponseTypes.ok) {
       _cities = response.data;
-      _cities.forEach((element) {
-        print("ID: " + element.id! + ", name: " + element.name);
-      });
       notifyListeners();
     }
   }
 
-  Future<void> editCity({required City city, required String name}) async {
-    if(_city == null) {
+  Future<void> editCity() async {
+    if(_city == null || _editingController.text.isEmpty) {
+      locator.get<NavigationRepo>().showInvalidInputSnackBar('cities_page.must_select'.tr());
       return;
     }
-    _city!.name = name;
+    _city!.name = _editingController.text;
     final APIResponse response = await _repo.editCity(city: _city!);
     if(response.responseType == ResponseTypes.ok) {
-      _cities[_cities.indexWhere((element) => element.id! == city.id!)] = city;
+      _cities[_cities.indexWhere((element) => element.id! == _city!.id!)] = _city!;
       notifyListeners();
     }
   }
 
-  Future<String?> deleteCity({required City cityToDelete}) async {
-    final APIResponse response = await _repo.deleteCity(city: cityToDelete);
+  Future<String?> deleteCity() async {
+    if(_city == null) {
+      locator.get<NavigationRepo>().showInvalidInputSnackBar('cities_page.must_select'.tr());
+      return null;
+    }
+    final APIResponse response = await _repo.deleteCity(city: _city!);
     if(response.responseType == ResponseTypes.ok) {
-      _cities.removeWhere((element) => element.id! == cityToDelete.id);
+      _cities.removeWhere((element) => element.id! == _city!.id!);
+      _editingController.clear();
       notifyListeners();
     }
     return response.error;
@@ -60,6 +69,7 @@ class CitiesProvider extends ChangeNotifier{
 
   void selectCity({required City city}) {
     _city = city;
+    _editingController.text = city.name;
     notifyListeners();
   }
 
@@ -76,4 +86,17 @@ class CitiesProvider extends ChangeNotifier{
   }
 
   City? get city => _city;
+
+
+  TextEditingController get createController => _createController;
+  TextEditingController get editingController => _editingController;
+
+  @override
+  void dispose() {
+    _createController.dispose();
+    _editingController.dispose();
+    super.dispose();
+  }
+
+
 }

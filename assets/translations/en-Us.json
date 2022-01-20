@@ -43,7 +43,8 @@
     "asked_questions": "Frequently asked questions",
     "can't_find" : "Can't find it here? Check out our ",
     "help_center" : "Help Center",
-    "item_not_selected" : "Item not selected"
+    "item_not_selected" : "Item not selected",
+    "add_button"        : "Add new item"
   },
   "faq_edit_page" : {
     "title"             : "Edit question",
@@ -70,6 +71,7 @@
     "city_name_hint": "Enter city name...",
     "add_city_label": "Add new city",
     "select_city"   : "Select city...",
-    "edit_section"  : "Edit section"
+    "edit_section"  : "Edit section",
+    "must_select"   : "You must select a city!"
   }
 }

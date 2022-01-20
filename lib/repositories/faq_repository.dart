@@ -39,13 +39,9 @@ class FaqRepo {
     return APIResponse(responseType: response.responseType, error: response.data);
   }
 
-  Future<APIResponse<FaqItem>> createFaqItem({required FaqItem faqItem}) async {
+  Future<APIResponse> createFaqItem({required FaqItem faqItem}) async {
     final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
-    final APIResponse response = await HTTPClient.instance.postData(ApiRoutes.faq.path(), headers, faqItem.toJson());
-    if(response.responseType == ResponseTypes.ok) {
-      return APIResponse<FaqItem>(responseType: response.responseType, data: FaqItem.fromJson(response.data));
-    }
-    return APIResponse<FaqItem>(responseType: response.responseType, error: response.data);
+    return await HTTPClient.instance.postData(ApiRoutes.faq.path(), headers, faqItem.toJson());
   }
 
 }

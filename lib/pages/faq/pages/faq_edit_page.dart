@@ -44,7 +44,7 @@ class FaqEditPage extends StatelessWidget {
                   FaqEditField(
                     controller: context.watch<FaqProvider>().answerBj,
                     hintText: 'faq_edit_page.answer_bj_hint'.tr(),
-                    labelText: 'faq_edit_page.answer_en_label'.tr(),
+                    labelText: 'faq_edit_page.answer_bj_label'.tr(),
                   ),
                   FaqEditField(
                     controller: context.watch<FaqProvider>().answerEn,

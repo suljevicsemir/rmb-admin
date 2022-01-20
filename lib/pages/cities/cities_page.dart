@@ -21,6 +21,9 @@ class _CitiesPageState extends State<CitiesPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    final CitiesProvider provider = Provider.of<CitiesProvider>(context);
+
     return Scaffold(
       backgroundColor: ColorHelper.backgroundColor.color,
       body: Padding(
@@ -75,12 +78,7 @@ class _CitiesPageState extends State<CitiesPage> {
                 )
               ],
             ),
-            TextField(
-              controller: controller,
-
-            ),
-            ElevatedButton(onPressed: () => context.read<CitiesProvider>().createCity(city: controller.text), child: Text("SAVE")),
-            if(context.watch<CitiesProvider>().cities.isEmpty) const CircularProgressIndicator() else
+            if(provider.cities.isEmpty) const CircularProgressIndicator() else
             Expanded(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +90,7 @@ class _CitiesPageState extends State<CitiesPage> {
                       shrinkWrap: true,
                       crossAxisCount: 4,
                       childAspectRatio: 2.6,
-                      children: context.read<CitiesProvider>().cities.map((e) => CityListItem(city: e)).toList(),
+                      children: provider.cities.map((e) => CityListItem(city: e)).toList(),
                     ),
                   ),
                   Expanded(
@@ -118,6 +116,8 @@ class _CitiesPageState extends State<CitiesPage> {
                               SizedBox(
                                 width: 400,
                                 child: TextField(
+                                  controller: provider.createController,
+                                  style: const TextStyle(color: Colors.white),
                                   decoration: InputDecoration(
                                       hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
                                       fillColor: Colors.grey.withOpacity(0.3),
@@ -129,49 +129,88 @@ class _CitiesPageState extends State<CitiesPage> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () => provider.createCity(),
                                 icon: Icon(Icons.save, color: ColorHelper.rmbYellow.color,),
                                 splashRadius: 20,
                               )
                             ],
                           ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          const SizedBox(height: 50,),
+                          Column(
                             children: [
-                              Text(
-                                'cities_page.edit_section'.tr(),
-                                style: TextStyle(
-                                    color: ColorHelper.rmbYellow.color,
-                                    fontSize: 18
-                                ),
-                              ),
-                              const SizedBox(width: 10,),
-                              SizedBox(
-                                width: 400,
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                      hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
-                                      fillColor: Colors.grey.withOpacity(0.3),
-                                      filled: true,
-                                      hintText: 'cities_page.select_city'.tr(),
-                                      enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-                                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
+                              Padding(
+                                padding: const EdgeInsets.only(right: 60),
+                                child: Text(
+                                  'cities_page.edit_section'.tr(),
+                                  style: TextStyle(
+                                      color: ColorHelper.rmbYellow.color,
+                                      fontSize: 18
                                   ),
                                 ),
                               ),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.save, color: ColorHelper.rmbYellow.color,),
-                                splashRadius: 20,
-                              ),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.save, color: ColorHelper.rmbYellow.color,),
-                                splashRadius: 20,
+                              const SizedBox(height: 20,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: 400,
+                                    child: TextField(
+                                      controller: provider.editingController,
+                                      style: const TextStyle(color: Colors.white),
+                                      decoration: InputDecoration(
+                                          hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
+                                          fillColor: Colors.grey.withOpacity(0.3),
+                                          filled: true,
+                                          hintText: 'cities_page.select_city'.tr(),
+                                          enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
+                                      ),
+                                    ),
+                                  ),
+                                  IconButton(
+                                    onPressed: () => provider.editCity(),
+                                    icon: const Icon(Icons.done, color: Colors.green,),
+                                    splashRadius: 20,
+                                  ),
+                                  IconButton(
+                                    onPressed: () => provider.deleteCity(),
+                                    icon: Icon(Icons.delete, color: ColorHelper.dangerRed.color,),
+                                    splashRadius: 20,
+                                  )
+                                ],
                               )
+
                             ],
-                          )
+                          ),
+                          // Row(
+                          //   crossAxisAlignment: CrossAxisAlignment.center,
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     Text(
+                          //       'cities_page.edit_section'.tr(),
+                          //       style: TextStyle(
+                          //           color: ColorHelper.rmbYellow.color,
+                          //           fontSize: 18
+                          //       ),
+                          //     ),
+                          //     const SizedBox(width: 10,),
+                          //     SizedBox(
+                          //       width: 400,
+                          //       child: TextField(
+                          //         controller: controller,
+                          //         decoration: InputDecoration(
+                          //             hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
+                          //             fillColor: Colors.grey.withOpacity(0.3),
+                          //             filled: true,
+                          //             hintText: 'cities_page.select_city'.tr(),
+                          //             enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                          //             focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
+                          //         ),
+                          //       ),
+                          //     ),
+                          //
+                          //   ],
+                          // )
 
                         ],
                       )

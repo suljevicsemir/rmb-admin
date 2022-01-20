@@ -108,6 +108,7 @@ void onDelete(BuildContext context, FaqProvider provider, FaqItem faqItem) {
         TextButton(
           onPressed: () async{
             final String? error = await provider.deleteFaqItem();
+            Navigator.of(context).pop();
           },
           child: Text('faq_edit_page.dialog_yes'.tr())
         ),

@@ -40,10 +40,26 @@ class _FaqPageState extends State<FaqPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            primary: ColorHelper.rmbYellow.color,
+            padding: const EdgeInsets.all(30)
+        ),
         onPressed: () {
-          changeVisible();
+          context.read<FaqProvider>().onFaqCreate();
+          locator.get<NavigationRepo>().navigateTo(
+              FaqEditPage.route,
+              params: {'id' : 'create'},
+              arguments: context.read<FaqProvider>()
+          );
         },
+        child: Text(
+          'faq_page.add_button'.tr(),
+          style: TextStyle(
+              color: ColorHelper.backgroundColor.color,
+              fontSize: 22
+          ),
+        ),
       ),
       backgroundColor: Colors.black87,
       body: SingleChildScrollView(
@@ -108,16 +124,7 @@ class _FaqPageState extends State<FaqPage> {
                           itemCount: context.watch<FaqProvider>().faqItems.length,
                           itemBuilder: (ctx, index) => FAQListItem(faqItem: context.read<FaqProvider>().faqItems[index],)
                       ),
-                    ElevatedButton(
-                      onPressed: () {
-                        context.read<FaqProvider>().onFaqCreate();
-                        locator.get<NavigationRepo>().navigateTo(FaqEditPage.route, params: {
-                          'id' : 'create'
-                        }, arguments: context.read<FaqProvider>());
-                      },
-                      child: Text('ADD'),
-                    )
-
+                    const SizedBox(height: 100,)
                   ],
                 ),
                 Positioned(
