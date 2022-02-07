@@ -1,5 +1,4 @@
 
-
 import 'package:json_annotation/json_annotation.dart';
 
 part 'branch_service_type.g.dart';
@@ -19,6 +18,4 @@ class BranchServiceType {
   @JsonKey(includeIfNull: false)
   String? id;
   String name;
-
-
 }
