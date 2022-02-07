@@ -82,6 +82,15 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SidebarExpendableItem(
+                icon: Icons.design_services,
+                title: "home.drawer.section_item_locations_filter".tr(),
+                children: <ExpandedSidebarItem>[
+                  ExpandedSidebarItem(title: "home.drawer.section_item_locations_filter_branch_type".tr(), icon: Icons.edit),
+                  ExpandedSidebarItem(title: "home.drawer.section_item_locations_filter_branch_service".tr(), icon: Icons.edit),
+                  ExpandedSidebarItem(title: "home.drawer.section_item_locations_filter_atm_service".tr(), icon: Icons.edit),
+                ],
+              ),
+              SidebarExpendableItem(
                 icon: Icons.atm,
                 title: "home.drawer.section_item_atms".tr(),
                 children: <ExpandedSidebarItem>[
