@@ -7,10 +7,12 @@ import 'package:provider/provider.dart';
 import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_edit_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
+import 'package:rmb_admin/pages/filter_locations/filter_locations.dart';
 import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/pages/login.dart';
 import 'package:rmb_admin/providers/cities_provider.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
+import 'package:rmb_admin/providers/locations_filter_provider.dart';
 import 'package:rmb_admin/providers/login_provider.dart';
 import 'package:rmb_admin/widgets/snackbars.dart';
 
@@ -64,6 +66,15 @@ class NavigationRepo{
             create: (_) => CitiesProvider(),
             lazy: false,
             child: const CitiesPage(),
+          )
+        ),
+        GoRoute(
+          name: FilterLocations.route,
+          path: FilterLocations.route,
+          builder: (context, state) => ChangeNotifierProvider<LocationsFilterProvider>(
+            create: (_) => LocationsFilterProvider(),
+            lazy: false,
+            child: const FilterLocations(),
           )
         )
       ],

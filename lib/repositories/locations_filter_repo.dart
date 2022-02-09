@@ -1,6 +1,9 @@
 
+
+import 'package:rmb_admin/models/locations_filter/atm_service.dart';
 import 'package:rmb_admin/models/locations_filter/branch_service_type.dart';
 import 'package:rmb_admin/models/locations_filter/branch_type.dart';
+import 'package:rmb_admin/models/locations_filter/locations_filter_container.dart';
 import 'package:rmb_admin/network_module/api_headers.dart';
 import 'package:rmb_admin/network_module/api_path.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
@@ -30,6 +33,44 @@ class LocationsFilterRepo {
     return APIResponse(responseType: response.responseType, error: response.error);
   }
 
+  Future<LocationsFilterContainer> getFilters() async {
+    List<APIResponse> results = await Future.wait([
+      getBranchTypes(),
+      getBranchServiceTypes()
+    ]);
+    return LocationsFilterContainer(
+      branchTypes: results[0].error == null ? results[0].data : null,
+      branchServiceTypes: results[1].error == null ? results[1].data : null
+    );
+  }
 
+  Future<APIResponse> createBranchType({required BranchType branchType}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    return await HTTPClient.instance.postData(ApiRoutes.branchType.path(), headers, branchType.toJson());
+  }
 
+  Future<APIResponse> createBranchServiceType({required BranchServiceType branchServiceType}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    return await HTTPClient.instance.postData(ApiRoutes.branchServiceType.path(), headers, branchServiceType.toJson());
+  }
+
+  Future<APIResponse> createATMType({required ATMService atmService}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    return await HTTPClient.instance.postData(ApiRoutes.atmService.path(), headers, atmService.toJson());
+  }
+
+  Future<APIResponse> deleteBranchType({required String id}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    return await HTTPClient.instance.deleteData(ApiRoutes.branchType.path([id]), headers, {});
+  }
+
+  Future<APIResponse> deleteBranchServiceType({required String id}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    return await HTTPClient.instance.deleteData(ApiRoutes.branchServiceType.path([id]), headers, {});
+  }
+
+  Future<APIResponse> deleteATMService({required String id}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    return await HTTPClient.instance.deleteData(ApiRoutes.atmService.path([id]), headers, {});
+  }
 }

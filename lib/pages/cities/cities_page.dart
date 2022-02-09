@@ -182,36 +182,6 @@ class _CitiesPageState extends State<CitiesPage> {
 
                             ],
                           ),
-                          // Row(
-                          //   crossAxisAlignment: CrossAxisAlignment.center,
-                          //   mainAxisAlignment: MainAxisAlignment.center,
-                          //   children: [
-                          //     Text(
-                          //       'cities_page.edit_section'.tr(),
-                          //       style: TextStyle(
-                          //           color: ColorHelper.rmbYellow.color,
-                          //           fontSize: 18
-                          //       ),
-                          //     ),
-                          //     const SizedBox(width: 10,),
-                          //     SizedBox(
-                          //       width: 400,
-                          //       child: TextField(
-                          //         controller: controller,
-                          //         decoration: InputDecoration(
-                          //             hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
-                          //             fillColor: Colors.grey.withOpacity(0.3),
-                          //             filled: true,
-                          //             hintText: 'cities_page.select_city'.tr(),
-                          //             enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-                          //             focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
-                          //         ),
-                          //       ),
-                          //     ),
-                          //
-                          //   ],
-                          // )
-
                         ],
                       )
                     ),

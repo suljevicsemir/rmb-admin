@@ -178,12 +178,10 @@ class HTTPClient {
       case 404:
         return APIResponse(
             responseType: ResponseTypes.notFound,
-            data: {}
+            error: response.body
         );
       default:
-        print(response.body);
-        //locator.get<NavigationRepo>().navigateTo("UnexpectedErrorRoute");
-        return const APIResponse(responseType: ResponseTypes.unexpected);
+        return APIResponse(responseType: ResponseTypes.unexpected, error: response.body);
     }
   }
 

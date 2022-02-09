@@ -9,6 +9,7 @@ import 'package:google_maps/google_maps.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
+import 'package:rmb_admin/pages/filter_locations/filter_locations.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/expanded_item.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/expendable_item.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/section_title.dart';
@@ -84,11 +85,7 @@ class _HomePageState extends State<HomePage> {
               SidebarExpendableItem(
                 icon: Icons.design_services,
                 title: "home.drawer.section_item_locations_filter".tr(),
-                children: <ExpandedSidebarItem>[
-                  ExpandedSidebarItem(title: "home.drawer.section_item_locations_filter_branch_type".tr(), icon: Icons.edit),
-                  ExpandedSidebarItem(title: "home.drawer.section_item_locations_filter_branch_service".tr(), icon: Icons.edit),
-                  ExpandedSidebarItem(title: "home.drawer.section_item_locations_filter_atm_service".tr(), icon: Icons.edit),
-                ],
+                onTap: () => locator.get<NavigationRepo>().navigateTo(FilterLocations.route)
               ),
               SidebarExpendableItem(
                 icon: Icons.atm,

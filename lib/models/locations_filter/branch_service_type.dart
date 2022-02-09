@@ -1,21 +1,22 @@
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:rmb_admin/models/locations_filter/location_filter.dart';
 
 part 'branch_service_type.g.dart';
 
 @JsonSerializable()
-class BranchServiceType {
+class BranchServiceType extends LocationFilter{
 
   BranchServiceType({
-    required this.name,
-    this.id
-  });
+    required String name,
+    String? id
+  }): super(
+    name: name,
+    id: id
+  );
 
   factory BranchServiceType.fromJson(Map<String, dynamic> json) => _$BranchServiceTypeFromJson(json);
 
   Map<String, dynamic> toJson() => _$BranchServiceTypeToJson(this);
 
-  @JsonKey(includeIfNull: false)
-  String? id;
-  String name;
 }

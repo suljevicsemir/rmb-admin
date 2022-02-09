@@ -7,7 +7,8 @@ enum ApiRoutes {
   city,
   cityEdit,
   branchType,
-  branchServiceType
+  branchServiceType,
+  atmService
 }
 
 
@@ -15,6 +16,8 @@ extension ApiRoutesExtension on ApiRoutes{
 
   String path([List<String> params = const []]) {
     switch (this) {
+      case ApiRoutes.atmService:
+        return "";
       case ApiRoutes.branchType:
         return "BranchType";
       case ApiRoutes.branchServiceType:

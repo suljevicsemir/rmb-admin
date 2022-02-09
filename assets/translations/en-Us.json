@@ -77,5 +77,17 @@
     "select_city"   : "Select city...",
     "edit_section"  : "Edit section",
     "must_select"   : "You must select a city!"
+  },
+  "filter_locations_page" : {
+    "headline_desc": "Add and delete filters",
+    "got_questions" : "You have some questions ? Check out our ",
+    "help_center"   : "Help Center",
+    "branch_type_hint_bj" : "Branch type in Bosnian...",
+    "branch_service_type_hint_bj" : "Branch service type in Bosnian...",
+    "atm_type_hint_bj" : "ATM type in Bosnian...",
+    "branch_type_hint_en" : "Branch type in English...",
+    "branch_service_type_hint_en" : "Branch service type in English...",
+    "atm_type_hint_en" : "ATM type in English...",
+    "save_filter" : "Save filter"
   }
 }
