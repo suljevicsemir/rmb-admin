@@ -34,12 +34,16 @@ class Branch {
   String? id;
   Location location;
   String name;
+  @JsonKey()
   City city;
   String contact;
   List<WorkingHours> workingHours;
+  @JsonKey()
   BranchType branchType;
+  @JsonKey()
   BranchServiceType branchServiceType;
   String atmType;
+  @JsonKey()
   ATMFilter atmFilter;
 
 

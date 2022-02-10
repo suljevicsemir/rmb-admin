@@ -27,5 +27,8 @@ class Location {
   double latitude;
   double longitude;
 
-
+  @override
+  String toString() {
+    return 'Location{id: $id, address: $address, latitude: $latitude, longitude: $longitude}';
+  }
 }

@@ -19,5 +19,8 @@ class ATMFilter extends LocationFilter{
 
   Map<String, dynamic> toJson() => _$ATMFilterToJson(this);
 
-
+  @override
+  String toString() {
+    return 'ATMFilter{id: $id, name: $name}';
+  }
 }

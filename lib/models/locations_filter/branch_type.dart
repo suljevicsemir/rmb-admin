@@ -19,4 +19,9 @@ class BranchType extends LocationFilter{
   factory BranchType.fromJson(Map<String, dynamic> json) => _$BranchTypeFromJson(json);
 
   Map<String, dynamic> toJson() => _$BranchTypeToJson(this);
+
+  @override
+  String toString() {
+    return 'BranchType{id: $id, name: $name}';
+  }
 }

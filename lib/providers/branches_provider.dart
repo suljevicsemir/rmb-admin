@@ -2,11 +2,16 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:rmb_admin/models/city.dart';
 import 'package:rmb_admin/models/locations_filter/atm_filter.dart';
+import 'package:rmb_admin/models/locations_filter/branch/branch_post.dart';
 import 'package:rmb_admin/models/locations_filter/branch_service_type.dart';
 import 'package:rmb_admin/models/locations_filter/branch_type.dart';
+import 'package:rmb_admin/models/locations_filter/location.dart';
+import 'package:rmb_admin/repositories/branches_repository.dart';
 import 'package:rmb_admin/utils/atm_validator.dart';
 
 class BranchesProvider extends ChangeNotifier {
+
+  final BranchesRepository _repo = BranchesRepository();
 
   final TextEditingController addressController = TextEditingController();
   final TextEditingController latitudeController = TextEditingController();
@@ -30,6 +35,38 @@ class BranchesProvider extends ChangeNotifier {
 
   String get atmFilters => _atmFilter == null ? "branches_page.validation.atm_filter".tr() : _atmFilter!.name;
 
+  Future<void> create() async{
+    debugPrint("Testig output");
+    debugPrint("Adresa: ${addressController.text}");
+    debugPrint("Latitude: ${latitudeController.text}");
+    debugPrint("Longitude: ${longitudeController.text}");
+
+    debugPrint("Branch name" + nameController.text);
+    debugPrint("City: " + _city!.name);
+    debugPrint("Contact: " + contactController.text);
+    debugPrint("Branch type: " + branchType!.name);
+    debugPrint("Branch service type: " + branchServiceType!.name);
+    debugPrint("ATM type: " + atmFilter!.name);
+
+    BranchPost branch = BranchPost(
+      location: Location(
+        address: addressController.text,
+        latitude: 42.14,
+        longitude: 38.12
+      ),
+      name: "Test1",
+      cityId: _city!.id!,
+      contact: contactController.text,
+      workingHours: [],
+      branchTypeId: _branchType!.id!,
+      branchServiceTypeId: _branchServiceType!.id!,
+      atmType: "s",
+      atmFilterId: _atmFilter!.id!,
+    );
+
+    _repo.createBranch(branch: branch);
+
+  }
 
   void setATMOutside() {
     _atmValidator.setOutside();

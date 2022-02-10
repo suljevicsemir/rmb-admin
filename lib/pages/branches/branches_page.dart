@@ -34,6 +34,11 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
     }
     return Scaffold(
       backgroundColor: ColorHelper.backgroundColor.color,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          branchesProvider.create();
+        },
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(150, 100, 150, 0),

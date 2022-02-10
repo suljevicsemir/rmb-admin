@@ -5,17 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/pages/branches/widgets/atm_position.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_textual_field.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/atm_validator.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch/branch_post.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch/branch_post.g.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/repositories/branches_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/translations/bs-Ba.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/bs-Ba.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/translations/en-Us.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-Us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/city.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/city.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/atm_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/atm_filter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch/branch.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch/branch.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch_service_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch_service_type.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch_type.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/location.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/location.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network_module/api_path.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/api_path.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network_module/http_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/http_client.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/branches/branches_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/branches_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/providers/branches_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/branches_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +66,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\models\locations_filter\branch" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\pages\filter_locations\widgets" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\pages\faq\pages" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\models\user" />
@@ -263,11 +270,17 @@
       <option name="project" value="LOCAL" />
       <updated>1644496443459</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added branches create page">
+      <created>1644515365576</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1644515365576</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init commit" />
     <MESSAGE value="added login page ui" />
     <MESSAGE value="added secure storage repo" />
     <MESSAGE value="added sidebar section title" />
@@ -292,7 +305,8 @@
     <MESSAGE value="prep for locations filter feature" />
     <MESSAGE value="added branch models" />
     <MESSAGE value="added atm types get and post methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="added atm types get and post methods" />
+    <MESSAGE value="added branches create page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added branches create page" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
