@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="" />
+    <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/models/locations_filter/atm_filter.g.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/locations_filter/location.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/locations_filter/location.g.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/locations_filter/working_hours.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/locations_filter/working_hours.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/atm_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/atm_filter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/atm_service.g.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch_service_type.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch_service_type.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch_type.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch_type.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/locations_filter_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/locations_filter_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/locations_filter_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/locations_filter_repo.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -229,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644367686214</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="prep for locations filter feature">
+      <created>1644492770137</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1644492770137</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -255,7 +276,8 @@
     <MESSAGE value="added branch model classes" />
     <MESSAGE value="added branch types network call and atm service model" />
     <MESSAGE value="added fetch for 2/3 filters and post for 2/3 filters" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fetch for 2/3 filters and post for 2/3 filters" />
+    <MESSAGE value="prep for locations filter feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="prep for locations filter feature" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

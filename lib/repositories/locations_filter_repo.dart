@@ -1,6 +1,6 @@
 
 
-import 'package:rmb_admin/models/locations_filter/atm_service.dart';
+import 'package:rmb_admin/models/locations_filter/atm_filter.dart';
 import 'package:rmb_admin/models/locations_filter/branch_service_type.dart';
 import 'package:rmb_admin/models/locations_filter/branch_type.dart';
 import 'package:rmb_admin/models/locations_filter/locations_filter_container.dart';
@@ -54,7 +54,7 @@ class LocationsFilterRepo {
     return await HTTPClient.instance.postData(ApiRoutes.branchServiceType.path(), headers, branchServiceType.toJson());
   }
 
-  Future<APIResponse> createATMType({required ATMService atmService}) async {
+  Future<APIResponse> createATMType({required ATMFilter atmService}) async {
     final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
     return await HTTPClient.instance.postData(ApiRoutes.atmService.path(), headers, atmService.toJson());
   }

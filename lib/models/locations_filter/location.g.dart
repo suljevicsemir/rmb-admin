@@ -1,17 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'atm_service.dart';
+part of 'location.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ATMService _$ATMServiceFromJson(Map<String, dynamic> json) => ATMService(
-      name: json['name'] as String,
+Location _$LocationFromJson(Map<String, dynamic> json) => Location(
+      address: json['address'] as String,
+      latitude: (json['latitude'] as num).toDouble(),
+      longitude: (json['longitude'] as num).toDouble(),
       id: json['id'] as String?,
     );
 
-Map<String, dynamic> _$ATMServiceToJson(ATMService instance) {
+Map<String, dynamic> _$LocationToJson(Location instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -21,6 +23,8 @@ Map<String, dynamic> _$ATMServiceToJson(ATMService instance) {
   }
 
   writeNotNull('id', instance.id);
-  val['name'] = instance.name;
+  val['address'] = instance.address;
+  val['latitude'] = instance.latitude;
+  val['longitude'] = instance.longitude;
   return val;
 }
