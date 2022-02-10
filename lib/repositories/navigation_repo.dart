@@ -11,6 +11,7 @@ import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
 import 'package:rmb_admin/pages/filter_locations/filter_locations.dart';
 import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/providers/branches_provider.dart';
 import 'package:rmb_admin/providers/cities_provider.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
 import 'package:rmb_admin/providers/locations_filter_provider.dart';
@@ -89,6 +90,10 @@ class NavigationRepo{
               ),
               ChangeNotifierProvider<LocationsFilterProvider>(
                 create: (_) => LocationsFilterProvider(),
+                lazy: false,
+              ),
+              ChangeNotifierProvider<BranchesProvider>(
+                create: (_) => BranchesProvider(),
                 lazy: false,
               ),
             ],

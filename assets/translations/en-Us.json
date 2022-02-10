@@ -89,5 +89,38 @@
     "branch_service_type_hint_en" : "Branch service type in English...",
     "atm_type_hint_en" : "ATM type in English...",
     "save_filter" : "Save filter"
+  },
+  "branches_page" : {
+    "headline_desc": "Add branch",
+    "got_questions" : "You have some questions ? Check out our ",
+    "help_center"   : "Help Center",
+    "address_label" : "Address",
+    "address_hint"  : "Enter address...",
+    "latitude_hint" : "Enter latitude...",
+    "latitude_label": "Latitude",
+    "longitude_hint": "Enter longitude...",
+    "longitude_label" : "Longitude",
+    "name_hint" : "Enter branch name...",
+    "name_label": "Branch name",
+    "contact_label" : "Contact",
+    "contact_hint" : "Enter contact...",
+    "branch_type_label" : "Branch type",
+    "branch_service_type_label" : "Branch service type",
+    "atm_filter_label" : "ATM type",
+    "atm_type" : "ATM position",
+    "atm_outside" : "Outdoor",
+    "atm_inside" : "Indoor",
+    "city_label" : "City",
+    "monday_label" : "Monday",
+    "tuesday_label" : "Tuesday",
+    "wednesday_label": "Wednesday",
+    "thursday_label" : "Thursday",
+    "friday_label"   : "Friday",
+    "validation" : {
+      "city" : "Pick a city",
+      "branch_type" : "Pick a branch type",
+      "branch_service_type" : "Pick a branch service type",
+      "atm_filter" : "Pick ATM type"
+    }
   }
 }

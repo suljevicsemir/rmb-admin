@@ -89,5 +89,38 @@
     "branch_service_type_hint_en" : "Vrsta poslovnice po servisu na engleskom jeziku...",
     "atm_type_hint_en" : "Tip bankomata na engleskom jeziku...",
     "save_filter" : "Spasi filter"
+  },
+  "branches_page" : {
+    "headline_desc": "Dodavanje poslovnice",
+    "got_questions" : "Imaš nekih pitanja? Posjeti naš ",
+    "help_center"   : "Centar za Pomoć",
+    "address_label" : "Adresa",
+    "address_hint"  : "Unesi adresu...",
+    "latitude_hint" : "Unesi latitude...",
+    "latitude_label": "Latitude",
+    "longitude_hint": "Unesi longitude...",
+    "longitude_label" : "Longitude",
+    "name_hint" : "Unesi ime poslovnice...",
+    "name_label": "Ime poslovnice",
+    "contact_label" : "Kontakt",
+    "contact_hint" : "Unesi kontakt...",
+    "branch_type_label" : "Tip poslovnice",
+    "branch_service_type_label" : "Tip poslovnice po servisu",
+    "atm_filter_label" : "Vrsta bankomata",
+    "atm_type" : "Tip bankomata",
+    "atm_outside" : "Vanjski",
+    "atm_inside" : "Unutrašnji",
+    "city_label" : "Grad",
+    "monday_label" : "Ponedjeljak",
+    "tuesday_label" : "Utorak",
+    "wednesday_label": "Srijeda",
+    "thursday_label" : "Četvrtak",
+    "friday_label"   : "Petak",
+    "validation" : {
+      "city" : "Odaberi grad",
+      "branch_type" : "Odaberi tip poslovnice",
+      "branch_service_type" : "Odaberi servis poslovnice",
+      "atm_filter" : "Odaberi tip bankomata"
+    }
   }
 }
