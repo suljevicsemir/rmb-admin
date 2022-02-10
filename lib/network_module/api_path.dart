@@ -17,7 +17,7 @@ extension ApiRoutesExtension on ApiRoutes{
   String path([List<String> params = const []]) {
     switch (this) {
       case ApiRoutes.atmService:
-        return "";
+        return "ATMFilter";
       case ApiRoutes.branchType:
         return "BranchType";
       case ApiRoutes.branchServiceType:

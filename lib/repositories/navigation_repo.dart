@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:rmb_admin/pages/branches/branches_page.dart';
 import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_edit_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
@@ -75,6 +76,23 @@ class NavigationRepo{
             create: (_) => LocationsFilterProvider(),
             lazy: false,
             child: const FilterLocations(),
+          )
+        ),
+        GoRoute(
+          name: BranchesInsertPage.route,
+          path: BranchesInsertPage.route,
+          builder: (context, state) => MultiProvider(
+            providers: [
+              ChangeNotifierProvider<CitiesProvider>(
+                create: (_) => CitiesProvider(),
+                lazy: false,
+              ),
+              ChangeNotifierProvider<LocationsFilterProvider>(
+                create: (_) => LocationsFilterProvider(),
+                lazy: false,
+              ),
+            ],
+            child: const BranchesInsertPage(),
           )
         )
       ],

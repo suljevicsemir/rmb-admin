@@ -7,6 +7,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps/google_maps.dart';
 import 'package:rmb_admin/main/locator.dart';
+import 'package:rmb_admin/pages/branches/branches_page.dart';
 import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
 import 'package:rmb_admin/pages/filter_locations/filter_locations.dart';
@@ -86,6 +87,11 @@ class _HomePageState extends State<HomePage> {
                 icon: Icons.design_services,
                 title: "home.drawer.section_item_locations_filter".tr(),
                 onTap: () => locator.get<NavigationRepo>().navigateTo(FilterLocations.route)
+              ),
+              SidebarExpendableItem(
+                icon: Icons.place,
+                title: "Branchevi bokte",
+                onTap: () => locator.get<NavigationRepo>().navigateTo(BranchesInsertPage.route),
               ),
               SidebarExpendableItem(
                 icon: Icons.atm,
