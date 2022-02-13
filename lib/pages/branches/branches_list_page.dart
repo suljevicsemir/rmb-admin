@@ -8,6 +8,8 @@ import 'package:rmb_admin/theme/color_helper.dart';
 class BranchesListPage extends StatefulWidget {
   const BranchesListPage({Key? key}) : super(key: key);
 
+  static const String route = '/branches_list';
+
   @override
   _BranchesListPageState createState() => _BranchesListPageState();
 }
@@ -20,6 +22,7 @@ class _BranchesListPageState extends State<BranchesListPage> {
       backgroundColor: ColorHelper.backgroundColor.color,
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps/google_maps.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/pages/branches/branches_create_page.dart';
+import 'package:rmb_admin/pages/branches/branches_list_page.dart';
 import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
 import 'package:rmb_admin/pages/filter_locations/filter_locations.dart';
@@ -90,8 +91,19 @@ class _HomePageState extends State<HomePage> {
               ),
               SidebarExpendableItem(
                 icon: Icons.place,
-                title: "Branchevi bokte",
-                onTap: () => locator.get<NavigationRepo>().navigateTo(BranchesInsertPage.route),
+                title: "home.drawer.section_item_branches".tr(),
+                children: [
+                  ExpandedSidebarItem(
+                    title: "home.drawer.section_item_branches_create".tr(),
+                    icon: Icons.add,
+                    onTap: () => locator.get<NavigationRepo>().navigateTo(BranchesInsertPage.route),
+                  ),
+                  ExpandedSidebarItem(
+                    title: "home.drawer.section_item_branches_list".tr(),
+                    icon: Icons.list,
+                    onTap: () => locator.get<NavigationRepo>().navigateTo(BranchesListPage.route),
+                  )
+                ],
               ),
               SidebarExpendableItem(
                 icon: Icons.atm,

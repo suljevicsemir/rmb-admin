@@ -30,4 +30,10 @@ class BranchesRepository {
     return APIResponse(responseType: response.responseType, error: response.error, data: response.data);
   }
 
+  Future<bool> deleteBranch({required Branch branch}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    final APIResponse response = await HTTPClient.instance.deleteData(ApiRoutes.branchEdit.path([branch.id!]), headers, {});
+    return response.error == null;
+  }
+
 }

@@ -21,7 +21,7 @@ extension ApiRoutesExtension on ApiRoutes{
       case ApiRoutes.branch:
         return "Branch";
       case ApiRoutes.branchEdit:
-        return "BranchEdit";
+        return "Branch/${params[0]}";
       case ApiRoutes.atmService:
         return "ATMFilter";
       case ApiRoutes.branchType:

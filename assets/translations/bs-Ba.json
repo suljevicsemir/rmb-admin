@@ -21,6 +21,9 @@
       "section_item_cities_list": "Pregled, brisanje i mijenjanje gradova",
       "section_item_cities_create": "Kreiraj novi grad",
       "section_item_locations_filter" : "Filteri lokacija",
+      "section_item_branches" : "Poslovnice",
+      "section_item_branches_create" : "Kreiraj novu poslovnicu",
+      "section_item_branches_list" : "Pregled i izmjena poslonvnica",
       "section_item_locations_filter_branch_type" : "Vrste poslovnica",
       "section_item_locations_filter_branch_service" : "Poslovnice po servisima",
       "section_item_locations_filter_atm_service" : "Bankomati po servisu",
@@ -133,5 +136,10 @@
       "create_success" : "Poslovnica kreirana",
       "create_failure" : "Kreiranje nije uspjelo, pokušajte ponovo"
     }
+  },
+  "branches_list" : {
+    "address" : "Adresa",
+    "city"    : "Grad",
+    "contact" : "Kontakt"
   }
 }
