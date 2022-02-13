@@ -37,6 +37,7 @@ class Branch {
   @JsonKey()
   City city;
   String contact;
+  @JsonKey(defaultValue: <WorkingHours>[])
   List<WorkingHours> workingHours;
   @JsonKey()
   BranchType branchType;

@@ -7,13 +7,14 @@ class BranchTextualField extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.label,
-    required this.hintText
+    required this.hintText,
+    this.validator
   }) : super(key: key);
 
   final String label;
   final TextEditingController controller;
   final String hintText;
-
+  final Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +33,25 @@ class BranchTextualField extends StatelessWidget {
           ),
           SizedBox(
             width: 400,
-            child: TextField(
+            child: TextFormField(
               controller: controller,
+              validator: (String? value) {
+                if(validator != null) {
+                  return validator!(value);
+                }
+              },
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
-                  hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
-                  fillColor: Colors.grey.withOpacity(0.3),
-                  filled: true,
-                  hintText: hintText,
-                  enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
+                errorStyle: TextStyle(
+                  fontSize: 16,
+                  color: ColorHelper.dangerRed.color
+                ),
+                hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
+                fillColor: Colors.grey.withOpacity(0.3),
+                filled: true,
+                hintText: hintText,
+                enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
               ),
             ),
           )

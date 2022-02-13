@@ -19,6 +19,12 @@ class ATMValidator {
     _outside = false;
   }
 
+  void reset() {
+    _outside = true;
+    _groupedValue = true;
+    _inside = false;
+  }
+
   bool get outside => _outside;
 
   bool get inside => _inside;

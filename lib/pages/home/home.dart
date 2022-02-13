@@ -7,7 +7,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps/google_maps.dart';
 import 'package:rmb_admin/main/locator.dart';
-import 'package:rmb_admin/pages/branches/branches_page.dart';
+import 'package:rmb_admin/pages/branches/branches_create_page.dart';
 import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
 import 'package:rmb_admin/pages/filter_locations/filter_locations.dart';

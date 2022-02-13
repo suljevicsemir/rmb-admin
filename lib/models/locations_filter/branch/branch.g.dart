@@ -18,9 +18,10 @@ Branch _$BranchFromJson(Map<String, dynamic> json) => Branch(
       name: json['name'] as String,
       atmType: json['atmType'] as String,
       contact: json['contact'] as String,
-      workingHours: (json['workingHours'] as List<dynamic>)
-          .map((e) => WorkingHours.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      workingHours: (json['workingHours'] as List<dynamic>?)
+              ?.map((e) => WorkingHours.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
     );
 
 Map<String, dynamic> _$BranchToJson(Branch instance) {

@@ -116,11 +116,22 @@
     "wednesday_label": "Srijeda",
     "thursday_label" : "Četvrtak",
     "friday_label"   : "Petak",
-    "validation" : {
+    "labels" : {
       "city" : "Odaberi grad",
       "branch_type" : "Odaberi tip poslovnice",
       "branch_service_type" : "Odaberi servis poslovnice",
       "atm_filter" : "Odaberi tip bankomata"
+    },
+    "validation" : {
+      "obligatory_field" : "Obavezno polje",
+      "not_a_number" : "Polje mora biti broj",
+      "phone_number" : "Neispravan broj telefona (počinje s + )",
+      "pick_city" : "Morate odabrati grad",
+      "pick_branch_type" : "Morate odabrati tip poslovnice",
+      "pick_branch_service_type" : "Morate odabrati servis poslovnice",
+      "pick_atm" : "Morate odabrati tip bankomata",
+      "create_success" : "Poslovnica kreirana",
+      "create_failure" : "Kreiranje nije uspjelo, pokušajte ponovo"
     }
   }
 }

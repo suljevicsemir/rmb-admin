@@ -116,11 +116,22 @@
     "wednesday_label": "Wednesday",
     "thursday_label" : "Thursday",
     "friday_label"   : "Friday",
-    "validation" : {
+    "labels" : {
       "city" : "Pick a city",
       "branch_type" : "Pick a branch type",
       "branch_service_type" : "Pick a branch service type",
       "atm_filter" : "Pick ATM type"
+    },
+    "validation" : {
+      "obligatory_field" : "Obligatory field",
+      "not_a_number" : "Field must be a number",
+      "phone_number" : "Irregular phone number (starts with +)",
+      "pick_city" : "You must pick a city",
+      "pick_branch_type" : "You must pick a branch type",
+      "pick_branch_service_type" : "You must pick a branch service type",
+      "pick_atm" : "You must pick ATM type",
+      "create_success" : "Branch created",
+      "create_failure" : "Creation failed, please try again"
     }
   }
 }

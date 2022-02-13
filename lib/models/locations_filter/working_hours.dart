@@ -8,8 +8,7 @@ part 'working_hours.g.dart';
 class WorkingHours {
 
   WorkingHours({
-    required this.interval,
-    required this.day,
+    this.day,
     this.id
   });
 
@@ -18,6 +17,5 @@ class WorkingHours {
   Map<String, dynamic> toJson() => _$WorkingHoursToJson(this);
 
   String? id;
-  String interval;
-  String day;
+  String? day;
 }
