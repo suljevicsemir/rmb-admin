@@ -79,7 +79,8 @@
     "add_city_label": "Add new city",
     "select_city"   : "Select city...",
     "edit_section"  : "Edit section",
-    "must_select"   : "You must select a city!"
+    "must_select"   : "You must select a city!",
+    "filter_section": "Filter cities"
   },
   "filter_locations_page" : {
     "headline_desc": "Add and delete filters",

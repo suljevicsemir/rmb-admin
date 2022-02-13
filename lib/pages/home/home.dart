@@ -75,14 +75,8 @@ class _HomePageState extends State<HomePage> {
               SidebarExpendableItem(
                 icon: Icons.location_on,
                 title: "home.drawer.section_item_cities".tr(),
-                children: <ExpandedSidebarItem>[
-                  ExpandedSidebarItem(
-                    title: "home.drawer.section_item_cities_list".tr(),
-                    icon: Icons.map,
-                    onTap: () => locator.get<NavigationRepo>().navigateTo(CitiesPage.route),
-                  ),
-                  ExpandedSidebarItem(title: "home.drawer.section_item_cities_create".tr(), icon: Icons.location_city)
-                ],
+                onTap: () => locator.get<NavigationRepo>().navigateTo(CitiesPage.route),
+                hasArrow: false,
               ),
               SidebarExpendableItem(
                 icon: Icons.design_services,

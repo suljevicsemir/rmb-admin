@@ -79,7 +79,8 @@
     "add_city_label": "Dodajte novi grad",
     "select_city"   : "Odaberite grad...",
     "edit_section"  : "Sekcija za izmjene",
-    "must_select"   : "Morate odabrati grad!"
+    "must_select"   : "Morate odabrati grad!",
+    "filter_section": "Filtriranje gradova"
   },
   "filter_locations_page" : {
     "headline_desc": "Dodaj i obriši filtere",

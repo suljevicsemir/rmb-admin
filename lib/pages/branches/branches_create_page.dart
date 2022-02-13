@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rmb_admin/models/city.dart';
@@ -38,58 +37,12 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
         backgroundColor: ColorHelper.backgroundColor.color,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(150, 100, 150, 0),
+            padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
             child: SafeArea(
               child: (filterProvider.filtersLoading || citiesProvider.cities.isEmpty) ? const CircularProgressIndicator() :
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.network(
-                        'assets/raiffeisen_logo.jpg',
-                        width: 350,
-                        height: 250,
-                      ),
-                      const Spacer(),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            "branches_page.headline_desc".tr(),
-                            style: const TextStyle(
-                                fontSize: 45,
-                                color: Colors.white
-                            ),
-                          ),
-                          RichText(
-                            text: TextSpan(
-                                text: "branches_page.got_questions".tr(),
-                                style: const TextStyle(
-                                  fontSize: 25,
-                                  color: Colors.white,
-                                ),
-                                children: [
-                                  TextSpan(
-                                      text: "branches_page.help_center".tr(),
-                                      style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20
-                                      ),
-                                      recognizer: TapGestureRecognizer()..onTap = () {
-
-                                      }
-                                  )
-                                ]
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
                   BranchTextualField(
                     label: "branches_page.address_label".tr(),
                     hintText: "branches_page.address_hint".tr(),
