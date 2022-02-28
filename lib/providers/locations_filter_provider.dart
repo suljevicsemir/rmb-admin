@@ -1,6 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
-import 'package:rmb_admin/models/locations_filter/atm_service.dart';
+import 'package:rmb_admin/models/locations_filter/atm_filter.dart';
 import 'package:rmb_admin/models/locations_filter/branch_service_type.dart';
 import 'package:rmb_admin/models/locations_filter/branch_type.dart';
 import 'package:rmb_admin/models/locations_filter/location_filter.dart';
@@ -18,7 +18,7 @@ class LocationsFilterProvider extends ChangeNotifier {
 
   List<BranchServiceType>? _branchServiceTypes;
   List<BranchType>? _branchTypes;
-  List<ATMService>? _atmServices;
+  List<ATMFilter>? _atmFilters;
   bool _filtersLoading = false;
 
   final TextEditingController _branchTypeControllerBj = TextEditingController();
@@ -39,6 +39,9 @@ class LocationsFilterProvider extends ChangeNotifier {
     }
     if(filter.branchServiceTypes != null) {
       _branchServiceTypes = filter.branchServiceTypes!;
+    }
+    if(filter.atmFilters != null) {
+      _atmFilters = filter.atmFilters;
     }
     notifyListeners();
   }
@@ -63,8 +66,10 @@ class LocationsFilterProvider extends ChangeNotifier {
     await fetchFilters();
   }
 
-  void createAtmType() {
-
+  Future<void> createAtmType() async{
+    final ATMFilter atmFilter = ATMFilter(name: _atmTypeControllerBj.text);
+    final APIResponse response = await _repo.createATMType(atmFilter: atmFilter);
+    await fetchFilters();
   }
 
 
@@ -99,7 +104,7 @@ class LocationsFilterProvider extends ChangeNotifier {
 
   List<BranchServiceType>? get branchServiceTypes => _branchServiceTypes;
 
-  List<ATMService>? get atmServices => _atmServices;
+  List<ATMFilter>? get atmFilters => _atmFilters;
 
   bool get filtersLoading => _filtersLoading;
 

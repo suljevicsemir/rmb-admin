@@ -4,12 +4,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:rmb_admin/pages/branches/branches_create_page.dart';
+import 'package:rmb_admin/pages/branches/branches_list_page.dart';
 import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_edit_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
 import 'package:rmb_admin/pages/filter_locations/filter_locations.dart';
 import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/providers/branches_provider.dart';
 import 'package:rmb_admin/providers/cities_provider.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
 import 'package:rmb_admin/providers/locations_filter_provider.dart';
@@ -76,6 +79,36 @@ class NavigationRepo{
             lazy: false,
             child: const FilterLocations(),
           )
+        ),
+        GoRoute(
+          name: BranchesInsertPage.route,
+          path: BranchesInsertPage.route,
+          builder: (context, state) => MultiProvider(
+            providers: [
+              ChangeNotifierProvider<CitiesProvider>(
+                create: (_) => CitiesProvider(),
+                lazy: false,
+              ),
+              ChangeNotifierProvider<LocationsFilterProvider>(
+                create: (_) => LocationsFilterProvider(),
+                lazy: false,
+              ),
+              ChangeNotifierProvider<BranchesProvider>(
+                create: (_) => BranchesProvider(),
+                lazy: false,
+              ),
+            ],
+            child: const BranchesInsertPage(),
+          )
+        ),
+        GoRoute(
+          name: BranchesListPage.route,
+          path: BranchesListPage.route,
+          builder: (context, state) => ChangeNotifierProvider<BranchesProvider>(
+            create: (_) => BranchesProvider(),
+            lazy: false,
+            child: const BranchesListPage(),
+          )
         )
       ],
     );
@@ -134,4 +167,24 @@ class NavigationRepo{
   GoRouter get router => _router;
 
 
+}
+
+
+class AppRouter {
+
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch(settings.name) {
+
+      default:
+        return MaterialPageRoute(
+          builder: (_) => const Scaffold(
+            body: SafeArea(
+              child: Center(
+                child: Text("Route not found"),
+              ),
+            ),
+          )
+        );
+    }
+  }
 }

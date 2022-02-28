@@ -3,7 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rmb_admin/pages/filter_locations/filter_item.dart';
+import 'package:rmb_admin/pages/filter_locations/widgets/filter_item.dart';
 import 'package:rmb_admin/pages/filter_locations/widgets/filter_save_button.dart';
 import 'package:rmb_admin/providers/locations_filter_provider.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
@@ -194,8 +194,8 @@ class _FilterLocationsState extends State<FilterLocations> {
                             hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
                             fillColor: Colors.grey.withOpacity(0.3),
                             filled: true,
-                            hintText: 'filter_locations_page.branch_service_type_hint_bj'.tr(),
-                            labelText: 'filter_locations_page.branch_service_type_hint_bj'.tr(),
+                            hintText: 'filter_locations_page.atm_type_hint_bj'.tr(),
+                            labelText: 'filter_locations_page.atm_type_hint_bj'.tr(),
                             enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
                             focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
                           ),
@@ -211,8 +211,8 @@ class _FilterLocationsState extends State<FilterLocations> {
                             hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
                             fillColor: Colors.grey.withOpacity(0.3),
                             filled: true,
-                            hintText: 'filter_locations_page.branch_service_type_hint_en'.tr(),
-                            labelText: 'filter_locations_page.branch_service_type_hint_en'.tr(),
+                            hintText: 'filter_locations_page.atm_type_hint_en'.tr(),
+                            labelText: 'filter_locations_page.atm_type_hint_en'.tr(),
                             enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
                             focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
                           ),
@@ -227,7 +227,7 @@ class _FilterLocationsState extends State<FilterLocations> {
                         width: 250,
                         child:ListView(
                             shrinkWrap: true,
-                            children: provider.branchServiceTypes!.map((e) => FilterItem(
+                            children: provider.atmFilters!.map((e) => FilterItem(
                               filter: e,
                               onDelete: () => provider.deleteATMService(),
                             )).toList()

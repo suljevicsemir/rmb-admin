@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rmb_admin/pages/cities/city_item.dart';
@@ -27,165 +26,187 @@ class _CitiesPageState extends State<CitiesPage> {
     return Scaffold(
       backgroundColor: ColorHelper.backgroundColor.color,
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(150, 100, 150, 0),
+        padding: const EdgeInsets.fromLTRB(150, 20, 150, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           children: [
+            // Row(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     Image.network(
+            //       'assets/raiffeisen_logo.jpg',
+            //       width: 350,
+            //       height: 250,
+            //     ),
+            //     const Spacer(),
+            //     Column(
+            //       crossAxisAlignment: CrossAxisAlignment.end,
+            //       mainAxisAlignment: MainAxisAlignment.start,
+            //       children: [
+            //         Text(
+            //           "cities_page.headline_desc".tr(),
+            //           style: const TextStyle(
+            //               fontSize: 45,
+            //               color: Colors.white
+            //           ),
+            //         ),
+            //         RichText(
+            //           text: TextSpan(
+            //               text: "cities_page.got_questions".tr(),
+            //               style: const TextStyle(
+            //                 fontSize: 25,
+            //                 color: Colors.white,
+            //               ),
+            //               children: [
+            //                 TextSpan(
+            //                     text: "cities_page.help_center".tr(),
+            //                     style: const TextStyle(
+            //                       color: Colors.white,
+            //                       fontWeight: FontWeight.bold,
+            //                       fontSize: 20
+            //                     ),
+            //                     recognizer: TapGestureRecognizer()..onTap = () {
+            //
+            //                     }
+            //                 )
+            //               ]
+            //           ),
+            //         )
+            //       ],
+            //     )
+            //   ],
+            // ),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image.network(
-                  'assets/raiffeisen_logo.jpg',
-                  width: 350,
-                  height: 250,
-                ),
-                const Spacer(),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "cities_page.headline_desc".tr(),
-                      style: const TextStyle(
-                          fontSize: 45,
-                          color: Colors.white
-                      ),
+                SizedBox(
+                  width: 130,
+                  child: Text(
+                    'cities_page.add_city_label'.tr(),
+                    style: TextStyle(
+                        color: ColorHelper.rmbYellow.color,
+                        fontSize: 20
                     ),
-                    RichText(
-                      text: TextSpan(
-                          text: "cities_page.got_questions".tr(),
-                          style: const TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                          ),
-                          children: [
-                            TextSpan(
-                                text: "cities_page.help_center".tr(),
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20
-                                ),
-                                recognizer: TapGestureRecognizer()..onTap = () {
-
-                                }
-                            )
-                          ]
-                      ),
-                    )
-                  ],
+                  ),
+                ),
+                SizedBox(
+                  width: 400,
+                  child: TextField(
+                    controller: provider.createController,
+                    style: const TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                        hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
+                        fillColor: Colors.grey.withOpacity(0.3),
+                        filled: true,
+                        hintText: 'cities_page.city_name_hint'.tr(),
+                        enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => provider.createCity(),
+                  icon: Icon(Icons.save, color: ColorHelper.rmbYellow.color,),
+                  splashRadius: 20,
                 )
               ],
             ),
+            const SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 130,
+                  child: Text(
+                    'cities_page.edit_section'.tr(),
+                    style: TextStyle(
+                        color: ColorHelper.rmbYellow.color,
+                        fontSize: 18
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 400,
+                  child: TextField(
+                    controller: provider.editingController,
+                    style: const TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                        hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
+                        fillColor: Colors.grey.withOpacity(0.3),
+                        filled: true,
+                        hintText: 'cities_page.select_city'.tr(),
+                        enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => provider.editCity(),
+                  icon: const Icon(Icons.done, color: Colors.green,),
+                  splashRadius: 20,
+                ),
+                IconButton(
+                  onPressed: () => provider.deleteCity(),
+                  icon: Icon(Icons.delete, color: ColorHelper.dangerRed.color,),
+                  splashRadius: 20,
+                )
+              ],
+            ),
+            const SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 130,
+                  child: Text(
+                    'cities_page.filter_section'.tr(),
+                    style: TextStyle(
+                        color: ColorHelper.rmbYellow.color,
+                        fontSize: 18
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 400,
+                  child: TextField(
+                    controller: provider.queryController,
+                    onChanged: (String? value) => provider.queryCities(),
+                    style: const TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
+                      fillColor: Colors.grey.withOpacity(0.3),
+                      filled: true,
+                      hintText: 'cities_page.filter_section'.tr(),
+                      enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => provider.editCity(),
+                  icon: const Icon(Icons.done, color: Colors.green,),
+                  splashRadius: 20,
+                ),
+              ],
+            ),
+            const SizedBox(height: 20,),
             if(provider.cities.isEmpty) const CircularProgressIndicator() else
             Expanded(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: 600,
+                    width: 0.8 * MediaQuery.of(context).size.width,
                     child: GridView.count(
                       crossAxisSpacing: 20,
                       shrinkWrap: true,
-                      crossAxisCount: 4,
-                      childAspectRatio: 2.6,
-                      children: provider.cities.map((e) => CityListItem(city: e)).toList(),
+                      crossAxisCount: 6,
+                      childAspectRatio: 3.6,
+                      children: provider.filteredCities.map((e) => CityListItem(city: e)).toList(),
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 130,
-                                child: Text(
-                                  'cities_page.add_city_label'.tr(),
-                                  style: TextStyle(
-                                      color: ColorHelper.rmbYellow.color,
-                                      fontSize: 20
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 400,
-                                child: TextField(
-                                  controller: provider.createController,
-                                  style: const TextStyle(color: Colors.white),
-                                  decoration: InputDecoration(
-                                      hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
-                                      fillColor: Colors.grey.withOpacity(0.3),
-                                      filled: true,
-                                      hintText: 'cities_page.city_name_hint'.tr(),
-                                      enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-                                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
-                                  ),
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () => provider.createCity(),
-                                icon: Icon(Icons.save, color: ColorHelper.rmbYellow.color,),
-                                splashRadius: 20,
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 50,),
-                          Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 60),
-                                child: Text(
-                                  'cities_page.edit_section'.tr(),
-                                  style: TextStyle(
-                                      color: ColorHelper.rmbYellow.color,
-                                      fontSize: 18
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(height: 20,),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    width: 400,
-                                    child: TextField(
-                                      controller: provider.editingController,
-                                      style: const TextStyle(color: Colors.white),
-                                      decoration: InputDecoration(
-                                          hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
-                                          fillColor: Colors.grey.withOpacity(0.3),
-                                          filled: true,
-                                          hintText: 'cities_page.select_city'.tr(),
-                                          enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-                                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorHelper.rmbYellow.color))
-                                      ),
-                                    ),
-                                  ),
-                                  IconButton(
-                                    onPressed: () => provider.editCity(),
-                                    icon: const Icon(Icons.done, color: Colors.green,),
-                                    splashRadius: 20,
-                                  ),
-                                  IconButton(
-                                    onPressed: () => provider.deleteCity(),
-                                    icon: Icon(Icons.delete, color: ColorHelper.dangerRed.color,),
-                                    splashRadius: 20,
-                                  )
-                                ],
-                              )
-
-                            ],
-                          ),
-                        ],
-                      )
-                    ),
-                  )
                 ],
               ),
             )

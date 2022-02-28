@@ -19,4 +19,8 @@ class BranchServiceType extends LocationFilter{
 
   Map<String, dynamic> toJson() => _$BranchServiceTypeToJson(this);
 
+  @override
+  String toString() {
+    return 'BranchServiceType{id: $id, name: $id}';
+  }
 }

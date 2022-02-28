@@ -10,14 +10,16 @@ import 'package:rmb_admin/repositories/navigation_repo.dart';
 class CitiesProvider extends ChangeNotifier{
   final CitiesRepo _repo = CitiesRepo();
 
-  final TextEditingController _createController = TextEditingController();
-  final TextEditingController _editingController = TextEditingController();
+  final TextEditingController _createController   = TextEditingController();
+  final TextEditingController _editingController  = TextEditingController();
+  final TextEditingController _queryController    = TextEditingController();
 
   CitiesProvider() {
     getCities();
   }
 
   List<City> _cities = [];
+  List<City> _filteredCities = [];
   City? _city;
 
 
@@ -25,6 +27,8 @@ class CitiesProvider extends ChangeNotifier{
     final APIResponse response = await _repo.createCity(city: City(name: _createController.text));
     if(response.responseType == ResponseTypes.ok) {
       _createController.clear();
+      _editingController.clear();
+      _queryController.clear();
       notifyListeners();
       await getCities();
     }
@@ -36,6 +40,7 @@ class CitiesProvider extends ChangeNotifier{
     final APIResponse response = await _repo.getCities();
     if(response.responseType == ResponseTypes.ok) {
       _cities = response.data;
+      _filteredCities = response.data;
       notifyListeners();
     }
   }
@@ -61,6 +66,7 @@ class CitiesProvider extends ChangeNotifier{
     final APIResponse response = await _repo.deleteCity(city: _city!);
     if(response.responseType == ResponseTypes.ok) {
       _cities.removeWhere((element) => element.id! == _city!.id!);
+      _filteredCities.removeWhere((element) => element.id! == _city!.id!);
       _editingController.clear();
       notifyListeners();
     }
@@ -73,11 +79,30 @@ class CitiesProvider extends ChangeNotifier{
     notifyListeners();
   }
 
+  void queryCities() {
+    if(_queryController.text.isEmpty) {
+      _filteredCities = _cities;
+      notifyListeners();
+      return;
+    }
+    final String query = _queryController.text.trim().toUpperCase();
+    _filteredCities = _cities.where((element) => element.name.toUpperCase().startsWith(query)).toList();
+    notifyListeners();
+  }
+
 
   List<City> get cities => _cities;
 
   set cities(List<City> value) {
     _cities = value;
+    notifyListeners();
+  }
+
+
+  List<City> get filteredCities => _filteredCities;
+
+  set filteredCities(List<City> value) {
+    _filteredCities = value;
     notifyListeners();
   }
 
@@ -90,6 +115,7 @@ class CitiesProvider extends ChangeNotifier{
 
   TextEditingController get createController => _createController;
   TextEditingController get editingController => _editingController;
+  TextEditingController get queryController => _queryController;
 
   @override
   void dispose() {

@@ -29,13 +29,15 @@ class CityListItem extends StatelessWidget {
                 border: Border.all(color: ColorHelper.rmbYellow.color, width: 3),
                 borderRadius: BorderRadius.circular(20)
               ),
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              child: Text(
-                city.name,
-                style: const TextStyle(
-                  color: Colors.white
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+              child: Center(
+                child: Text(
+                  city.name,
+                  style: const TextStyle(
+                    color: Colors.white
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
           ),

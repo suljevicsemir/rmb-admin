@@ -21,6 +21,9 @@
       "section_item_cities_list": "List, edit, delete cities",
       "section_item_cities_create": "Create a new city",
       "section_item_locations_filter" : "Filter locations",
+      "section_item_branches" : "Branches",
+      "section_item_branches_create" : "Create a new branch",
+      "section_item_branches_list" : "View and edit branches",
       "section_item_locations_filter_branch_type" : "Branch types",
       "section_item_locations_filter_branch_service" : "Branch services",
       "section_item_locations_filter_atm_service" : "ATM types",
@@ -76,7 +79,8 @@
     "add_city_label": "Add new city",
     "select_city"   : "Select city...",
     "edit_section"  : "Edit section",
-    "must_select"   : "You must select a city!"
+    "must_select"   : "You must select a city!",
+    "filter_section": "Filter cities"
   },
   "filter_locations_page" : {
     "headline_desc": "Add and delete filters",
@@ -89,5 +93,54 @@
     "branch_service_type_hint_en" : "Branch service type in English...",
     "atm_type_hint_en" : "ATM type in English...",
     "save_filter" : "Save filter"
+  },
+  "branches_page" : {
+    "headline_desc": "Add branch",
+    "got_questions" : "You have some questions ? Check out our ",
+    "help_center"   : "Help Center",
+    "address_label" : "Address",
+    "address_hint"  : "Enter address...",
+    "latitude_hint" : "Enter latitude...",
+    "latitude_label": "Latitude",
+    "longitude_hint": "Enter longitude...",
+    "longitude_label" : "Longitude",
+    "name_hint" : "Enter branch name...",
+    "name_label": "Branch name",
+    "contact_label" : "Contact",
+    "contact_hint" : "Enter contact...",
+    "branch_type_label" : "Branch type",
+    "branch_service_type_label" : "Branch service type",
+    "atm_filter_label" : "ATM type",
+    "atm_type" : "ATM position",
+    "atm_outside" : "Outdoor",
+    "atm_inside" : "Indoor",
+    "city_label" : "City",
+    "monday_label" : "Monday",
+    "tuesday_label" : "Tuesday",
+    "wednesday_label": "Wednesday",
+    "thursday_label" : "Thursday",
+    "friday_label"   : "Friday",
+    "labels" : {
+      "city" : "Pick a city",
+      "branch_type" : "Pick a branch type",
+      "branch_service_type" : "Pick a branch service type",
+      "atm_filter" : "Pick ATM type"
+    },
+    "validation" : {
+      "obligatory_field" : "Obligatory field",
+      "not_a_number" : "Field must be a number",
+      "phone_number" : "Irregular phone number (starts with +)",
+      "pick_city" : "You must pick a city",
+      "pick_branch_type" : "You must pick a branch type",
+      "pick_branch_service_type" : "You must pick a branch service type",
+      "pick_atm" : "You must pick ATM type",
+      "create_success" : "Branch created",
+      "create_failure" : "Creation failed, please try again"
+    }
+  },
+  "branches_list" : {
+    "address" : "Address",
+    "city"    : "City",
+    "contact" : "Contact"
   }
 }

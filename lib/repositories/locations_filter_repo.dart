@@ -1,6 +1,6 @@
 
 
-import 'package:rmb_admin/models/locations_filter/atm_service.dart';
+import 'package:rmb_admin/models/locations_filter/atm_filter.dart';
 import 'package:rmb_admin/models/locations_filter/branch_service_type.dart';
 import 'package:rmb_admin/models/locations_filter/branch_type.dart';
 import 'package:rmb_admin/models/locations_filter/locations_filter_container.dart';
@@ -33,14 +33,26 @@ class LocationsFilterRepo {
     return APIResponse(responseType: response.responseType, error: response.error);
   }
 
+  Future<APIResponse<List<ATMFilter>>> getATMFilters() async{
+    final Map<String, String> headers = await ApiHeaders.appJsonNoAuth.createHeaders();
+    final APIResponse response = await HTTPClient.instance.fetchData(ApiRoutes.atmService.path(), headers);
+    if(response.responseType == ResponseTypes.ok) {
+      final List<ATMFilter> atmFilters = (response.data as List).map((e) => ATMFilter.fromJson(e)).toList();
+      return APIResponse<List<ATMFilter>>(responseType: ResponseTypes.ok, data: atmFilters, error: response.error);
+    }
+    return APIResponse(responseType: response.responseType, error: response.error);
+  }
+
   Future<LocationsFilterContainer> getFilters() async {
     List<APIResponse> results = await Future.wait([
       getBranchTypes(),
-      getBranchServiceTypes()
+      getBranchServiceTypes(),
+      getATMFilters()
     ]);
     return LocationsFilterContainer(
       branchTypes: results[0].error == null ? results[0].data : null,
-      branchServiceTypes: results[1].error == null ? results[1].data : null
+      branchServiceTypes: results[1].error == null ? results[1].data : null,
+      atmFilters: results[2].error == null ? results[2].data : null
     );
   }
 
@@ -54,9 +66,9 @@ class LocationsFilterRepo {
     return await HTTPClient.instance.postData(ApiRoutes.branchServiceType.path(), headers, branchServiceType.toJson());
   }
 
-  Future<APIResponse> createATMType({required ATMService atmService}) async {
+  Future<APIResponse> createATMType({required ATMFilter atmFilter}) async {
     final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
-    return await HTTPClient.instance.postData(ApiRoutes.atmService.path(), headers, atmService.toJson());
+    return await HTTPClient.instance.postData(ApiRoutes.atmService.path(), headers, atmFilter.toJson());
   }
 
   Future<APIResponse> deleteBranchType({required String id}) async {

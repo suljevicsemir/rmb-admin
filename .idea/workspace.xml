@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="" />
+    <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/translations/en-Us.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-US.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main/locator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/locator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network_module/api_headers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/api_headers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network_module/http_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/http_client.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_textual_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_textual_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/login_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/login_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +71,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\models\locations_filter\branch" />
+      <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\pages\filter_locations\widgets" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\pages\faq\pages" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\models\user" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\main" />
@@ -229,15 +254,66 @@
       <option name="project" value="LOCAL" />
       <updated>1644367686214</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="prep for locations filter feature">
+      <created>1644492770137</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1644492770137</updated>
+    </task>
+    <task id="LOCAL-00025" summary="added branch models">
+      <created>1644493721714</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1644493721714</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added atm types get and post methods">
+      <created>1644496443459</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1644496443459</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added branches create page">
+      <created>1644515365576</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1644515365576</updated>
+    </task>
+    <task id="LOCAL-00028" summary="branch post model added">
+      <created>1644520346261</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1644520346261</updated>
+    </task>
+    <task id="LOCAL-00029" summary="added branch fetch call">
+      <created>1644714785695</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1644714785695</updated>
+    </task>
+    <task id="LOCAL-00030" summary="added branch list page with delete functionality">
+      <created>1644719972825</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1644719972825</updated>
+    </task>
+    <task id="LOCAL-00031" summary="added a lot of cities">
+      <created>1644721764802</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1644721764802</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init commit" />
-    <MESSAGE value="added login page ui" />
-    <MESSAGE value="added secure storage repo" />
-    <MESSAGE value="added sidebar section title" />
-    <MESSAGE value="added maps" />
     <MESSAGE value="optimize imports" />
     <MESSAGE value="added faq model, flavor classes" />
     <MESSAGE value="setup json parser" />
@@ -255,7 +331,15 @@
     <MESSAGE value="added branch model classes" />
     <MESSAGE value="added branch types network call and atm service model" />
     <MESSAGE value="added fetch for 2/3 filters and post for 2/3 filters" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fetch for 2/3 filters and post for 2/3 filters" />
+    <MESSAGE value="prep for locations filter feature" />
+    <MESSAGE value="added branch models" />
+    <MESSAGE value="added atm types get and post methods" />
+    <MESSAGE value="added branches create page" />
+    <MESSAGE value="branch post model added" />
+    <MESSAGE value="added branch fetch call" />
+    <MESSAGE value="added branch list page with delete functionality" />
+    <MESSAGE value="added a lot of cities" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a lot of cities" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

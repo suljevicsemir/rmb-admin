@@ -61,14 +61,14 @@ class HTTPClient {
 
   static Future<APIResponse> _post(Map<String, dynamic> arguments) async {
     final String uri = arguments["baseUrl"] + arguments["url"];
+    print("OVO JE BODY: " + arguments["body"].toString());
     try {
       http.Response response = await http.post(
           Uri.parse(uri),
           headers: arguments["headers"],
           body: jsonEncode(arguments["body"])
       ).timeout(const Duration(seconds: 3));
-      final APIResponse apiResponse = await _parseResponse(response);
-      return apiResponse;
+      return await _parseResponse(response);
     }
     on TimeoutException catch (_) {
       return const APIResponse(responseType: ResponseTypes.timeout);
@@ -137,6 +137,8 @@ class HTTPClient {
   }
 
   static Future<APIResponse> _parseResponse(http.Response response) async {
+    print(response.body);
+    print(response.statusCode);
     switch(response.statusCode) {
       case 200:
       case 201:

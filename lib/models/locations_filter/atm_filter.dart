@@ -1,14 +1,13 @@
 
-
 import 'package:json_annotation/json_annotation.dart';
 import 'package:rmb_admin/models/locations_filter/location_filter.dart';
 
-part 'branch_type.g.dart';
+part 'atm_filter.g.dart';
 
 @JsonSerializable()
-class BranchType extends LocationFilter{
+class ATMFilter extends LocationFilter{
 
-  BranchType({
+  ATMFilter({
     required String name,
     String? id
   }): super(
@@ -16,12 +15,12 @@ class BranchType extends LocationFilter{
     id: id
   );
 
-  factory BranchType.fromJson(Map<String, dynamic> json) => _$BranchTypeFromJson(json);
+  factory ATMFilter.fromJson(Map<String, dynamic> json) => _$ATMFilterFromJson(json);
 
-  Map<String, dynamic> toJson() => _$BranchTypeToJson(this);
+  Map<String, dynamic> toJson() => _$ATMFilterToJson(this);
 
   @override
   String toString() {
-    return 'BranchType{id: $id, name: $name}';
+    return 'ATMFilter{id: $id, name: $name}';
   }
 }

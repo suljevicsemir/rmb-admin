@@ -16,5 +16,8 @@ class City {
   String? id;
   String name;
 
-
+  @override
+  String toString() {
+    return 'City{id: $id, name: $name}';
+  }
 }
