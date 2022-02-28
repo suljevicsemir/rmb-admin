@@ -18,6 +18,7 @@ class AuthRepo {
   TokenPair? _tokenPair;
 
   Future<String?> getAccessToken() async{
+    debugPrint("Getting cached access token");
     if(_tokenPair == null || _tokenPair!.accessToken == null) {
       debugPrint("Local token pair is null");
       return null;
@@ -44,7 +45,7 @@ class AuthRepo {
   }
 
   Future<void> saveTokenPair({required TokenPair tokenPair}) async {
-    _tokenPair = tokenPair;
+    _tokenPair = TokenPair(refreshToken: tokenPair.refreshToken!, accessToken: tokenPair.accessToken!);
     await Future.wait([
       locator.get<SecureStorageRepo>().setValue(key: SecureStorageRepo.refreshToken, value: tokenPair.refreshToken!),
       locator.get<SecureStorageRepo>().setValue(key: SecureStorageRepo.accessToken, value: tokenPair.accessToken!),

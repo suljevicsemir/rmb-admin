@@ -36,57 +36,63 @@ class _FAQListItemState extends State<FAQListItem> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          SizedBox(
-            width: MediaQuery.of(context).size.width - 400,
-            child: Theme(
-              data: Theme.of(context).copyWith(
-                splashColor: Colors.transparent
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: ExpansionTile(
-                  backgroundColor: ColorHelper.backgroundColor.color,
-                  collapsedBackgroundColor: ColorHelper.backgroundColor.color,
-                  onExpansionChanged: (bool value) => onTap(),
-                  title: Text(
-                    widget.faqItem.questionBj,
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: ColorHelper.rmbYellow.color
+          Expanded(
+            child: SizedBox(
+              child: Theme(
+                data: Theme.of(context).copyWith(
+                  splashColor: Colors.transparent
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: ExpansionTile(
+                    backgroundColor: ColorHelper.backgroundColor.color,
+                    collapsedBackgroundColor: ColorHelper.backgroundColor.color,
+                    onExpansionChanged: (bool value) => onTap(),
+                    title: Text(
+                      widget.faqItem.questionBj,
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: ColorHelper.rmbYellow.color
+                      ),
                     ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, bottom: 10),
-                      child: SelectableText(
-                        widget.faqItem.answerBj,
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: ColorHelper.rmbYellow.color
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10, left: 15),
+                        child: Text(
+                          widget.faqItem.answerBj,
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: ColorHelper.rmbYellow.color
+                          ),
                         ),
                       ),
-                    )
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              context.read<FaqProvider>().selectFaq(faqItem: widget.faqItem);
+                              locator.get<NavigationRepo>().navigateTo(FaqEditPage.route, arguments: context.read<FaqProvider>());
+                            },
+                            icon: Icon(Icons.edit, color: ColorHelper.dashboardIcon.color,),
+                            splashRadius: 20,
+                          ),
+                          IconButton(
+                            onPressed: () => onDelete(context, context.read<FaqProvider>(), widget.faqItem),
+                            icon: Icon(Icons.delete, color: ColorHelper.dangerRed.color,),
 
-                  ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-          const SizedBox(width: 10,),
-          IconButton(
-            onPressed: () {
-              context.read<FaqProvider>().selectFaq(faqItem: widget.faqItem);
-              locator.get<NavigationRepo>().navigateTo(FaqEditPage.route, arguments: context.read<FaqProvider>());
-            },
-            icon: Icon(Icons.edit, color: ColorHelper.dashboardIcon.color,),
-            splashRadius: 20,
-          ),
-          IconButton(
-            onPressed: () => onDelete(context, context.read<FaqProvider>(), widget.faqItem),
-            icon: Icon(Icons.delete, color: ColorHelper.dangerRed.color,),
-            splashRadius: 20,
-          )
         ],
       ),
     );

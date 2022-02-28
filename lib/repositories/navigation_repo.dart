@@ -95,10 +95,9 @@ class AppRouter {
           )
         );
       case FaqEditPage.route:
-        final Map<String, dynamic> arguments = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
           builder: (_) => ChangeNotifierProvider.value(
-            value: arguments["faqProvider"] as FaqProvider,
+            value: settings.arguments as FaqProvider,
             child: const FaqEditPage(),
           ),
         );
