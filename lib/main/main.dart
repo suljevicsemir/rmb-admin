@@ -1,31 +1,20 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:rmb_admin/main/config/flavor_config.dart';
 import 'package:rmb_admin/main/locator.dart';
-import 'package:rmb_admin/pages/home/home.dart';
-import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/pages/splash_page.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
-import 'package:rmb_admin/repositories/secure_storage_repo.dart';
 void mainStart() async{
   setupLocator();
 
 
   await Future.wait([
-    Hive.initFlutter(),
+    //Hive.initFlutter(),
     EasyLocalization.ensureInitialized(),
-    locator.get<SecureStorageRepo>().websiteStart()
   ]);
 
-  bool isLoggedIn = locator.get<SecureStorageRepo>().isLoggedIn;
-  if(isLoggedIn) {
-    locator.get<NavigationRepo>().setInitialRoute(initialRoute: HomePage.route);
-  }
-  else {
-    locator.get<NavigationRepo>().setInitialRoute(initialRoute: LoginPage.route);
-  }
+
 
   runApp(
     EasyLocalization(
@@ -44,14 +33,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routeInformationParser: locator<NavigationRepo>().router.routeInformationParser,
-      routerDelegate: locator.get<NavigationRepo>().router.routerDelegate,
+    return MaterialApp(
+      navigatorKey: locator.get<NavigationRepo>().navigationKey,
       scaffoldMessengerKey: locator.get<NavigationRepo>().scaffoldKey,
       title: FlavorConfig.instance.flavorValues.appName,
       locale: context.locale,
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
+      onGenerateRoute: AppRouter.generateRoute,
+      initialRoute: SplashPage.route,
     );
   }
 }

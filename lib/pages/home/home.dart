@@ -13,7 +13,6 @@ import 'package:rmb_admin/pages/home/widgets/sidebar/expanded_item.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/expendable_item.dart';
 import 'package:rmb_admin/pages/home/widgets/sidebar/section_title.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
-import 'package:rmb_admin/repositories/secure_storage_repo.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 
 
@@ -39,23 +38,23 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            TextButton(
-              onPressed: () {
-                locator.get<SecureStorageRepo>().deleteAll();
-              },
-              child: Text("LOGOUT"),
-            ),
-            TextButton(
-              onPressed: () {
-                locator.get<SecureStorageRepo>().getAccessToken();
-              },
-              child: Text("REFRESH"),
-            )
-            ]
-      ),
+      // floatingActionButton: Row(
+      //   mainAxisAlignment: MainAxisAlignment.end,
+      //     children: [
+      //       TextButton(
+      //         onPressed: () {
+      //           locator.get<SecureStorageRepo>().deleteAll();
+      //         },
+      //         child: Text("LOGOUT"),
+      //       ),
+      //       TextButton(
+      //         onPressed: () {
+      //           //locator.get<SecureStorageRepo>().getAccessToken();
+      //         },
+      //         child: Text("REFRESH"),
+      //       )
+      //       ]
+      // ),
       drawer: Drawer(
         child: Container(
           color: ColorHelper.dashboardBlue.color,

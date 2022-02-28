@@ -7,9 +7,9 @@ import 'package:rmb_admin/models/user/credentials_pair.dart';
 import 'package:rmb_admin/models/user/token_pair.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
 import 'package:rmb_admin/pages/home/home.dart';
+import 'package:rmb_admin/repositories/auth_repo.dart';
 import 'package:rmb_admin/repositories/login_repository.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
-import 'package:rmb_admin/repositories/secure_storage_repo.dart';
 
 class LoginProvider extends ChangeNotifier {
   bool _rememberMe = false;
@@ -31,9 +31,8 @@ class LoginProvider extends ChangeNotifier {
     final CredentialsPair pair = CredentialsPair(password: _passwordController.text, email: _emailController.text);
     final APIResponse<TokenPair> response = await loginRepository.login(credentialsPair: pair);
     if(response.error == null && response.data != null) {
-      print("ALL GOOD");
-      await locator.get<SecureStorageRepo>().saveToken(tokenPair: response.data!);
-      locator.get<NavigationRepo>().navigateTo(HomePage.route);
+      await locator.get<AuthRepo>().saveTokenPair(tokenPair: response.data!);
+      locator.get<NavigationRepo>().navigateAndRemove(HomePage.route);
     }
     else {
 

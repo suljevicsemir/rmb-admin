@@ -1,8 +1,4 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:rmb_admin/pages/branches/branches_create_page.dart';
 import 'package:rmb_admin/pages/branches/branches_list_page.dart';
@@ -12,132 +8,32 @@ import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
 import 'package:rmb_admin/pages/filter_locations/filter_locations.dart';
 import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/pages/splash_page.dart';
 import 'package:rmb_admin/providers/branches_provider.dart';
 import 'package:rmb_admin/providers/cities_provider.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
 import 'package:rmb_admin/providers/locations_filter_provider.dart';
 import 'package:rmb_admin/providers/login_provider.dart';
+import 'package:rmb_admin/providers/splash_provider.dart';
 import 'package:rmb_admin/widgets/snackbars.dart';
 
 class NavigationRepo{
   final GlobalKey<NavigatorState> _navigationKey = GlobalKey<NavigatorState>();
   final GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
 
-  late GoRouter _router;
-
-  void setInitialRoute({required String initialRoute}) {
-    _router = GoRouter(
-      initialLocation: LoginPage.route,
-      routes: [
-        GoRoute(
-          path: LoginPage.route,
-          builder: (context, state) => ChangeNotifierProvider<LoginProvider>(
-            create: (_) => LoginProvider(),
-            child: const LoginPage(),
-          ),
-        ),
-        GoRoute(
-          name: HomePage.route,
-          path: HomePage.route,
-          builder: (context, state) => const HomePage(),
-        ),
-        GoRoute(
-          name: FaqPage.route,
-          path: FaqPage.route,
-          builder: (context, state) {
-            return ChangeNotifierProvider(
-              create: (_) => FaqProvider(),
-              child: const FaqPage(),
-              lazy: false,
-            );
-          },
-          routes: [
-            GoRoute(
-              path: ':id',
-              name: FaqEditPage.route,
-              builder: (context, state) => ChangeNotifierProvider.value(
-                value: state.extra! as FaqProvider,
-                child: const FaqEditPage(),
-              ),
-            ),
-          ]
-        ),
-        GoRoute(
-          name: CitiesPage.route,
-          path: CitiesPage.route,
-          builder: (context, state) => ChangeNotifierProvider<CitiesProvider>(
-            create: (_) => CitiesProvider(),
-            lazy: false,
-            child: const CitiesPage(),
-          )
-        ),
-        GoRoute(
-          name: FilterLocations.route,
-          path: FilterLocations.route,
-          builder: (context, state) => ChangeNotifierProvider<LocationsFilterProvider>(
-            create: (_) => LocationsFilterProvider(),
-            lazy: false,
-            child: const FilterLocations(),
-          )
-        ),
-        GoRoute(
-          name: BranchesInsertPage.route,
-          path: BranchesInsertPage.route,
-          builder: (context, state) => MultiProvider(
-            providers: [
-              ChangeNotifierProvider<CitiesProvider>(
-                create: (_) => CitiesProvider(),
-                lazy: false,
-              ),
-              ChangeNotifierProvider<LocationsFilterProvider>(
-                create: (_) => LocationsFilterProvider(),
-                lazy: false,
-              ),
-              ChangeNotifierProvider<BranchesProvider>(
-                create: (_) => BranchesProvider(),
-                lazy: false,
-              ),
-            ],
-            child: const BranchesInsertPage(),
-          )
-        ),
-        GoRoute(
-          name: BranchesListPage.route,
-          path: BranchesListPage.route,
-          builder: (context, state) => ChangeNotifierProvider<BranchesProvider>(
-            create: (_) => BranchesProvider(),
-            lazy: false,
-            child: const BranchesListPage(),
-          )
-        )
-      ],
-    );
+  dynamic pop({dynamic result}) {
+    return _navigationKey.currentState!.pop(result);
   }
 
-
-  void pop({dynamic result}) {
-    return _router.pop();
-  }
-
-  Future<dynamic> navigateTo(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50), Map<String, String> params = const {}}) async{
+  Future<dynamic> navigateTo(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50)}) async{
     await Future.delayed(duration);
-    return _router.goNamed(routeName, params: params, extra: arguments);
+    return _navigationKey.currentState!.pushNamed(routeName, arguments: arguments);
   }
 
 
-
-
-  Future<dynamic> navigateToNamed(String routeName, {Object? arguments, Duration duration = const Duration(milliseconds: 50)}) async {
+  Future<dynamic> navigateAndRemove(String routeName, {dynamic arguments, Duration duration = const Duration(milliseconds: 50)}) async{
     await Future.delayed(duration);
-    return _router.pushNamed(routeName, queryParams: {
-      'kurac' : '12cm'
-    });
-  }
-
-
-  Future<dynamic> navigateAndRemove(String routeName, {dynamic arguments}) async{
-    await Future.delayed(const Duration(milliseconds: 100));
-    return _router.go(routeName);
+    return _navigationKey.currentState!.pushNamedAndRemoveUntil(routeName, (_) => false, arguments: arguments);
   }
 
   Future<dynamic> popCurrentAndPush(String routeName, {dynamic arguments}) {
@@ -164,9 +60,6 @@ class NavigationRepo{
 
   GlobalKey<ScaffoldMessengerState> get scaffoldKey => _scaffoldKey;
 
-  GoRouter get router => _router;
-
-
 }
 
 
@@ -174,7 +67,85 @@ class AppRouter {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch(settings.name) {
-
+      case SplashPage.route:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider<SplashProvider>(
+            create: (_) => SplashProvider(),
+            lazy: false,
+            child: const SplashPage(),
+          ),
+        );
+      case LoginPage.route:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider<LoginProvider>(
+            create: (_) => LoginProvider(),
+            child: LoginPage(),
+          )
+        );
+      case HomePage.route:
+        return MaterialPageRoute(
+          builder: (_) =>  const HomePage()
+        );
+      case FaqPage.route:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (_) => FaqProvider(),
+            child: const FaqPage(),
+            lazy: false,
+          )
+        );
+      case FaqEditPage.route:
+        final Map<String, dynamic> arguments = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider.value(
+            value: arguments["faqProvider"] as FaqProvider,
+            child: const FaqEditPage(),
+          ),
+        );
+      case CitiesPage.route:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider<CitiesProvider>(
+            create: (_) => CitiesProvider(),
+            lazy: false,
+            child: const CitiesPage(),
+          )
+        );
+      case FilterLocations.route:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider<LocationsFilterProvider>(
+            create: (_) => LocationsFilterProvider(),
+            lazy: false,
+            child: const FilterLocations(),
+          )
+        );
+      case BranchesInsertPage.route:
+        return MaterialPageRoute(
+          builder: (_) => MultiProvider(
+            providers: [
+              ChangeNotifierProvider<CitiesProvider>(
+                create: (_) => CitiesProvider(),
+                lazy: false,
+              ),
+              ChangeNotifierProvider<LocationsFilterProvider>(
+                create: (_) => LocationsFilterProvider(),
+                lazy: false,
+              ),
+              ChangeNotifierProvider<BranchesProvider>(
+                create: (_) => BranchesProvider(),
+                lazy: false,
+              ),
+            ],
+            child: const BranchesInsertPage(),
+          )
+        );
+      case BranchesListPage.route:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider<BranchesProvider>(
+            create: (_) => BranchesProvider(),
+            lazy: false,
+            child: const BranchesListPage(),
+          )
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

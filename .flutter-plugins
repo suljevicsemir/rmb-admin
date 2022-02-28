@@ -1,4 +1,9 @@
 # This is a generated file; do not edit or check into version control.
+flutter_secure_storage=C:\\Flutter\\folder_sdk\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_secure_storage-5.0.2\\
+flutter_secure_storage_linux=C:\\Flutter\\folder_sdk\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_secure_storage_linux-1.1.0\\
+flutter_secure_storage_macos=C:\\Flutter\\folder_sdk\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_secure_storage_macos-1.1.0\\
+flutter_secure_storage_web=C:\\Flutter\\folder_sdk\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_secure_storage_web-1.0.2\\
+flutter_secure_storage_windows=C:\\Flutter\\folder_sdk\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_secure_storage_windows-1.1.2\\
 path_provider=C:\\Flutter\\folder_sdk\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider-2.0.8\\
 path_provider_android=C:\\Flutter\\folder_sdk\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_android-2.0.11\\
 path_provider_ios=C:\\Flutter\\folder_sdk\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_ios-2.0.7\\

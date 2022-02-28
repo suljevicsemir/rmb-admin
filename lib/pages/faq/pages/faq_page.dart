@@ -47,11 +47,7 @@ class _FaqPageState extends State<FaqPage> {
         ),
         onPressed: () {
           context.read<FaqProvider>().onFaqCreate();
-          locator.get<NavigationRepo>().navigateTo(
-              FaqEditPage.route,
-              params: {'id' : 'create'},
-              arguments: context.read<FaqProvider>()
-          );
+          locator.get<NavigationRepo>().navigateTo(FaqEditPage.route, arguments: context.read<FaqProvider>());
         },
         child: Text(
           'faq_page.add_button'.tr(),

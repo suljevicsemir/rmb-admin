@@ -77,10 +77,7 @@ class _FAQListItemState extends State<FAQListItem> {
           IconButton(
             onPressed: () {
               context.read<FaqProvider>().selectFaq(faqItem: widget.faqItem);
-              final Map<String, String> params = {
-                'id' : widget.faqItem.id!
-              };
-              locator.get<NavigationRepo>().navigateTo(FaqEditPage.route, params: params, arguments: context.read<FaqProvider>());
+              locator.get<NavigationRepo>().navigateTo(FaqEditPage.route, arguments: context.read<FaqProvider>());
             },
             icon: Icon(Icons.edit, color: ColorHelper.dashboardIcon.color,),
             splashRadius: 20,

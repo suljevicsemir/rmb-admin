@@ -8,6 +8,7 @@ import 'package:rmb_admin/main/config/flavor_config.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
 import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/repositories/auth_repo.dart';
 import 'package:rmb_admin/repositories/navigation_repo.dart';
 import 'package:rmb_admin/repositories/secure_storage_repo.dart';
 
@@ -160,7 +161,7 @@ class HTTPClient {
           error: response.body
         );
       case 401:
-        bool logged = locator.get<SecureStorageRepo>().isLoggedIn;
+        bool logged = await locator.get<AuthRepo>().loggedIn();
         if(logged) {
           await Future.wait([
             locator.get<SecureStorageRepo>().deleteAll(),

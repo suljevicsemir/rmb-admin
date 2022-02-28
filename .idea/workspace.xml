@@ -4,28 +4,34 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
+    <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="removed">
+      <change afterPath="$PROJECT_DIR$/lib/pages/login/widgets/LoginButton.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/login/widgets/login_email_field.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/login/widgets/login_password_field.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/splash_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/providers/splash_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/repositories/auth_repo.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/widgets/text_form_fields/app_form_field.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/translations/en-Us.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-US.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main/locator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/locator.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/network_module/api_headers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/api_headers.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/network_module/http_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/http_client.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_textual_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_textual_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/faq/pages/faq_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/faq/pages/faq_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/faq/widgets/faq_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/faq/widgets/faq_list_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/start_page.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/providers/login_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/login_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/secure_storage_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/secure_storage_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/text_form_fields/text_field_suffix_icon.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/text_form_fields/text_field_suffix_icon.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,9 +84,9 @@
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\main" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/lib/main/main.dart" />
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="main_dev.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main/main_dev.dart" />
       <method v="2" />
     </configuration>
   </component>
@@ -310,11 +316,24 @@
       <option name="project" value="LOCAL" />
       <updated>1644721764802</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="addapt for apk build">
+      <created>1646046241546</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1646046241546</updated>
+    </task>
+    <task id="LOCAL-00033" summary="addapt for apk build">
+      <created>1646046481846</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1646046481846</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="optimize imports" />
     <MESSAGE value="added faq model, flavor classes" />
     <MESSAGE value="setup json parser" />
     <MESSAGE value="translations setup" />
@@ -339,7 +358,8 @@
     <MESSAGE value="added branch fetch call" />
     <MESSAGE value="added branch list page with delete functionality" />
     <MESSAGE value="added a lot of cities" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a lot of cities" />
+    <MESSAGE value="addapt for apk build" />
+    <option name="LAST_COMMIT_MESSAGE" value="addapt for apk build" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

@@ -3,7 +3,7 @@
 import 'dart:io';
 
 import 'package:rmb_admin/main/locator.dart';
-import 'package:rmb_admin/repositories/secure_storage_repo.dart';
+import 'package:rmb_admin/repositories/auth_repo.dart';
 
 enum ApiHeaders {
   appJsonNoAuth,
@@ -16,7 +16,7 @@ extension ApiHeadersHelper on ApiHeaders {
 
     switch(this) {
       case ApiHeaders.appJson:
-       String? accessToken = await locator.get<SecureStorageRepo>().getAccessToken();
+       String? accessToken = await locator.get<AuthRepo>().getAccessToken();
         return <String, String> {
           HttpHeaders.contentTypeHeader: 'application/json; charset=utf-8',
           HttpHeaders.authorizationHeader: 'Bearer $accessToken'
