@@ -1,11 +1,8 @@
 
 
-import 'dart:html' as html;
-import 'dart:ui' as ui;
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps/google_maps.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/pages/branches/branches_create_page.dart';
 import 'package:rmb_admin/pages/branches/branches_list_page.dart';
@@ -86,6 +83,9 @@ class _HomePageState extends State<HomePage> {
               SidebarExpendableItem(
                 icon: Icons.place,
                 title: "home.drawer.section_item_branches".tr(),
+                onTap: () {
+
+                },
                 children: [
                   ExpandedSidebarItem(
                     title: "home.drawer.section_item_branches_create".tr(),
@@ -177,34 +177,8 @@ class _HomePageState extends State<HomePage> {
 
         ],
       ),
-      body: Container(child: getMap())
+      body: Container()
     );
   }
 }
 
-
-
-Widget getMap() {
-  String htmlId = "7";
-
-  final myLatlng = new LatLng(30.2669444, -97.7427778);
-
-  final mapOptions = new MapOptions()
-    ..zoom = 8
-    ..center = new LatLng(30.2669444, -97.7427778);
-
-// ignore: undefined_prefixed_name
-  ui.platformViewRegistry.registerViewFactory(htmlId, (int viewId) {
-    final elem = html.DivElement()
-      ..id = htmlId
-      ..style.width = "100%"
-      ..style.height = "100%"
-      ..style.border = 'none';
-
-    GMap(elem, mapOptions);
-
-    return elem;
-  });
-
-  return HtmlElementView(viewType: htmlId);
-}

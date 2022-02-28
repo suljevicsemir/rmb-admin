@@ -21,6 +21,7 @@ class BranchTextualField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
             width: 90,
@@ -31,8 +32,7 @@ class BranchTextualField extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            width: 400,
+          Flexible(
             child: TextFormField(
               controller: controller,
               validator: (String? value) {

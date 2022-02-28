@@ -37,13 +37,9 @@ class _SidebarExpendableItemState extends State<SidebarExpendableItem> {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onHover: (bool? value) {
-          onTap();
-        },
+
         onTap: () {
-          if(widget.onTap != null) {
-            widget.onTap!();
-          }
+          onTap();
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),

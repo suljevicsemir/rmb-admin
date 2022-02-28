@@ -37,7 +37,7 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
         backgroundColor: ColorHelper.backgroundColor.color,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
+            padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
             child: SafeArea(
               child: (filterProvider.filtersLoading || citiesProvider.cities.isEmpty) ? const CircularProgressIndicator() :
               Column(
@@ -96,7 +96,7 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
                         child: Text(
                           "branches_page.city_label".tr(),
                           style: const TextStyle(
-                            color: Colors.white
+                              color: Colors.white
                           ),
                         ),
                       ),
@@ -171,7 +171,7 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
                             child: Text(
                               e.name,
                               style: const TextStyle(
-                                color: Colors.white
+                                  color: Colors.white
                               ),
                             ),
                           );

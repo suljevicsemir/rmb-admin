@@ -138,6 +138,7 @@ class HTTPClient {
 
   static Future<APIResponse> _parseResponse(http.Response response) async {
     print(response.body);
+    print(response.statusCode);
     switch(response.statusCode) {
       case 200:
       case 201:

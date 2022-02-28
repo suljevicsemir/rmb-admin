@@ -5,14 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/translations/bs-Ba.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/bs-Ba.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/translations/en-Us.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-Us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/translations/en-Us.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-US.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main/locator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/locator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network_module/api_headers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/api_headers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network_module/http_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/http_client.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/cities/cities_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/cities/cities_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/cities/city_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/cities/city_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_textual_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_textual_field.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/cities_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/cities_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/login_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/login_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,11 +303,17 @@
       <option name="project" value="LOCAL" />
       <updated>1644719972825</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added a lot of cities">
+      <created>1644721764802</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1644721764802</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added maps" />
     <MESSAGE value="optimize imports" />
     <MESSAGE value="added faq model, flavor classes" />
     <MESSAGE value="setup json parser" />
@@ -318,7 +338,8 @@
     <MESSAGE value="branch post model added" />
     <MESSAGE value="added branch fetch call" />
     <MESSAGE value="added branch list page with delete functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added branch list page with delete functionality" />
+    <MESSAGE value="added a lot of cities" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a lot of cities" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

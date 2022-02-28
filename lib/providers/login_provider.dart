@@ -31,6 +31,7 @@ class LoginProvider extends ChangeNotifier {
     final CredentialsPair pair = CredentialsPair(password: _passwordController.text, email: _emailController.text);
     final APIResponse<TokenPair> response = await loginRepository.login(credentialsPair: pair);
     if(response.error == null && response.data != null) {
+      print("ALL GOOD");
       await locator.get<SecureStorageRepo>().saveToken(tokenPair: response.data!);
       locator.get<NavigationRepo>().navigateTo(HomePage.route);
     }
