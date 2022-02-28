@@ -17,13 +17,6 @@ class AuthRepo {
 
   TokenPair? _tokenPair;
 
-  Future<void> saveTokenPair({required TokenPair tokenPair}) async {
-
-  }
-
-
-
-
   Future<String?> getAccessToken() async{
     if(_tokenPair == null || _tokenPair!.accessToken == null) {
       debugPrint("Local token pair is null");
@@ -44,17 +37,31 @@ class AuthRepo {
           }
       );
       if(response.responseType == ResponseTypes.ok) {
-        await _saveTokenPair(tokenPair: TokenPair.fromJson(response.data));
+        await saveTokenPair(tokenPair: TokenPair.fromJson(response.data));
       }
     }
     return _tokenPair!.accessToken;
   }
 
-  Future<void> _saveTokenPair({required TokenPair tokenPair}) async {
+  Future<void> saveTokenPair({required TokenPair tokenPair}) async {
     _tokenPair = tokenPair;
     await Future.wait([
       locator.get<SecureStorageRepo>().setValue(key: SecureStorageRepo.refreshToken, value: tokenPair.refreshToken!),
       locator.get<SecureStorageRepo>().setValue(key: SecureStorageRepo.accessToken, value: tokenPair.accessToken!),
+    ]);
+  }
+
+  Future<void> saveUserId({required String id}) async {
+    await locator.get<SecureStorageRepo>().setValue(key: SecureStorageRepo.userId, value: id);
+  }
+
+  Future<void> loginLocally({required TokenPair tokenPair}) async{
+    final Map<String, dynamic> map = JwtDecoder.decode(tokenPair.accessToken!);
+    final String id = map["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
+
+    await Future.wait([
+      saveTokenPair(tokenPair: tokenPair),
+      saveUserId(id: id),
     ]);
   }
 

@@ -28,12 +28,15 @@ class LoginProvider extends ChangeNotifier {
     if(!key.currentState!.validate()) {
       return;
     }
+
     final CredentialsPair pair = CredentialsPair(password: _passwordController.text, email: _emailController.text);
     final APIResponse<TokenPair> response = await loginRepository.login(credentialsPair: pair);
+
     if(response.error == null && response.data != null) {
-      await locator.get<AuthRepo>().saveTokenPair(tokenPair: response.data!);
+      await locator.get<AuthRepo>().loginLocally(tokenPair: response.data!);
       locator.get<NavigationRepo>().navigateAndRemove(HomePage.route);
     }
+    //TODO handle login fail
     else {
 
     }

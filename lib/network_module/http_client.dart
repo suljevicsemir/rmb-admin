@@ -62,7 +62,6 @@ class HTTPClient {
 
   static Future<APIResponse> _post(Map<String, dynamic> arguments) async {
     final String uri = arguments["baseUrl"] + arguments["url"];
-    print("OVO JE BODY: " + arguments["body"].toString());
     try {
       http.Response response = await http.post(
           Uri.parse(uri),
@@ -138,8 +137,6 @@ class HTTPClient {
   }
 
   static Future<APIResponse> _parseResponse(http.Response response) async {
-    print(response.body);
-    print(response.statusCode);
     switch(response.statusCode) {
       case 200:
       case 201:
