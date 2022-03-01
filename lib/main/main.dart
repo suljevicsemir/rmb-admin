@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:rmb_admin/main/config/flavor_config.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/pages/splash_page.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
+import 'package:rmb_admin/routing/router_generator.dart';
+
 void mainStart() async{
   setupLocator();
 

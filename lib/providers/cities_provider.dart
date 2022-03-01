@@ -1,11 +1,10 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/models/city.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
 import 'package:rmb_admin/repositories/cities_repo.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 
 class CitiesProvider extends ChangeNotifier{
   final CitiesRepo _repo = CitiesRepo();

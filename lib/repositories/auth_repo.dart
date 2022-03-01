@@ -9,9 +9,9 @@ import 'package:rmb_admin/models/user/token_pair.dart';
 import 'package:rmb_admin/network_module/api_path.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
 import 'package:rmb_admin/network_module/http_client.dart';
-import 'package:rmb_admin/pages/login.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:rmb_admin/pages/login/login.dart';
 import 'package:rmb_admin/repositories/secure_storage_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 
 class AuthRepo {
 

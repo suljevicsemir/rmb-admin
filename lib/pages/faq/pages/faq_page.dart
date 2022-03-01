@@ -4,7 +4,7 @@ import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_edit_page.dart';
 import 'package:rmb_admin/pages/faq/widgets/faq_list_item.dart';
 import 'package:rmb_admin/providers/faq_provider.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 
 class FaqPage extends StatelessWidget {

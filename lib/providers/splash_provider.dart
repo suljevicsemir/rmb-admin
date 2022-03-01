@@ -1,12 +1,10 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/repositories/auth_repo.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
 import 'package:rmb_admin/repositories/secure_storage_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 
 class SplashProvider extends ChangeNotifier {
 

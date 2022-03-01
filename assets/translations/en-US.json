@@ -141,6 +141,10 @@
   "branches_list" : {
     "address" : "Address",
     "city"    : "City",
-    "contact" : "Contact"
+    "contact" : "Contact",
+    "title"   : "Branches"
+  },
+  "branch_page" : {
+    "title" : "Branch"
   }
 }

@@ -34,6 +34,16 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
     return Form(
       key: formKey,
       child: Scaffold(
+        appBar: AppBar(
+          leading: const BackButton(),
+          centerTitle: true,
+          title: Text(
+            'branch_page.title'.tr(),
+            style: const TextStyle(
+              color: Colors.white
+            ),
+          ),
+        ),
         backgroundColor: ColorHelper.backgroundColor.color,
         body: SingleChildScrollView(
           child: Padding(

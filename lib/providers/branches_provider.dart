@@ -10,7 +10,7 @@ import 'package:rmb_admin/models/locations_filter/branch_type.dart';
 import 'package:rmb_admin/models/locations_filter/location.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
 import 'package:rmb_admin/repositories/branches_repository.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 import 'package:rmb_admin/utils/atm_validator.dart';
 
 class BranchesProvider extends ChangeNotifier {
@@ -34,12 +34,15 @@ class BranchesProvider extends ChangeNotifier {
   BranchType? _branchType;
   BranchServiceType? _branchServiceType;
   ATMFilter? _atmFilter;
+  bool _loadingBranches = false;
 
   Future<void> fetchBranches() async {
+    loadingBranches = true;
     final APIResponse response = await _repo.getBranches();
     if(response.error == null) {
        branches = response.data;
     }
+    loadingBranches = false;
   }
 
 
@@ -152,6 +155,13 @@ class BranchesProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+
+  bool get loadingBranches => _loadingBranches;
+
+  set loadingBranches(bool value) {
+    _loadingBranches = value;
+    notifyListeners();
+  }
 
   void _clearInputs() {
     addressController.clear();

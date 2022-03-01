@@ -35,7 +35,7 @@ class _BranchListItemState extends State<BranchListItem> {
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
               child: Text(
                 widget.branch.name,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18
                 ),
@@ -61,7 +61,7 @@ class _BranchListItemState extends State<BranchListItem> {
         ),
         AnimatedSize(
           duration: const Duration(milliseconds: 100),
-          child: !expanded ? const SizedBox() :
+          child: !expanded ? const Center(child: SizedBox(),) :
           Column(
             children: [
               _BranchField(
@@ -98,7 +98,7 @@ class _BranchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
       child: Row(
         children: [
           SizedBox(
@@ -111,11 +111,13 @@ class _BranchField extends StatelessWidget {
               ),
             ),
           ),
-          Text(
-            fieldValue,
-            style: const TextStyle(
-              color: Colors.white54,
-              fontSize: 17
+          Expanded(
+            child: Text(
+              fieldValue,
+              style: const TextStyle(
+                color: Colors.white54,
+                fontSize: 17
+              ),
             ),
           )
         ],

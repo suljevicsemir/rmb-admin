@@ -141,6 +141,10 @@
   "branches_list" : {
     "address" : "Adresa",
     "city"    : "Grad",
-    "contact" : "Kontakt"
+    "contact" : "Kontakt",
+    "title"   : "Branše"
+  },
+  "branch_page" : {
+    "title" : "Branša"
   }
 }

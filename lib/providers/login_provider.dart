@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/models/user/credentials_pair.dart';
@@ -9,7 +6,7 @@ import 'package:rmb_admin/network_module/api_response.dart';
 import 'package:rmb_admin/pages/home/home.dart';
 import 'package:rmb_admin/repositories/auth_repo.dart';
 import 'package:rmb_admin/repositories/login_repository.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 
 class LoginProvider extends ChangeNotifier {
   bool _rememberMe = false;

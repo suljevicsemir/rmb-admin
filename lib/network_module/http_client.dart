@@ -7,10 +7,10 @@ import 'package:http/http.dart' as http;
 import 'package:rmb_admin/main/config/flavor_config.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
-import 'package:rmb_admin/pages/login.dart';
+import 'package:rmb_admin/pages/login/login.dart';
 import 'package:rmb_admin/repositories/auth_repo.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
 import 'package:rmb_admin/repositories/secure_storage_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 
 
 class HTTPClient {

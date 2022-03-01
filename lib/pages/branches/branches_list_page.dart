@@ -1,4 +1,4 @@
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rmb_admin/pages/branches/widgets/branch_list_item.dart';
@@ -20,6 +20,18 @@ class _BranchesListPageState extends State<BranchesListPage> {
     final BranchesProvider provider = context.watch<BranchesProvider>();
     return Scaffold(
       backgroundColor: ColorHelper.backgroundColor.color,
+      appBar: AppBar(
+        leading: const BackButton(),
+        backgroundColor: ColorHelper.backgroundColor.color,
+        elevation: 0.0,
+        title: Text(
+          'branches_list.title'.tr(),
+          style: const TextStyle(
+            color: Colors.white
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,10 +42,13 @@ class _BranchesListPageState extends State<BranchesListPage> {
                 Text("Ovdje ce biti search bar")
               ],
             ),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: provider.branches.length,
-              itemBuilder: (_, index) => BranchListItem(branch: provider.branches[index],),
+            if(provider.loadingBranches) Expanded(child: Center(child: CircularProgressIndicator(color: ColorHelper.rmbYellow.color,))) else
+            Expanded(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: provider.branches.length,
+                itemBuilder: (_, index) => BranchListItem(branch: provider.branches[index],),
+              ),
             )
           ],
         ),
