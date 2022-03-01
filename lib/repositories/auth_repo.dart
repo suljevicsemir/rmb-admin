@@ -28,17 +28,18 @@ class AuthRepo {
     if(isExpired) {
       debugPrint("Cached access token expired.");
       APIResponse response = await HTTPClient.instance.postData(
-          ApiRoutes.token.path(),
+          ApiRoutes.accessTokenRefresh.path(),
           {
             HttpHeaders.acceptLanguageHeader : 'en',
             HttpHeaders.contentTypeHeader : 'application/json; charset=utf-8'
           },
-          {
-            'refresh' : _tokenPair!.refreshToken!
-          }
+          _tokenPair!.toJson()
       );
       if(response.responseType == ResponseTypes.ok) {
         await saveTokenPair(tokenPair: TokenPair.fromJson(response.data));
+      }
+      else {
+        print("Refresh failed, reason: ${response.data.toString()}");
       }
     }
     return _tokenPair!.accessToken;

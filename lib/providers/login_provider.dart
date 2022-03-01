@@ -38,7 +38,8 @@ class LoginProvider extends ChangeNotifier {
     }
     //TODO handle login fail
     else {
-
+      print("login failed");
+      print(response.data.toString());
     }
 
   }
