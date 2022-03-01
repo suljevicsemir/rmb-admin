@@ -142,7 +142,11 @@
     "address" : "Adresa",
     "city"    : "Grad",
     "contact" : "Kontakt",
-    "title"   : "Branše"
+    "title"   : "Branše",
+    "dialog_title" : "Potvrdite brisanje",
+    "dialog_text"  : "Jeste li sigurni da želite obrisati branšu {branch}?",
+    "dialog_yes"   : "Da",
+    "dialog_no"    : "Ne"
   },
   "branch_page" : {
     "title" : "Branša"

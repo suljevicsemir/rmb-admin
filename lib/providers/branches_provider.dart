@@ -97,11 +97,7 @@ class BranchesProvider extends ChangeNotifier {
   Future<void> deleteBranch({required Branch branch}) async{
     final bool response = await _repo.deleteBranch(branch: branch);
     if(response) {
-      print("uspjelo brisanje");
       _deleteBranch(branch: branch);
-    }
-    else {
-      print("nije uspjelo brisanje");
     }
   }
 

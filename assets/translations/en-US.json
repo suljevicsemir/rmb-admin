@@ -139,10 +139,14 @@
     }
   },
   "branches_list" : {
-    "address" : "Address",
-    "city"    : "City",
-    "contact" : "Contact",
-    "title"   : "Branches"
+    "address"      : "Address",
+    "city"         : "City",
+    "contact"      : "Contact",
+    "title"        : "Branches",
+    "dialog_title" : "Confirm delete action",
+    "dialog_text"  : "Are you sure you want to delete branch {branch}?",
+    "dialog_yes"   : "Yes",
+    "dialog_no"    : "No"
   },
   "branch_page" : {
     "title" : "Branch"

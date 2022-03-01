@@ -52,7 +52,7 @@ class _BranchListItemState extends State<BranchListItem> {
               icon: Icon(Icons.edit, color: ColorHelper.rmbYellow.color,),
             ),
             IconButton(
-              onPressed: () => context.read<BranchesProvider>().deleteBranch(branch: widget.branch),
+              onPressed: () => onDelete(context, widget.branch),
               splashRadius: 20,
               icon: Icon(Icons.delete, color: ColorHelper.dangerRed.color,),
             ),
@@ -125,4 +125,32 @@ class _BranchField extends StatelessWidget {
     );
   }
 }
+
+
+Future<void> onDelete(BuildContext context, Branch branch) async{
+  await Future.delayed(const Duration(milliseconds: 100));
+  showDialog(
+    context: context,
+    builder: (_) {
+      return AlertDialog(
+        title: Text('branches_list.dialog_title'.tr()),
+        content: Text('branches_list.dialog_text'.tr(namedArgs: {'branch' : branch.name}),),
+        actions: [
+          TextButton(
+            onPressed: () async {
+              await context.read<BranchesProvider>().deleteBranch(branch: branch);
+              Navigator.of(context).pop();
+            },
+            child: Text('branches_list.dialog_yes'.tr()),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text('branches_list.dialog_no'.tr()),
+          )
+        ],
+      );
+    }
+  );
+}
+
 
