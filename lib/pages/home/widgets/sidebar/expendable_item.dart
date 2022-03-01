@@ -38,6 +38,7 @@ class _SidebarExpendableItemState extends State<SidebarExpendableItem> {
       color: Colors.transparent,
       child: InkWell(
         onTap: () {
+          onTap();
           if(widget.onTap != null) {
             widget.onTap!();
           }
