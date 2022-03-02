@@ -1,11 +1,21 @@
 
 
+import 'package:rmb_admin/models/locations_filter/branch/branch.dart';
+
 class ATMValidator {
 
   bool _outside = true;
   bool _inside = false;
 
   bool _groupedValue = true;
+
+  void setFromBranch(Branch branch) {
+    if(branch.atmType.compareTo("UNUTRASNJI") == 0) {
+      setInside();
+      return;
+    }
+    setOutside();
+  }
 
   void setOutside() {
     _outside = true;

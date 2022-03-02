@@ -5,28 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/translations/en-Us.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-US.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/translations/bs-Ba.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/bs-Ba.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/translations/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-US.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main/locator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/locator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/network_module/api_headers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/api_headers.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/network_module/http_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/http_client.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/city.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/city.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/atm_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/atm_filter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch_service_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch_service_type.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch_type.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_textual_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_textual_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/branches/branches_list_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/branches_list_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_list_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/widgets/sidebar/expendable_item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/login_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/login_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/navigation_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/branches_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/branches_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/faq_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/faq_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/auth_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/auth_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/branches_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/branches_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routing/router_generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routing/router_generator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/atm_validator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/atm_validator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/snackbars.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/snackbars.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,16 +69,16 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\pages\login" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\models\locations_filter\branch" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\pages\filter_locations\widgets" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\pages\faq\pages" />
       <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\models\user" />
-      <recent name="C:\Users\semir\projects\rmb-web-admin\rmb-admin\lib\main" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/lib/main/main.dart" />
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="main_dev.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main/main_dev.dart" />
       <method v="2" />
     </configuration>
   </component>
@@ -310,18 +308,73 @@
       <option name="project" value="LOCAL" />
       <updated>1644721764802</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="addapt for apk build">
+      <created>1646046241546</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1646046241546</updated>
+    </task>
+    <task id="LOCAL-00033" summary="addapt for apk build">
+      <created>1646046481846</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1646046481846</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactored navigation and login page">
+      <created>1646059874843</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1646059874843</updated>
+    </task>
+    <task id="LOCAL-00035" summary="finished login procedure">
+      <created>1646061215728</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1646061215728</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fixed faq feature">
+      <created>1646088081747</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1646088081747</updated>
+    </task>
+    <task id="LOCAL-00037" summary="tested faq">
+      <created>1646093749303</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1646093749303</updated>
+    </task>
+    <task id="LOCAL-00038" summary="finished cities feature">
+      <created>1646096855339</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1646096855339</updated>
+    </task>
+    <task id="LOCAL-00039" summary="added providers and pages export files, refactored navigation files">
+      <created>1646101307686</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1646101307686</updated>
+    </task>
+    <task id="LOCAL-00040" summary="added delete with dialog">
+      <created>1646102788193</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1646102788193</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="optimize imports" />
-    <MESSAGE value="added faq model, flavor classes" />
-    <MESSAGE value="setup json parser" />
-    <MESSAGE value="translations setup" />
-    <MESSAGE value="added faq list item widget" />
-    <MESSAGE value="display list of expendable list items" />
-    <MESSAGE value="what" />
-    <MESSAGE value="create navigation strategy" />
     <MESSAGE value="added credentials and token model classes" />
     <MESSAGE value="switch secure storage for shared preferences" />
     <MESSAGE value="fix translations and faq routing" />
@@ -339,7 +392,15 @@
     <MESSAGE value="added branch fetch call" />
     <MESSAGE value="added branch list page with delete functionality" />
     <MESSAGE value="added a lot of cities" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a lot of cities" />
+    <MESSAGE value="addapt for apk build" />
+    <MESSAGE value="refactored navigation and login page" />
+    <MESSAGE value="finished login procedure" />
+    <MESSAGE value="fixed faq feature" />
+    <MESSAGE value="tested faq" />
+    <MESSAGE value="finished cities feature" />
+    <MESSAGE value="added providers and pages export files, refactored navigation files" />
+    <MESSAGE value="added delete with dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="added delete with dialog" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

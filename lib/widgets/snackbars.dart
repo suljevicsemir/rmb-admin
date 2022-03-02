@@ -10,7 +10,7 @@ class ActionSuccessSnackBar extends SnackBar {
   }) : super(key: key,
       content: _SnackBarContent(label: label),
       behavior: SnackBarBehavior.floating,
-      margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
       backgroundColor: Colors.green,
       duration: const Duration(seconds: 2)
   );
@@ -24,7 +24,7 @@ class _SnackBarContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 50),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

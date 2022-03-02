@@ -19,7 +19,7 @@ class FaqEditField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Center(
         child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.8,
+          width: MediaQuery.of(context).size.width * 0.95,
           child: TextFormField(
             maxLines: 5,
             controller: controller,

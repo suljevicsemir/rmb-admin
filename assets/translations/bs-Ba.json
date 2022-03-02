@@ -135,12 +135,23 @@
       "pick_branch_service_type" : "Morate odabrati servis poslovnice",
       "pick_atm" : "Morate odabrati tip bankomata",
       "create_success" : "Poslovnica kreirana",
-      "create_failure" : "Kreiranje nije uspjelo, pokušajte ponovo"
-    }
+      "create_failure" : "Kreiranje nije uspjelo, pokušajte ponovo",
+      "branch_updated" : "Podaci ažurirani",
+      "update_failure" : "Update failed, try again"
+    },
+    "save_changes" : "Spasi"
   },
   "branches_list" : {
     "address" : "Adresa",
     "city"    : "Grad",
-    "contact" : "Kontakt"
+    "contact" : "Kontakt",
+    "title"   : "Branše",
+    "dialog_title" : "Potvrdite brisanje",
+    "dialog_text"  : "Jeste li sigurni da želite obrisati branšu {branch}?",
+    "dialog_yes"   : "Da",
+    "dialog_no"    : "Ne"
+  },
+  "branch_page" : {
+    "title" : "Branša"
   }
 }

@@ -7,9 +7,10 @@ import 'package:http/http.dart' as http;
 import 'package:rmb_admin/main/config/flavor_config.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
-import 'package:rmb_admin/pages/login.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:rmb_admin/pages/login/login.dart';
+import 'package:rmb_admin/repositories/auth_repo.dart';
 import 'package:rmb_admin/repositories/secure_storage_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 
 
 class HTTPClient {
@@ -61,7 +62,6 @@ class HTTPClient {
 
   static Future<APIResponse> _post(Map<String, dynamic> arguments) async {
     final String uri = arguments["baseUrl"] + arguments["url"];
-    print("OVO JE BODY: " + arguments["body"].toString());
     try {
       http.Response response = await http.post(
           Uri.parse(uri),
@@ -137,8 +137,6 @@ class HTTPClient {
   }
 
   static Future<APIResponse> _parseResponse(http.Response response) async {
-    print(response.body);
-    print(response.statusCode);
     switch(response.statusCode) {
       case 200:
       case 201:
@@ -160,7 +158,7 @@ class HTTPClient {
           error: response.body
         );
       case 401:
-        bool logged = locator.get<SecureStorageRepo>().isLoggedIn;
+        bool logged = await locator.get<AuthRepo>().loggedIn();
         if(logged) {
           await Future.wait([
             locator.get<SecureStorageRepo>().deleteAll(),

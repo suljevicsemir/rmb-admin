@@ -24,4 +24,11 @@ class BranchType extends LocationFilter{
   String toString() {
     return 'BranchType{id: $id, name: $name}';
   }
+
+  @override
+  bool operator ==(dynamic other) =>
+      other != null && other is BranchType && id == other.id;
+
+  @override
+  int get hashCode => super.hashCode;
 }

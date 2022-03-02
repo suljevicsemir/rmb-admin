@@ -1,4 +1,3 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +5,7 @@ import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/models/faq_item.dart';
 import 'package:rmb_admin/network_module/api_response.dart';
 import 'package:rmb_admin/repositories/faq_repository.dart';
-import 'package:rmb_admin/repositories/navigation_repo.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 
 class FaqProvider extends ChangeNotifier {
 

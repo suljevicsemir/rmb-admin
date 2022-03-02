@@ -34,232 +34,245 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
     return Form(
       key: formKey,
       child: Scaffold(
+        appBar: AppBar(
+          leading: const BackButton(),
+          centerTitle: true,
+          title: Text(
+            'branch_page.title'.tr(),
+            style: const TextStyle(
+              color: Colors.white
+            ),
+          ),
+          backgroundColor: ColorHelper.backgroundColor.color,
+          elevation: 0.0,
+        ),
         backgroundColor: ColorHelper.backgroundColor.color,
         body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
-            child: SafeArea(
-              child: (filterProvider.filtersLoading || citiesProvider.cities.isEmpty) ? const CircularProgressIndicator() :
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  BranchTextualField(
-                    label: "branches_page.address_label".tr(),
-                    hintText: "branches_page.address_hint".tr(),
-                    controller: branchesProvider.addressController,
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) {
-                        return "branches_page.validation.obligatory_field".tr();
-                      }
-                    },
-                  ),
-                  BranchTextualField(
-                    label: "branches_page.latitude_label".tr(),
-                    hintText: "branches_page.latitude_hint".tr(),
-                    controller: branchesProvider.latitudeController,
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) {
-                        return "branches_page.validation.obligatory_field".tr();
-                      }
-                      if(double.tryParse(value) == null) {
-                        return "branches_page.validation.not_a_number".tr();
-                      }
-                    },
-                  ),
-                  BranchTextualField(
-                    label: "branches_page.longitude_label".tr(),
-                    hintText: "branches_page.longitude_hint".tr(),
-                    controller: branchesProvider.longitudeController,
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) {
-                        return "branches_page.validation.obligatory_field".tr();
-                      }
-                      if(double.tryParse(value) == null) {
-                        return "branches_page.validation.not_a_number".tr();
-                      }
-                    },
-                  ),
-                  BranchTextualField(
-                    label: "branches_page.name_label".tr(),
-                    hintText: "branches_page.name_hint".tr(),
-                    controller: branchesProvider.nameController,
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) {
-                        return "branches_page.validation.obligatory_field".tr();
-                      }
-                    },
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 90,
-                        child: Text(
-                          "branches_page.city_label".tr(),
-                          style: const TextStyle(
-                              color: Colors.white
-                          ),
+          child: (filterProvider.filtersLoading || citiesProvider.cities.isEmpty) ? const LoadingWidget() :
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                BranchTextualField(
+                  label: "branches_page.address_label".tr(),
+                  hintText: "branches_page.address_hint".tr(),
+                  controller: branchesProvider.addressController,
+                  validator: (String? value) {
+                    if(value == null || value.isEmpty) {
+                      return "branches_page.validation.obligatory_field".tr();
+                    }
+                  },
+                ),
+                BranchTextualField(
+                  label: "branches_page.latitude_label".tr(),
+                  hintText: "branches_page.latitude_hint".tr(),
+                  controller: branchesProvider.latitudeController,
+                  validator: (String? value) {
+                    if(value == null || value.isEmpty) {
+                      return "branches_page.validation.obligatory_field".tr();
+                    }
+                    if(double.tryParse(value) == null) {
+                      return "branches_page.validation.not_a_number".tr();
+                    }
+                  },
+                ),
+                BranchTextualField(
+                  label: "branches_page.longitude_label".tr(),
+                  hintText: "branches_page.longitude_hint".tr(),
+                  controller: branchesProvider.longitudeController,
+                  validator: (String? value) {
+                    if(value == null || value.isEmpty) {
+                      return "branches_page.validation.obligatory_field".tr();
+                    }
+                    if(double.tryParse(value) == null) {
+                      return "branches_page.validation.not_a_number".tr();
+                    }
+                  },
+                ),
+                BranchTextualField(
+                  label: "branches_page.name_label".tr(),
+                  hintText: "branches_page.name_hint".tr(),
+                  controller: branchesProvider.nameController,
+                  validator: (String? value) {
+                    if(value == null || value.isEmpty) {
+                      return "branches_page.validation.obligatory_field".tr();
+                    }
+                  },
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 90,
+                      child: Text(
+                        "branches_page.city_label".tr(),
+                        style: const TextStyle(
+                            color: Colors.white
                         ),
                       ),
-                      DropdownButton<City>(
-                        dropdownColor: Colors.black87,
-                        hint: Text(
-                          "branches_page.labels.city".tr(),
-                          style: const TextStyle(
-                              color: Colors.white
-                          ),
+                    ),
+                    DropdownButton<City>(
+                      dropdownColor: Colors.black87,
+                      hint: Text(
+                        "branches_page.labels.city".tr(),
+                        style: const TextStyle(
+                            color: Colors.white
                         ),
-                        items: citiesProvider.cities.map((e) {
-                          return DropdownMenuItem(
-                            value: e,
-                            child: Text(
-                              e.name,
-                              style: const TextStyle(
-                                  color: Colors.white
-                              ),
+                      ),
+                      items: citiesProvider.cities.map((e) {
+                        return DropdownMenuItem(
+                          value: e,
+                          child: Text(
+                            e.name,
+                            style: const TextStyle(
+                                color: Colors.white
                             ),
-                          );
-                        }).toList(),
-                        onChanged: (City? city) => branchesProvider.city = city,
-                        value: branchesProvider.city,
-                      ),
-                    ],
-                  ),
-                  BranchTextualField(
-                    label: "branches_page.contact_label".tr(),
-                    hintText: "branches_page.contact_hint".tr(),
-                    controller: branchesProvider.contactController,
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) {
-                        return "branches_page.validation.obligatory_field".tr();
-                      }
-                      if(value[0] != '+' || value.length <= 9) {
-                        return "branches_page.validation.phone_number".tr();
-                      }
-                      if(value.substring(1).contains(RegExp(r'^[a-zA-Z]+$'))) {
-                        return "branches_page.validation.phone_number".tr();
-                      }
-                    },
-                  ),
-                  Row(
-                    children: [
-                      Text("Working hours"),
+                          ),
+                        );
+                      }).toList(),
+                      onChanged: (City? city) => branchesProvider.city = city,
+                      value: branchesProvider.city,
+                    ),
+                  ],
+                ),
+                BranchTextualField(
+                  label: "branches_page.contact_label".tr(),
+                  hintText: "branches_page.contact_hint".tr(),
+                  controller: branchesProvider.contactController,
+                  validator: (String? value) {
+                    if(value == null || value.isEmpty) {
+                      return "branches_page.validation.obligatory_field".tr();
+                    }
+                    if(value[0] != '+' || value.length <= 9) {
+                      return "branches_page.validation.phone_number".tr();
+                    }
+                    if(value.substring(1).contains(RegExp(r'^[a-zA-Z]+$'))) {
+                      return "branches_page.validation.phone_number".tr();
+                    }
+                  },
+                ),
+                Row(
+                  children: [
+                    Text("Working hours"),
 
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 140,
-                        child: Text(
-                          "branches_page.branch_type_label".tr(),
-                          style: const TextStyle(
-                              color: Colors.white
-                          ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 140,
+                      child: Text(
+                        "branches_page.branch_type_label".tr(),
+                        style: const TextStyle(
+                            color: Colors.white
                         ),
                       ),
-                      DropdownButton<BranchType>(
-                        dropdownColor: Colors.black87,
-                        hint: Text(
-                          "branches_page.labels.branch_type".tr(),
-                          style: const TextStyle(
-                              color: Colors.white
-                          ),
+                    ),
+                    DropdownButton<BranchType>(
+                      dropdownColor: Colors.black87,
+                      hint: Text(
+                        "branches_page.labels.branch_type".tr(),
+                        style: const TextStyle(
+                            color: Colors.white
                         ),
-                        items: filterProvider.branchTypes!.map((e) {
-                          return DropdownMenuItem(
-                            value: e,
-                            child: Text(
-                              e.name,
-                              style: const TextStyle(
-                                  color: Colors.white
-                              ),
+                      ),
+                      items: filterProvider.branchTypes!.map((e) {
+                        return DropdownMenuItem(
+                          value: e,
+                          child: Text(
+                            e.name,
+                            style: const TextStyle(
+                                color: Colors.white
                             ),
-                          );
-                        }).toList(),
-                        onChanged: (BranchType? branchType) => branchesProvider.branchType = branchType,
-                        value: branchesProvider.branchType,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 140,
-                        child: Text(
-                          "branches_page.branch_service_type_label".tr(),
-                          style: const TextStyle(
-                              color: Colors.white
                           ),
+                        );
+                      }).toList(),
+                      onChanged: (BranchType? branchType) => branchesProvider.branchType = branchType,
+                      value: branchesProvider.branchType,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 140,
+                      child: Text(
+                        "branches_page.branch_service_type_label".tr(),
+                        style: const TextStyle(
+                            color: Colors.white
                         ),
                       ),
-                      DropdownButton<BranchServiceType>(
-                        dropdownColor: Colors.black87,
-                        hint: Text(
-                          "branches_page.labels.branch_service_type".tr(),
-                          style: const TextStyle(
-                              color: Colors.white
-                          ),
+                    ),
+                    DropdownButton<BranchServiceType>(
+                      dropdownColor: Colors.black87,
+                      hint: Text(
+                        "branches_page.labels.branch_service_type".tr(),
+                        style: const TextStyle(
+                            color: Colors.white
                         ),
-                        items: filterProvider.branchServiceTypes!.map((e) {
-                          return DropdownMenuItem(
-                            value: e,
-                            child: Text(
-                              e.name,
-                              style: const TextStyle(
-                                  color: Colors.white
-                              ),
+                      ),
+                      items: filterProvider.branchServiceTypes!.map((e) {
+                        return DropdownMenuItem(
+                          value: e,
+                          child: Text(
+                            e.name,
+                            style: const TextStyle(
+                                color: Colors.white
                             ),
-                          );
-                        }).toList(),
-                        onChanged: (BranchServiceType? branchServiceType) => branchesProvider.branchServiceType = branchServiceType,
-                        value: branchesProvider.branchServiceType,
-                      ),
-                    ],
-                  ),
-                  const ATMPosition(),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 90,
-                        child: Text(
-                          "branches_page.atm_filter_label".tr(),
-                          style: const TextStyle(
-                              color: Colors.white
                           ),
+                        );
+                      }).toList(),
+                      onChanged: (BranchServiceType? branchServiceType) => branchesProvider.branchServiceType = branchServiceType,
+                      value: branchesProvider.branchServiceType,
+                    ),
+                  ],
+                ),
+                const ATMPosition(),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 90,
+                      child: Text(
+                        "branches_page.atm_filter_label".tr(),
+                        style: const TextStyle(
+                            color: Colors.white
                         ),
                       ),
-                      DropdownButton<ATMFilter>(
-                        dropdownColor: Colors.black87,
-                        hint: Text(
-                          "branches_page.labels.atm_filter".tr(),
-                          style: const TextStyle(
-                              color: Colors.white
-                          ),
+                    ),
+                    DropdownButton<ATMFilter>(
+                      dropdownColor: Colors.black87,
+                      hint: Text(
+                        "branches_page.labels.atm_filter".tr(),
+                        style: const TextStyle(
+                            color: Colors.white
                         ),
-                        items: filterProvider.atmFilters!.map((e) {
-                          return DropdownMenuItem(
-                            value: e,
-                            child: Text(
-                              e.name,
-                              style: const TextStyle(
-                                  color: Colors.white
-                              ),
+                      ),
+                      items: filterProvider.atmFilters!.map((e) {
+                        return DropdownMenuItem(
+                          value: e,
+                          child: Text(
+                            e.name,
+                            style: const TextStyle(
+                                color: Colors.white
                             ),
-                          );
-                        }).toList(),
-                        onChanged: (ATMFilter? atmFilter) => branchesProvider.atmFilter = atmFilter,
-                        value: branchesProvider.atmFilter,
-                      ),
-                    ],
+                          ),
+                        );
+                      }).toList(),
+                      onChanged: (ATMFilter? atmFilter) => branchesProvider.atmFilter = atmFilter,
+                      value: branchesProvider.atmFilter,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 50,),
+                SizedBox(
+                  width: double.maxFinite,
+                  child: RMBElevatedTextButton(
+                    onPressed: () => branchesProvider.saveChanges(formKey: formKey),
+                    text: 'branches_page.save_changes'.tr(),
                   ),
-                  const SizedBox(height: 50,),
-                  RMBElevatedTextButton(
-                    onPressed: () => branchesProvider.create(formKey: formKey),
-                    text: 'CREATE',
-                  ),
-                  const SizedBox(height: 50,),
-                ],
-              ),
+                ),
+                const SizedBox(height: 20,),
+              ],
             ),
           ),
         ),
@@ -267,6 +280,22 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
     );
   }
 }
+
+class LoadingWidget extends StatelessWidget {
+  const LoadingWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child: Center(
+        child: CircularProgressIndicator(color: ColorHelper.rmbYellow.color,),
+      ),
+    );
+  }
+}
+
 
 
 

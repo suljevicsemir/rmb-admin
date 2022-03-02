@@ -9,28 +9,29 @@ class FaqEditPage extends StatelessWidget {
   const FaqEditPage({Key? key}) : super(key: key);
 
   static const String route = '/faq_edit';
-  static const String routeCreate = '/:faq_create';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorHelper.backgroundColor.color,
+      appBar: AppBar(
+        leading: const BackButton(),
+        backgroundColor: ColorHelper.backgroundColor.color,
+        centerTitle: true,
+        elevation: 0.0,
+        title: Text(
+          'faq_edit_page.title'.tr(),
+          style: TextStyle(
+              color: ColorHelper.rmbYellow.color
+          ),
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Stack(
             children: [
               Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 30),
-                    child: Text(
-                      'faq_edit_page.title'.tr(),
-                      style: TextStyle(
-                          fontSize: 26,
-                          color: ColorHelper.rmbYellow.color
-                      ),
-                    ),
-                  ),
                   FaqEditField(
                     controller: context.watch<FaqProvider>().questionBj,
                     hintText: 'faq_edit_page.question_bj_hint'.tr(),
@@ -52,20 +53,30 @@ class FaqEditPage extends StatelessWidget {
                     labelText: 'faq_edit_page.answer_en_label'.tr(),
                   ),
                   const SizedBox(height: 30,),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
                         primary: ColorHelper.rmbYellow.color,
-                        padding: const EdgeInsets.all(30)
-                    ),
-                    onPressed: () => context.read<FaqProvider>().saveChanges(),
-                    child: Text(
-                      'faq_edit_page.save_button'.tr(),
-                      style: TextStyle(
-                          color: ColorHelper.backgroundColor.color,
-                          fontSize: 22
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                        padding: const EdgeInsets.symmetric(vertical: 8)
                       ),
+                      onPressed: () => context.read<FaqProvider>().saveChanges(),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'faq_edit_page.save_button'.tr(),
+                            style: TextStyle(
+                                color: ColorHelper.backgroundColor.color,
+                                fontSize: 20
+                            ),
+                          ),
+                        ],
+                      )
                     ),
-                  )
+                  ),
+                  const SizedBox(height: 20,),
                 ],
               ),
 

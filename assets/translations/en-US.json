@@ -135,12 +135,23 @@
       "pick_branch_service_type" : "You must pick a branch service type",
       "pick_atm" : "You must pick ATM type",
       "create_success" : "Branch created",
-      "create_failure" : "Creation failed, please try again"
-    }
+      "create_failure" : "Creation failed, please try again",
+      "branch_updated" : "Branch updated",
+      "update_failure" : "Update failed, try again"
+    },
+    "save_changes" : "Save"
   },
   "branches_list" : {
-    "address" : "Address",
-    "city"    : "City",
-    "contact" : "Contact"
+    "address"      : "Address",
+    "city"         : "City",
+    "contact"      : "Contact",
+    "title"        : "Branches",
+    "dialog_title" : "Confirm delete action",
+    "dialog_text"  : "Are you sure you want to delete branch {branch}?",
+    "dialog_yes"   : "Yes",
+    "dialog_no"    : "No"
+  },
+  "branch_page" : {
+    "title" : "Branch"
   }
 }
