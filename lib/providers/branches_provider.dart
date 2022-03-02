@@ -17,6 +17,7 @@ class BranchesProvider extends ChangeNotifier {
 
   final BranchesRepository _repo = BranchesRepository();
   List<Branch> _branches = [];
+  List<Branch> _filteredBranches = [];
 
   BranchesProvider() {
     fetchBranches();
@@ -27,6 +28,7 @@ class BranchesProvider extends ChangeNotifier {
   late TextEditingController longitudeController = TextEditingController();
   late TextEditingController nameController = TextEditingController();
   late TextEditingController contactController = TextEditingController();
+  final TextEditingController filterController = TextEditingController();
   Branch? _branch;
 
   final ATMValidator _atmValidator = ATMValidator();
@@ -41,11 +43,25 @@ class BranchesProvider extends ChangeNotifier {
     loadingBranches = true;
     final APIResponse response = await _repo.getBranches();
     if(response.error == null) {
-       branches = response.data;
+       _branches = response.data;
+       _filteredBranches = response.data;
     }
-    loadingBranches = false;
+    _loadingBranches = false;
+    notifyListeners();
   }
 
+  void filterBranches(String? value) {
+    if(value == null) {
+      return;
+    }
+    if(_filteredBranches.isNotEmpty && filterController.text.isNotEmpty) {
+      _filteredBranches = _branches.where((element) => element.name.toUpperCase().contains(filterController.text.toUpperCase())).toList();
+    }
+    else if(filterController.text.isEmpty) {
+      _filteredBranches = List.of(_branches);
+    }
+    notifyListeners();
+  }
 
   List<Branch> get branches => _branches;
 
@@ -61,6 +77,7 @@ class BranchesProvider extends ChangeNotifier {
   String get branchServiceTypes => _branchServiceType == null ? "branches_page.validation.branch_service_type".tr() : _branchServiceType!.name;
 
   String get atmFilters => _atmFilter == null ? "branches_page.validation.atm_filter".tr() : _atmFilter!.name;
+
 
 
   Future<void> saveChanges({required GlobalKey<FormState> formKey}) async {
@@ -233,6 +250,14 @@ class BranchesProvider extends ChangeNotifier {
 
   set loadingBranches(bool value) {
     _loadingBranches = value;
+    notifyListeners();
+  }
+
+
+  List<Branch> get filteredBranches => _filteredBranches;
+
+  set filteredBranches(List<Branch> value) {
+    _filteredBranches = value;
     notifyListeners();
   }
 

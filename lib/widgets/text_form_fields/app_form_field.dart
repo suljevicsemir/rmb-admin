@@ -40,6 +40,7 @@ class AppTextFormField extends StatelessWidget {
       obscureText: obscureText,
       onChanged: onChanged,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.only(left: 20),
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         hintStyle: hintStyle ?? TextStyle(color: Colors.white.withOpacity(0.5)),

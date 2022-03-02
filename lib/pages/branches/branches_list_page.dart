@@ -7,17 +7,15 @@ import 'package:rmb_admin/pages/branches/widgets/branch_list_item.dart';
 import 'package:rmb_admin/providers/branches_provider.dart';
 import 'package:rmb_admin/routing/navigator.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
+import 'package:rmb_admin/widgets/text_form_fields/app_form_field.dart';
 
-class BranchesListPage extends StatefulWidget {
+
+class BranchesListPage extends StatelessWidget{
+
   const BranchesListPage({Key? key}) : super(key: key);
 
   static const String route = '/branches_list';
 
-  @override
-  _BranchesListPageState createState() => _BranchesListPageState();
-}
-
-class _BranchesListPageState extends State<BranchesListPage> {
   @override
   Widget build(BuildContext context) {
     final BranchesProvider provider = context.watch<BranchesProvider>();
@@ -47,19 +45,29 @@ class _BranchesListPageState extends State<BranchesListPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Text("Ovdje ce bit pretraga"),
-                Text("Ovdje ce biti search bar")
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                children: [
+                 Flexible(
+                   child: AppTextFormField(
+                     controller: provider.filterController,
+                     onChanged: (String? value) => provider.filterBranches(value),
+                     filled: true,
+                     hintText: '',
+                     suffixIcon: Icon(Icons.search, color: ColorHelper.rmbYellow.color),
+                   ),
+                 )
+                ],
+              ),
             ),
             if(provider.loadingBranches) Expanded(child: Center(child: CircularProgressIndicator(color: ColorHelper.rmbYellow.color,))) else
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.only(bottom: 60),
                 shrinkWrap: true,
-                itemCount: provider.branches.length,
-                itemBuilder: (_, index) => BranchListItem(branch: provider.branches[index],),
+                itemCount: provider.filteredBranches.length,
+                itemBuilder: (_, index) => BranchListItem(branch: provider.filteredBranches[index],),
               ),
             ),
           ],
