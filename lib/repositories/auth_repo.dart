@@ -15,16 +15,14 @@ import 'package:rmb_admin/routing/navigator.dart';
 
 class AuthRepo {
 
-  TokenPair? _tokenPair;
-
   Future<String?> getAccessToken() async{
     debugPrint("Getting cached access token");
-    if(_tokenPair == null || _tokenPair!.accessToken == null) {
-      debugPrint("Local token pair is null");
+    String? accessToken = await locator.get<SecureStorageRepo>().getValue(key: SecureStorageRepo.accessToken);
+    final String? refreshToken = await locator.get<SecureStorageRepo>().getValue(key: SecureStorageRepo.refreshToken);
+    if(accessToken == null || refreshToken == null) {
       return null;
     }
-
-    bool isExpired = JwtDecoder.isExpired(_tokenPair!.accessToken!);
+    bool isExpired = JwtDecoder.isExpired(accessToken);
     if(isExpired) {
       debugPrint("Cached access token expired.");
       APIResponse response = await HTTPClient.instance.postData(
@@ -33,20 +31,17 @@ class AuthRepo {
             HttpHeaders.acceptLanguageHeader : 'en',
             HttpHeaders.contentTypeHeader : 'application/json; charset=utf-8'
           },
-          _tokenPair!.toJson()
+          TokenPair(refreshToken: refreshToken, accessToken: accessToken).toJson()
       );
       if(response.responseType == ResponseTypes.ok) {
         await saveTokenPair(tokenPair: TokenPair.fromJson(response.data));
-      }
-      else {
-        print("Refresh failed, reason: ${response.data.toString()}");
+        accessToken = (TokenPair.fromJson(response.data)).accessToken!;
       }
     }
-    return _tokenPair!.accessToken;
+    return accessToken;
   }
 
   Future<void> saveTokenPair({required TokenPair tokenPair}) async {
-    _tokenPair = TokenPair(refreshToken: tokenPair.refreshToken!, accessToken: tokenPair.accessToken!);
     await Future.wait([
       locator.get<SecureStorageRepo>().setValue(key: SecureStorageRepo.refreshToken, value: tokenPair.refreshToken!),
       locator.get<SecureStorageRepo>().setValue(key: SecureStorageRepo.accessToken, value: tokenPair.accessToken!),

@@ -135,8 +135,11 @@
       "pick_branch_service_type" : "You must pick a branch service type",
       "pick_atm" : "You must pick ATM type",
       "create_success" : "Branch created",
-      "create_failure" : "Creation failed, please try again"
-    }
+      "create_failure" : "Creation failed, please try again",
+      "branch_updated" : "Branch updated",
+      "update_failure" : "Update failed, try again"
+    },
+    "save_changes" : "Save"
   },
   "branches_list" : {
     "address"      : "Address",

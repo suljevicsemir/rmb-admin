@@ -1,8 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/models/locations_filter/branch/branch.dart';
+import 'package:rmb_admin/pages/branches/branches_create_page.dart';
 import 'package:rmb_admin/providers/branches_provider.dart';
+import 'package:rmb_admin/routing/navigator.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 
 class BranchListItem extends StatefulWidget {
@@ -31,13 +34,15 @@ class _BranchListItemState extends State<BranchListItem> {
       children: [
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-              child: Text(
-                widget.branch.name,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(15, 10, 5, 10),
+                child: Text(
+                  widget.branch.name,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18
+                  ),
                 ),
               ),
             ),
@@ -47,7 +52,10 @@ class _BranchListItemState extends State<BranchListItem> {
               icon: Icon( !expanded ? Icons.expand_more : Icons.expand_less, color: ColorHelper.dashboardIcon.color,),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                context.read<BranchesProvider>().selectBranch(branch: widget.branch);
+                locator.get<NavigationRepo>().navigateTo(BranchesInsertPage.route, arguments: context.read<BranchesProvider>());
+              },
               splashRadius: 20,
               icon: Icon(Icons.edit, color: ColorHelper.rmbYellow.color,),
             ),

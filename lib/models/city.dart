@@ -20,4 +20,11 @@ class City {
   String toString() {
     return 'City{id: $id, name: $name}';
   }
+
+  @override
+  bool operator ==(dynamic other) =>
+      other != null && other is City && id == other.id;
+
+  @override
+  int get hashCode => super.hashCode;
 }

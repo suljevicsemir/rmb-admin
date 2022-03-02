@@ -69,9 +69,8 @@ class AppRouter {
                   create: (_) => LocationsFilterProvider(),
                   lazy: false,
                 ),
-                ChangeNotifierProvider<BranchesProvider>(
-                  create: (_) => BranchesProvider(),
-                  lazy: false,
+                ChangeNotifierProvider<BranchesProvider>.value(
+                  value: settings.arguments as BranchesProvider,
                 ),
               ],
               child: const BranchesInsertPage(),

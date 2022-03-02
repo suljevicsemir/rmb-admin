@@ -23,4 +23,13 @@ class ATMFilter extends LocationFilter{
   String toString() {
     return 'ATMFilter{id: $id, name: $name}';
   }
+
+  @override
+  bool operator ==(dynamic other) =>
+      other != null && other is ATMFilter && id == other.id;
+
+  @override
+  int get hashCode => super.hashCode;
+
+
 }

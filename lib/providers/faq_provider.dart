@@ -13,7 +13,6 @@ class FaqProvider extends ChangeNotifier {
   final String _selectedItem = "";
 
   FaqProvider() {
-    print("faq provider ctor");
     loadFaq();
   }
 

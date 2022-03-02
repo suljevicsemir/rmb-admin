@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rmb_admin/main/locator.dart';
-import 'package:rmb_admin/pages/branches/branches_create_page.dart';
 import 'package:rmb_admin/pages/branches/branches_list_page.dart';
 import 'package:rmb_admin/pages/cities/cities_page.dart';
 import 'package:rmb_admin/pages/faq/pages/faq_page.dart';
@@ -24,14 +23,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-  bool expanded = true;
-
-  void tapOnSidebar() {
-    setState(() {
-      expanded = !expanded;
-    });
-  }
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -64,21 +55,8 @@ class _HomePageState extends State<HomePage> {
             SidebarExpendableItem(
               icon: Icons.place,
               title: "home.drawer.section_item_branches".tr(),
-              onTap: () {
-
-              },
-              children: [
-                ExpandedSidebarItem(
-                  title: "home.drawer.section_item_branches_create".tr(),
-                  icon: Icons.add,
-                  onTap: () => locator.get<NavigationRepo>().navigateTo(BranchesInsertPage.route),
-                ),
-                ExpandedSidebarItem(
-                  title: "home.drawer.section_item_branches_list".tr(),
-                  icon: Icons.list,
-                  onTap: () => locator.get<NavigationRepo>().navigateTo(BranchesListPage.route),
-                )
-              ],
+              hasArrow: false,
+              onTap: () =>  locator.get<NavigationRepo>().navigateTo(BranchesListPage.route),
             ),
             SidebarExpendableItem(
               icon: Icons.atm,

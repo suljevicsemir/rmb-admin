@@ -36,4 +36,10 @@ class BranchesRepository {
     return response.error == null;
   }
 
+  Future<bool> editBranch({required BranchPost branch, required String id}) async {
+    final Map<String, String> headers = await ApiHeaders.appJson.createHeaders();
+    final APIResponse response = await HTTPClient.instance.putData(ApiRoutes.branchEdit.path([id]), headers, branch.toJson());
+    return response.error == null;
+  }
+
 }
