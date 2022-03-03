@@ -28,6 +28,7 @@ class BranchesProvider extends ChangeNotifier {
   late TextEditingController longitudeController = TextEditingController();
   late TextEditingController nameController = TextEditingController();
   late TextEditingController contactController = TextEditingController();
+  late TextEditingController cityController = TextEditingController();
   final TextEditingController filterController = TextEditingController();
   Branch? _branch;
 
@@ -62,6 +63,8 @@ class BranchesProvider extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+
 
   List<Branch> get branches => _branches;
 
@@ -173,6 +176,7 @@ class BranchesProvider extends ChangeNotifier {
     latitudeController = TextEditingController(text: branch.location.latitude.toString());
     longitudeController = TextEditingController(text: branch.location.longitude.toString());
     nameController = TextEditingController(text: branch.name);
+    cityController = TextEditingController(text: branch.city.name);
     contactController = TextEditingController(text: branch.contact);
     _city = branch.city;
     _branchType = branch.branchType;
@@ -220,6 +224,7 @@ class BranchesProvider extends ChangeNotifier {
 
   set city(City? value) {
     _city = value;
+    cityController = TextEditingController(text: value!.name);
     notifyListeners();
   }
 
@@ -267,6 +272,7 @@ class BranchesProvider extends ChangeNotifier {
     longitudeController.clear();
     nameController.clear();
     contactController.clear();
+    cityController.clear();
     _atmValidator.reset();
     _city = null;
     _branchType = null;

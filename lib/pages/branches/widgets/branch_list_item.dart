@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rmb_admin/main/locator.dart';
 import 'package:rmb_admin/models/locations_filter/branch/branch.dart';
-import 'package:rmb_admin/pages/branches/branches_create_page.dart';
+import 'package:rmb_admin/pages/branches/pages/branches_create_page.dart';
 import 'package:rmb_admin/providers/branches_provider.dart';
 import 'package:rmb_admin/routing/navigator.dart';
 import 'package:rmb_admin/theme/color_helper.dart';

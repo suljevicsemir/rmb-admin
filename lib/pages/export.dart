@@ -1,5 +1,5 @@
-export 'branches/branches_create_page.dart';
 export 'branches/branches_list_page.dart';
+export 'branches/pages/branches_create_page.dart';
 export 'cities/cities_page.dart';
 export 'faq/pages/faq_edit_page.dart';
 export 'faq/pages/faq_page.dart';
