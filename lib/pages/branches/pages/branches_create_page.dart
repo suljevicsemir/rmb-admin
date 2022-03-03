@@ -1,17 +1,17 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rmb_admin/models/city.dart';
 import 'package:rmb_admin/models/locations_filter/atm_filter.dart';
 import 'package:rmb_admin/models/locations_filter/branch_service_type.dart';
 import 'package:rmb_admin/models/locations_filter/branch_type.dart';
 import 'package:rmb_admin/pages/branches/widgets/atm_position.dart';
-import 'package:rmb_admin/pages/branches/widgets/branch_textual_field.dart';
+import 'package:rmb_admin/pages/branches/widgets/city_type_ahead_field.dart';
 import 'package:rmb_admin/providers/branches_provider.dart';
 import 'package:rmb_admin/providers/cities_provider.dart';
 import 'package:rmb_admin/providers/locations_filter_provider.dart';
 import 'package:rmb_admin/theme/color_helper.dart';
 import 'package:rmb_admin/widgets/buttons/rmb_elevated_button.dart';
+import 'package:rmb_admin/widgets/text_form_fields/app_form_field.dart';
 
 class BranchesInsertPage extends StatefulWidget {
   const BranchesInsertPage({Key? key}) : super(key: key);
@@ -40,7 +40,7 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
           title: Text(
             'branch_page.title'.tr(),
             style: const TextStyle(
-              color: Colors.white
+                color: Colors.white
             ),
           ),
           backgroundColor: ColorHelper.backgroundColor.color,
@@ -48,97 +48,85 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
         ),
         backgroundColor: ColorHelper.backgroundColor.color,
         body: SingleChildScrollView(
+          padding: EdgeInsets.zero,
           child: (filterProvider.filtersLoading || citiesProvider.cities.isEmpty) ? const LoadingWidget() :
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                BranchTextualField(
-                  label: "branches_page.address_label".tr(),
-                  hintText: "branches_page.address_hint".tr(),
-                  controller: branchesProvider.addressController,
-                  validator: (String? value) {
-                    if(value == null || value.isEmpty) {
-                      return "branches_page.validation.obligatory_field".tr();
-                    }
-                  },
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: AppTextFormField(
+                    label: "branches_page.address_label".tr(),
+                    hintText: "branches_page.address_hint".tr(),
+                    controller: branchesProvider.addressController,
+                    validator: (String? value) {
+                      if(value == null || value.isEmpty) {
+                        return "branches_page.validation.obligatory_field".tr();
+                      }
+                    },
+                    filled: true,
+                  ),
                 ),
-                BranchTextualField(
-                  label: "branches_page.latitude_label".tr(),
-                  hintText: "branches_page.latitude_hint".tr(),
-                  controller: branchesProvider.latitudeController,
-                  validator: (String? value) {
-                    if(value == null || value.isEmpty) {
-                      return "branches_page.validation.obligatory_field".tr();
-                    }
-                    if(double.tryParse(value) == null) {
-                      return "branches_page.validation.not_a_number".tr();
-                    }
-                  },
+
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: AppTextFormField(
+                    label: "branches_page.latitude_label".tr(),
+                    hintText: "branches_page.latitude_hint".tr(),
+                    controller: branchesProvider.latitudeController,
+                    validator: (String? value) {
+                      if(value == null || value.isEmpty) {
+                        return "branches_page.validation.obligatory_field".tr();
+                      }
+                      if(double.tryParse(value) == null) {
+                        return "branches_page.validation.not_a_number".tr();
+                      }
+                    },
+                    filled: true,
+                  ),
                 ),
-                BranchTextualField(
-                  label: "branches_page.longitude_label".tr(),
-                  hintText: "branches_page.longitude_hint".tr(),
-                  controller: branchesProvider.longitudeController,
-                  validator: (String? value) {
-                    if(value == null || value.isEmpty) {
-                      return "branches_page.validation.obligatory_field".tr();
-                    }
-                    if(double.tryParse(value) == null) {
-                      return "branches_page.validation.not_a_number".tr();
-                    }
-                  },
+
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: AppTextFormField(
+                    label: "branches_page.longitude_label".tr(),
+                    hintText: "branches_page.longitude_hint".tr(),
+                    controller: branchesProvider.longitudeController,
+                    validator: (String? value) {
+                      if(value == null || value.isEmpty) {
+                        return "branches_page.validation.obligatory_field".tr();
+                      }
+                      if(double.tryParse(value) == null) {
+                        return "branches_page.validation.not_a_number".tr();
+                      }
+                    },
+                    filled: true,
+
+                  ),
                 ),
-                BranchTextualField(
-                  label: "branches_page.name_label".tr(),
-                  hintText: "branches_page.name_hint".tr(),
-                  controller: branchesProvider.nameController,
-                  validator: (String? value) {
-                    if(value == null || value.isEmpty) {
-                      return "branches_page.validation.obligatory_field".tr();
-                    }
-                  },
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: AppTextFormField(
+                    label: "branches_page.name_label".tr(),
+                    hintText: "branches_page.name_hint".tr(),
+                    controller: branchesProvider.nameController,
+                    validator: (String? value) {
+                      if(value == null || value.isEmpty) {
+                        return "branches_page.validation.obligatory_field".tr();
+                      }
+                    },
+                    filled: true,
+                  ),
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 90,
-                      child: Text(
-                        "branches_page.city_label".tr(),
-                        style: const TextStyle(
-                            color: Colors.white
-                        ),
-                      ),
-                    ),
-                    DropdownButton<City>(
-                      dropdownColor: Colors.black87,
-                      hint: Text(
-                        "branches_page.labels.city".tr(),
-                        style: const TextStyle(
-                            color: Colors.white
-                        ),
-                      ),
-                      items: citiesProvider.cities.map((e) {
-                        return DropdownMenuItem(
-                          value: e,
-                          child: Text(
-                            e.name,
-                            style: const TextStyle(
-                                color: Colors.white
-                            ),
-                          ),
-                        );
-                      }).toList(),
-                      onChanged: (City? city) => branchesProvider.city = city,
-                      value: branchesProvider.city,
-                    ),
-                  ],
-                ),
-                BranchTextualField(
-                  label: "branches_page.contact_label".tr(),
-                  hintText: "branches_page.contact_hint".tr(),
+                const CityTypeAheadField(),
+
+                AppTextFormField(
                   controller: branchesProvider.contactController,
+                  hintText: "branches_page.contact_hint".tr(),
+                  filled: true,
+                  label: "branches_page.contact_label".tr(),
                   validator: (String? value) {
                     if(value == null || value.isEmpty) {
                       return "branches_page.validation.obligatory_field".tr();
@@ -150,12 +138,6 @@ class _BranchesInsertPageState extends State<BranchesInsertPage> {
                       return "branches_page.validation.phone_number".tr();
                     }
                   },
-                ),
-                Row(
-                  children: [
-                    Text("Working hours"),
-
-                  ],
                 ),
                 Row(
                   children: [
@@ -286,11 +268,13 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      child: Center(
-        child: CircularProgressIndicator(color: ColorHelper.rmbYellow.color,),
+    return Center(
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height - (AppBar().preferredSize.height + kToolbarHeight),
+        width: MediaQuery.of(context).size.width,
+        child: Center(
+          child: CircularProgressIndicator(color: ColorHelper.rmbYellow.color,),
+        ),
       ),
     );
   }

@@ -18,7 +18,7 @@ class HTTPClient {
   static final HTTPClient _singleton = HTTPClient();
   static HTTPClient get instance => _singleton;
 
-  Future<APIResponse> fetchData(String url, Map<String, String> headers, {Map<String, String>? params, bool fromIsolate = false, int timeoutSeconds = 3}) async {
+  Future<APIResponse> fetchData(String url, Map<String, String> headers, {Map<String, String>? params, bool fromIsolate = false, int timeoutSeconds = 10}) async {
     debugPrint("Fetching data from: ${FlavorConfig.instance.flavorValues.baseUrl}$url");
     final Map<String, dynamic> arguments = {
       'baseUrl' : FlavorConfig.instance.flavorValues.baseUrl,

@@ -33,6 +33,20 @@ class CitiesProvider extends ChangeNotifier{
     }
   }
 
+  Future<List<City>> filterCities(String? value) async{
+
+    if(value == null) {
+      debugPrint("value is null");
+      return _cities;
+    }
+    debugPrint("Filtering cities for value: $value");
+    if(_filteredCities.isNotEmpty && value.isNotEmpty) {
+      final List<City> x = _filteredCities.where((element) => element.name.toUpperCase().contains(value.toUpperCase())).toList();
+      return x;
+    }
+    return List.of(_cities);
+  }
+
 
   Future<void> getCities() async {
     _cities.clear();
@@ -72,6 +86,12 @@ class CitiesProvider extends ChangeNotifier{
     return response.error;
   }
 
+  String? validateCity(String value) {
+    if(_cities.any((element) => element.name.compareTo(value) == 0)) {
+      return null;
+    }
+    return "branches_page.validation.pick_city".tr();
+  }
   void selectCity({required City city}) {
     _city = city;
     _editingController.text = city.name;

@@ -5,26 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19f08d99-ef4c-4d16-a3c5-16a83d061183" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/translations/bs-Ba.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/bs-Ba.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/translations/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translations/en-US.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/city.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/city.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/atm_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/atm_filter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch_service_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch_service_type.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/locations_filter/branch_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/locations_filter/branch_type.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network_module/http_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network_module/http_client.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/branches_create_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/branches/branches_list_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/branches_list_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/branches/widgets/branch_list_item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/providers/branches_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/branches_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/faq_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/faq_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/auth_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/auth_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/branches_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/branches_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routing/router_generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routing/router_generator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/atm_validator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/atm_validator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/snackbars.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/snackbars.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/cities_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/cities_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/text_form_fields/app_form_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/text_form_fields/app_form_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -371,13 +365,31 @@
       <option name="project" value="LOCAL" />
       <updated>1646102788193</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="finished create and update branch">
+      <created>1646238270027</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1646238270027</updated>
+    </task>
+    <task id="LOCAL-00042" summary="pull branch">
+      <created>1646238402703</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1646238402703</updated>
+    </task>
+    <task id="LOCAL-00043" summary="added local branch filter">
+      <created>1646248246318</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1646248246318</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added credentials and token model classes" />
-    <MESSAGE value="switch secure storage for shared preferences" />
-    <MESSAGE value="fix translations and faq routing" />
     <MESSAGE value="creation, editing, deleting faqs" />
     <MESSAGE value="cities page mockup" />
     <MESSAGE value="finished faq and cities page" />
@@ -400,7 +412,10 @@
     <MESSAGE value="finished cities feature" />
     <MESSAGE value="added providers and pages export files, refactored navigation files" />
     <MESSAGE value="added delete with dialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="added delete with dialog" />
+    <MESSAGE value="finished create and update branch" />
+    <MESSAGE value="pull branch" />
+    <MESSAGE value="added local branch filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="added local branch filter" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

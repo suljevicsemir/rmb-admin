@@ -131,6 +131,7 @@
       "not_a_number" : "Polje mora biti broj",
       "phone_number" : "Neispravan broj telefona (počinje s + )",
       "pick_city" : "Morate odabrati grad",
+      "no_cities" : "Pretraga nema rezultata",
       "pick_branch_type" : "Morate odabrati tip poslovnice",
       "pick_branch_service_type" : "Morate odabrati servis poslovnice",
       "pick_atm" : "Morate odabrati tip bankomata",

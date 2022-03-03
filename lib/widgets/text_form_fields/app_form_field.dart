@@ -15,7 +15,9 @@ class AppTextFormField extends StatelessWidget {
     this.validator,
     this.suffixIcon,
     this.obscureText = false,
-    this.onChanged
+    this.onChanged,
+    this.label,
+    this.labelStyle
   }) : super(key: key);
 
   final TextEditingController controller;
@@ -31,7 +33,8 @@ class AppTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final bool obscureText;
   final Function(String)? onChanged;
-
+  final String? label;
+  final TextStyle? labelStyle;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -40,7 +43,10 @@ class AppTextFormField extends StatelessWidget {
       obscureText: obscureText,
       onChanged: onChanged,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.only(left: 20),
         suffixIcon: suffixIcon,
+        labelText: label,
+        labelStyle: labelStyle?? TextStyle(color: Colors.white.withOpacity(0.5)),
         prefixIcon: prefixIcon,
         hintStyle: hintStyle ?? TextStyle(color: Colors.white.withOpacity(0.5)),
         fillColor: fillColor ?? Colors.grey.withOpacity(0.3),

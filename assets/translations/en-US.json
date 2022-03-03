@@ -131,6 +131,7 @@
       "not_a_number" : "Field must be a number",
       "phone_number" : "Irregular phone number (starts with +)",
       "pick_city" : "You must pick a city",
+      "no_cities" : "No cities match your search",
       "pick_branch_type" : "You must pick a branch type",
       "pick_branch_service_type" : "You must pick a branch service type",
       "pick_atm" : "You must pick ATM type",
